@@ -6,3 +6,4 @@ CS1530 group repository
 - Craig Kodman (cmk126@pitt.edu | c-kodman)  
 - Joe Meszar (jwm54@pitt.edu | outkst)  
 - David Tsui (dat83@pitt.edu | luckyleap)  
+
