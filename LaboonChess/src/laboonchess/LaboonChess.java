@@ -9,11 +9,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
  *
- * @author Malsby
+ * @author Joe Meszar (jwm54@pitt.edu)
  */
 public class LaboonChess extends Application {
     
@@ -23,6 +24,7 @@ public class LaboonChess extends Application {
         
         Scene scene = new Scene(root);
         
+        stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("icon.png"))); 
         stage.setTitle("Laboon Chess");
         stage.setScene(scene);
         stage.setResizable(false);

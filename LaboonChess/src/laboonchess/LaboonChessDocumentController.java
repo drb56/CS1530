@@ -19,6 +19,16 @@ public class LaboonChessDocumentController implements Initializable {
     private Label lblStatus;
     
     @FXML
+    private void handleUndoMoveAction(ActionEvent event) {
+        lblStatus.setText("Undo Move menu item clicked");
+    }
+    
+    @FXML
+    private void handleAboutAction(ActionEvent event) {
+        lblStatus.setText("About menu item clicked");
+    }
+    
+    @FXML
     private void handleLoadGameAction(ActionEvent event) {
         System.out.println("Load Game button clicked!");
         lblStatus.setText("Load Game clicked");
