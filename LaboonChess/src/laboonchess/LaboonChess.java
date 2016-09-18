@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
@@ -24,11 +25,25 @@ public class LaboonChess extends Application {
         
         Scene scene = new Scene(root);
         
-        stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("icon.png"))); 
+        // set custom app icon
+        stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("icon.png")));
+        
+        // set custom title
         stage.setTitle("Laboon Chess");
+        
+        // import custom chess font
+        // usage: -fx-font-family: PIXymbolsChessW95-Regular
+        Font.loadFont(LaboonChess.class.getResource("chess.ttf").toExternalForm(), 10);
+        
+        // set the scene AKA the form
         stage.setScene(scene);
+        
+        // make the window not resizable
         stage.setResizable(false);
+        
+        // show the scene/stage AKA the form/window
         stage.show();
+        
     }
 
     /**
