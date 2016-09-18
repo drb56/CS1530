@@ -3,16 +3,14 @@ package laboonchess;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -81,7 +79,11 @@ public class LaboonChessDocumentController implements Initializable {
         
         // start the timer for the game.
         Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
-            lblTimer.setText(String.format("%d", ++timer_count));
+            //lblTimer.setText(String.format("%d", ++timer_count));
+            lblTimer.setText(String.format("%d:%02d", 
+                TimeUnit.SECONDS.toMinutes(++timer_count),
+                TimeUnit.SECONDS.toSeconds(timer_count) - TimeUnit.MINUTES.toSeconds(TimeUnit.SECONDS.toMinutes(timer_count))
+            ));
         }));
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();

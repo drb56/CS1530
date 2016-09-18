@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="LaboonChess.jnlp">
+  <information>
+    <title>LaboonChess</title>
+    <vendor></vendor>
+    <description>David Bickford (drb56@pitt.edu)
+Craig Kodman (cmk126@pitt.edu) 
+Joe Meszar (jwm54@pitt.edu)
+David Tsui (dat83@pitt.edu)</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="LaboonChess.jar" size="39427" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="LaboonChess" >
+    <param name="requiredFXVersion" value="2.2+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="laboonchess.LaboonChess"  name="LaboonChess" />
+  <update check="always"/>
+</jnlp>
