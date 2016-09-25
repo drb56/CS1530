@@ -6,9 +6,11 @@
 package laboonchess;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -18,6 +20,8 @@ import javafx.stage.Stage;
  * @author Joe Meszar (jwm54@pitt.edu)
  */
 public class LaboonChess extends Application {
+    @FXML Label lblTimer = null;
+    long timer_count = 0;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -40,10 +44,9 @@ public class LaboonChess extends Application {
         
         // make the window not resizable
         stage.setResizable(false);
-        
+
         // show the scene/stage AKA the form/window
         stage.show();
-        
     }
 
     /**
@@ -52,5 +55,4 @@ public class LaboonChess extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }
