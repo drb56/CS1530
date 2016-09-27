@@ -25,6 +25,6 @@ During each sprint our group will work in two teams, which will change each spri
 
 We’re doing it this way to make sure we have multiple sets of eyes on the code so we catch any errors in our code, grammatical or otherwise. 
 
-Branching names: feature/<name of feature>
+Branching names: feature/"name of feature"
 Who can integrate branches into master: Anyone, as long as the other group accepts the branch.
 
