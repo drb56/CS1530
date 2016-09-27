@@ -14,7 +14,7 @@ David Tsui (dat83@pitt.edu)</description>
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="LaboonChess.jar" size="39427" download="eager" />
+    <jar href="LaboonChess.jar" size="50472" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="LaboonChess" >
     <param name="requiredFXVersion" value="2.2+"/>

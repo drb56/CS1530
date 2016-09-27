@@ -17,11 +17,14 @@
 14.	Test that the player turn notification correctly notifies the player of their turn
 
 
-##Branching/Integration Plan:
-Each sprint our group will work in two teams, which will be different each sprint, and equally divide up the work between 
-the two groups. Once a team has finished their work and wants to push to master the other group must review their work to 
-check for errors before it is pushed to master. We’re doing it this way to make sure we have multiple sets of eyes and 
-that we don’t have any errors in our code, grammatical or otherwise. 
+For our project we’re going to use a method called TDD, or Test Driven Development. For TDD we will write our tests before we write the actual code for the project. This will allow us to assure that all tests will pass and that the code is written is a well formatted way.
 
-Branching names: feature/<name of feature>
+
+##Branching/Integration Plan:
+During each sprint our group will work in two teams, which will change each sprint, and equally divide up the work between the two groups. Once a team has finished their work and is ready to push to master, the other group will first review their work to check for errors.
+
+We’re doing it this way to make sure we have multiple sets of eyes on the code so we catch any errors in our code, grammatical or otherwise. 
+
+Branching names: feature/"name of feature"
 Who can integrate branches into master: Anyone, as long as the other group accepts the branch.
+
