@@ -1,5 +1,3 @@
-package laboonchess;
-
 import java.io.IOException;
 import java.lang.reflect.TypeVariable;
 import java.net.URL;

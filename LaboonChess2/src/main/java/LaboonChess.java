@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package laboonchess;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -25,19 +24,19 @@ public class LaboonChess extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("LaboonChessDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/LaboonChessDocument.fxml"));
         
         Scene scene = new Scene(root);
         
         // set custom app icon
-        stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("icon.png")));
+        stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("/icon.png")));
         
         // set custom title
         stage.setTitle("Laboon Chess");
         
         // import custom chess font
         // usage: -fx-font-family: PIXymbolsChessW95-Regular
-        Font.loadFont(LaboonChess.class.getResource("chess.ttf").toExternalForm(), 10);
+        Font.loadFont(LaboonChess.class.getResource("/chess.ttf").toExternalForm(), 10);
         
         // set the scene AKA the form
         stage.setScene(scene);
