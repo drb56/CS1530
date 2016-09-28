@@ -8,8 +8,8 @@
 5.	Test that when the load button is pressed, it loads a game from a PGN save-game list.
 6.	Test that when the exit button is pressed, it exits the program.
 7.	Test that when the undo button is pressed (from Edit -> undo), it correctly undoes a move.
-8.	Test that the user color is black when the user chooses black.
-9.	Test that the user color is white when the user chooses white.
+8.	Test that the user color is black, when the user chooses black.
+9.	Test that the user color is white, when the user chooses white.
 10.	Test that the "game timer" correctly counts down the time since the game was started.
 11. Test that when the "game timer" has elapsed, the current game is forfeited.
 12.	Test that the “per turn timer” is correctly set at the beginning of each turn.
