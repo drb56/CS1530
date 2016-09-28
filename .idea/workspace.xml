@@ -1,0 +1,1946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e68578a-0221-4b16-9f8f-85736bbdf220" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/CS1530.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_18_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_testfx_testfx_core_4_0_4_alpha.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_testfx_testfx_legacy_4_0_4_alpha.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChessFX.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/test/LaboonChessDocumentControllerTest.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java" afterPath="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" afterPath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess.iml" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChess.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build.gradle" afterPath="$PROJECT_DIR$/LaboonChess2/build.gradle" />
+    </list>
+    <ignored path="CS1530.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/LaboonChessFX/.gradle/" />
+    <ignored path="$PROJECT_DIR$/LaboonChessFX/build/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess2/.gradle/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess2/build/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess3/.gradle/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess3/build/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess/.gradle/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/LaboonChess">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/LaboonChess2">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/LaboonChess3">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/LaboonChessFX">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="test">
+          <activation />
+        </task>
+        <task path="Gradle_Test">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/LaboonChess2">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/LaboonChess3">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/LaboonChess">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="LaboonChess2" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Run Configurations" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.RunConfigurationsNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="LaboonChess2" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Dependencies" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="LaboonChess2" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="LaboonChess2" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="build setup" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="LaboonChess2" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="build" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+            </PATH>
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CS1530" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaboonChess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaboonChessTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="white_king.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/white_king.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deliverable1.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deliverable 1/deliverable1.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="150">
+                <caret line="10" column="59" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="59" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AboutDialog.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="238" selection-start-line="9" selection-start-column="238" selection-end-line="9" selection-end-column="238" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaboonChessDocument.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="26" column="98" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaboonChessAboutDialogController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaboonChessDocumentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+              <folding>
+                <element signature="e#2061#2062#0" expanded="true" />
+                <element signature="e#2115#2116#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$/LaboonChess" value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13" />
+        <entry key="$PROJECT_DIR$/LaboonChess2" value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$/LaboonChess" value="2.13" />
+        <entry key="$PROJECT_DIR$/LaboonChess2" value="2.13" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="LaboonChess" />
+              <option name="path" value="$PROJECT_DIR$/LaboonChess" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="LaboonChess" />
+                <option name="path" value="$PROJECT_DIR$/LaboonChess" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="LaboonChess2" />
+              <option name="path" value="$PROJECT_DIR$/LaboonChess2" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="LaboonChess2" />
+                <option name="path" value="$PROJECT_DIR$/LaboonChess2" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$/LaboonChess">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'LaboonChess'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'LaboonChess'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/LaboonChess2">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'LaboonChess2'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'LaboonChess2'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'LaboonChess2'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the test Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="compileTestGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'LaboonChess2'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the main Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="compileGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'LaboonChess2'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Groovydoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="groovydoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'LaboonChess2'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'LaboonChess2'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'LaboonChess2'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/LaboonChess" value="2950084278000" />
+        <entry key="$PROJECT_DIR$/LaboonChess2" value="2950135379000" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$/LaboonChess">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$/LaboonChess">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="path" value="$PROJECT_DIR$/LaboonChess" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="LaboonChess" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-base-services-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-base-services-groovy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-cli-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-core-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-docs-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-installation-beacon-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-launcher-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-messaging-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-model-core-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-model-groovy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-open-api-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-resources-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-tooling-api-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-ui-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-wrapper-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/groovy-all-2.4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-announce-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-antlr-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-build-comparison-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-build-init-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-code-quality-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-dependency-management-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-diagnostics-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ear-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ide-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ide-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ivy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-jacoco-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-javascript-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-jetty-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-groovy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-java-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-jvm-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-scala-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-maven-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-osgi-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-base-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-jvm-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-play-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-plugin-development-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-plugin-use-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-plugins-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-publish-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-reporting-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-resources-http-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-resources-s3-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-resources-sftp-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-scala-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-signing-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-sonar-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-test-kit-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-base-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-jvm-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-tooling-api-builders-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/LaboonChess/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/LaboonChess/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/LaboonChess2">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$/LaboonChess2">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="path" value="$PROJECT_DIR$/LaboonChess2" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="LaboonChess2" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-base-services-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-base-services-groovy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-cli-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-core-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-docs-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-installation-beacon-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-launcher-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-messaging-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-model-core-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-model-groovy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-open-api-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-resources-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-tooling-api-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-ui-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/gradle-wrapper-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/groovy-all-2.4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-announce-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-antlr-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-build-comparison-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-build-init-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-code-quality-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-dependency-management-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-diagnostics-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ear-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ide-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ide-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-ivy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-jacoco-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-javascript-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-jetty-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-groovy-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-java-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-jvm-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-language-scala-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-maven-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-osgi-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-base-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-jvm-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-platform-play-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-plugin-development-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-plugin-use-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-plugins-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-publish-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-reporting-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-resources-http-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-resources-s3-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-resources-sftp-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-scala-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-signing-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-sonar-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-test-kit-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-base-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-jvm-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-native-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-tooling-api-builders-2.13.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/LaboonChess2/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/LaboonChess2/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="GroovyConsoleState">
+    <option name="list">
+      <list>
+        <Entry>
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
+          <option name="moduleName" value="CS1530" />
+          <option name="title" value="CS1530 (Bundled Groovy 2.4.6)" />
+        </Entry>
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/LaboonChess/src/laboonchess/build.gradle" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/LaboonChessFX/src/main/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/settings.gradle" />
+        <option value="$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChessDocumentController.java" />
+        <option value="$PROJECT_DIR$/LaboonChess3/build.gradle" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/build.gradle" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/AboutDialog.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/LaboonChessDocument.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessDocumentControllerTest.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/build.gradle" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle: org.testfx:testfx-core:4.0.4-alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboonChess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS1530" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Deliverable 1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="FullScreen" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/LaboonChess2/src/test/java" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LaboonChess2/src/test" />
+      <recent name="$PROJECT_DIR$/LaboonChess3/src/main/resources" />
+      <recent name="$PROJECT_DIR$/LaboonChess3/src/main/java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LaboonChess2/src/main/resources" />
+      <recent name="$PROJECT_DIR$/LaboonChess2/src/main/java" />
+      <recent name="$PROJECT_DIR$/LaboonChess/src/main/java" />
+      <recent name="$PROJECT_DIR$/LaboonChess/src/main/resources" />
+      <recent name="$PROJECT_DIR$/LaboonChess/src/test/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.LaboonChessTest">
+    <configuration default="false" name="LaboonChess2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="LaboonChess2 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="LaboonChessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="LaboonChess2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LaboonChessTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess2" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="LaboonChessTest.testButtonClick" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="LaboonChess2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LaboonChessTest" />
+      <option name="METHOD_NAME" value="testButtonClick" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess2" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="LaboonChessTest.testIsLaboonChessTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="LaboonChess2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LaboonChessTest" />
+      <option name="METHOD_NAME" value="testIsLaboonChessTitle" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess2" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="Gradle_Test" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CS1530" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LaboonFX" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="LaboonChess" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LaboonChess" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LaboonChess" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="LaboonChess" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LaboonChess2" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Application.LaboonFX" />
+      <item index="1" class="java.lang.String" itemvalue="Application.LaboonChess" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [build]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [clean]" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.LaboonChessTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testButtonClick" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testIsLaboonChessTitle" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.LaboonChessTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testIsLaboonChessTitle" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testButtonClick" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [build]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e68578a-0221-4b16-9f8f-85736bbdf220" name="Default" comment="" />
+      <created>1475016410829</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1475016410829</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Upload Laboon Chess Working Gradle">
+      <created>1475044327349</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1475044327349</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="LaboonChessDocumentControllerTest - 2016.09.28 at 14h 44m 40s.xml">
+      <configuration name="LaboonChessDocumentControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 16h 30m 01s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 16h 31m 04s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 18h 03m 34s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 18h 39m 16s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 18h 39m 38s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 18h 42m 27s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest - 2016.09.28 at 18h 50m 23s.xml">
+      <configuration name="LaboonChessTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest_testButtonClick - 2016.09.28 at 16h 21m 05s.xml">
+      <configuration name="LaboonChessTest.testButtonClick" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LaboonChessTest_testIsLaboonChessTitle - 2016.09.28 at 16h 29m 05s.xml">
+      <configuration name="LaboonChessTest.testIsLaboonChessTitle" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2890411" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29009902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30371568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17770597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LIMIT_HISTORY" value="false" />
+    <MESSAGE value="Upload Laboon Chess Working Gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload Laboon Chess Working Gradle" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/laboonchess/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/resources/LaboonChessDocument.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/resources/icon.png" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/resources/blackqueen.png" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/resources/white_king.png" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/resources/AboutDialog.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/resources/black_king.png" />
+    <entry file="file://$PROJECT_DIR$/LaboonChessFX/settings.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChessFX/src/main/java/LaboonChess.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChessFX/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChessFX/src/main/java/LaboonChess.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChessFX/src/main/java/test.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/laboonchess/Hello.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Launcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="356" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/laboonchess/LaboonChess.class" />
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/settings.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/gradlew.bat" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/gradlew" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/laboonchess/LaboonChess.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/build/resources/main/LaboonChessDocument.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/settings.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChessDocumentController.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChessAboutDialogController.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChess.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChessDocumentController.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChess.java" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/event/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/AboutDialog.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/LaboonChessDocument.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/settings.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessAboutDialogController.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessDocumentController.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChess.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessDocumentControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deliverable 1/deliverable1.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="150">
+            <caret line="10" column="59" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="59" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-legacy/4.0.4-alpha/defdba445bcb35a65e6d8e99279840a94e3fd574/testfx-legacy-4.0.4-alpha-sources.jar!/org/loadui/testfx/GuiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="253" column="30" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/white_king.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="238" selection-start-line="9" selection-start-column="238" selection-end-line="9" selection-end-column="238" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/screenshot1475094544694.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="26" column="98" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding>
+            <element signature="e#2061#2062#0" expanded="true" />
+            <element signature="e#2115#2116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="gradleExecuteTaskHistory">
+    <option value="" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>LaboonChess2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: junit:junit:4.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
