@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e68578a-0221-4b16-9f8f-85736bbdf220" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/CS1530.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_18_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_testfx_testfx_core_4_0_4_alpha.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_testfx_testfx_legacy_4_0_4_alpha.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChessFX.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/test/LaboonChessDocumentControllerTest.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java" afterPath="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" afterPath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess.iml" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChess.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build.gradle" afterPath="$PROJECT_DIR$/LaboonChess2/build.gradle" />
     </list>
     <ignored path="CS1530.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1578,7 +1562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475044327349</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Upload test and testfx framework with gradle integration&#10;">
+      <created>1475103060590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1475103060590</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1667,7 +1658,8 @@
   <component name="VcsManagerConfiguration">
     <option name="LIMIT_HISTORY" value="false" />
     <MESSAGE value="Upload Laboon Chess Working Gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload Laboon Chess Working Gradle" />
+    <MESSAGE value="Upload test and testfx framework with gradle integration&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload test and testfx framework with gradle integration&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
