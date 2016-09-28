@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboonChessDocumentController">
+    <children>
+      <MenuBar fx:id="mnuMain" prefHeight="25.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="true" text="_File">
+            <items>
+                  <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_New Game">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="mnuLoadGame" mnemonicParsing="true" onAction="#handleLoadGameAction" text="_Load Game...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="mnuSaveGame" mnemonicParsing="true" onAction="#handleSaveGameAction" text="_Save Game...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="true" />
+                  <MenuItem fx:id="mnuExit" mnemonicParsing="true" onAction="#handleExitAction" text="E_xit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="true" text="_Edit">
+            <items>
+              <MenuItem fx:id="mnuUndoMove" mnemonicParsing="true" onAction="#handleUndoMoveAction" text="_Undo Move">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="true" text="_Help">
+            <items>
+              <MenuItem fx:id="mnuAbout" mnemonicParsing="true" onAction="#handleAboutAction" text="_About">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      
+      <GridPane fx:id="chessboard" layoutY="25.0" prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: #999;" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <children>
+                  <Label fx:id="lblTestPiece" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1.0" prefHeight="35.0" prefWidth="56.0" style="-fx-font-family: PIXymbolsChessW95-Regular; -fx-font-weight: 900;" textAlignment="CENTER" textOverrun="CLIP">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <ImageView layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_rook.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               <children>
+                  <ImageView id="BlackQueen" fx:id="imgBlackQueen" fitHeight="50.0" fitWidth="50.0" layoutX="3.0" onMouseClicked="#handleChessboardClickAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@blackqueen.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="0">
+               <children>
+                  <ImageView layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_rook.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_king.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="8" />		
+         </children>
+      </GridPane>
+      
+      <Button fx:id="btnLoadGame" alignment="CENTER" layoutX="14.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleLoadGameAction" prefHeight="30.0" prefWidth="129.0" text="_Load Game" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="btnSaveGame" alignment="CENTER" layoutX="179.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleSaveGameAction" prefHeight="30.0" prefWidth="129.0" snapToPixel="false" text="_Save Game" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" />
+      <Button fx:id="btnExit" alignment="CENTER" layoutX="343.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleExitAction" prefHeight="30.0" prefWidth="129.0" text="E_xit" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="343.0" AnchorPane.rightAnchor="14.0" />
+      <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="477.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="480.0" text="test output will go here" textAlignment="CENTER" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
+      <Label fx:id="lblTimer" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="370.0" layoutY="482.0" text="Timer Here" textAlignment="RIGHT" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="14.0" />
+    </children>
+</AnchorPane>
