@@ -7,5 +7,8 @@ CS1530 group repository
 - Joe Meszar (jwm54@pitt.edu | outkst)  
 - David Tsui (dat83@pitt.edu | luckyleap)  
 
-## Running LaboonChess
-`LaboonChess\dist> `**`java -jar LaboonChess.jar`**
+## Running Gradle
+```
+cd LaboonChess2
+gradle build
+```
