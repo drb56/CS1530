@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboonChessDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="laboonchess.LaboonChessDocumentController">
     <children>
       <MenuBar fx:id="mnuMain" prefHeight="25.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -81,223 +81,307 @@
             <RowConstraints />
         </rowConstraints>
          <children>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="0">
                <children>
                   <Label fx:id="lblTestPiece" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="1.0" prefHeight="35.0" prefWidth="56.0" style="-fx-font-family: PIXymbolsChessW95-Regular; -fx-font-weight: 900;" textAlignment="CENTER" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
                   </Label>
-                  <ImageView layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="14.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_rook.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <children>
-                  <ImageView id="BlackQueen" fx:id="imgBlackQueen" fitHeight="50.0" fitWidth="50.0" layoutX="3.0" onMouseClicked="#handleChessboardClickAction" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="14.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@blackqueen.png" />
+                        <Image url="@black_knight.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="0">
+            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="0">
                <children>
-                  <ImageView layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_bishop.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="0">
+               <children>
+                  <ImageView layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_queen.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="0">
+               <children>
+                  <ImageView layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_king.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="0">
+               <children>
+                  <ImageView layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@black_bishop.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="0">
+               <children>
+                  <ImageView layoutX="14.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@black_knight.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="0">
+               <children>
+                  <ImageView layoutX="15.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_rook.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="13.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="13.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="14.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="12.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="12.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="12.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="13.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView layoutX="13.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@black_pawn.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="6">
-               <children>
-                  <ImageView layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                     <image>
-                        <Image url="@white_pawn.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="7">
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="6">
                <children>
                   <ImageView layoutX="13.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@white_pawn.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_rook.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_knight.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_bishop.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_queen.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@white_king.png" />
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="8" />		
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_bishop.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_knight.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="7">
+               <children>
+                  <ImageView layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white_rook.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+            <Pane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="8" />		
          </children>
       </GridPane>
       

@@ -1,5 +1,3 @@
-package laboonchess;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,7 +51,7 @@ public class LaboonChessDocumentController implements Initializable {
         
         Stage aboutDialog;
         aboutDialog = new Stage();
-        aboutDialog.setScene(new Scene(FXMLLoader.load(getClass().getResource("AboutDialog.fxml"))));
+        aboutDialog.setScene(new Scene(FXMLLoader.load(getClass().getResource("/AboutDialog.fxml"))));
         aboutDialog.setTitle("About LaboonChess");
         aboutDialog.initModality(Modality.APPLICATION_MODAL);
         aboutDialog.initStyle(StageStyle.UTILITY);
