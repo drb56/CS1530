@@ -44,5 +44,4 @@ public class LaboonChessTest extends GuiTest{
         this.clickOn(b);
         assertTrue(this.find("Load Game clicked").isVisible());
     }
-
 }
