@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LaboonChessTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-01T22:35:28" hostname="Davids-MBP-8.home" time="1.327">
+  <properties/>
+  <testcase name="testLoadGame" classname="LaboonChessTest" time="1.327"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
