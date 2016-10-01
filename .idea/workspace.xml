@@ -2,28 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e68578a-0221-4b16-9f8f-85736bbdf220" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_all_1_3.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChessAboutDialogController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/laboonchess/LaboonChess.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/laboonchess/LaboonChessDocumentController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/reports/tests/classes/LaboonChessTest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/reports/tests/css/base-style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/reports/tests/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/reports/tests/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/reports/tests/js/report.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/reports/tests/packages/default-package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/blackqueen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/test-results/TEST-LaboonChessTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/test-results/binary/test/results.bin" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" afterPath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChessDocumentController.class" afterPath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChessDocumentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/distributions/LaboonChess2-1.0-SNAPSHOT.tar" afterPath="$PROJECT_DIR$/LaboonChess2/build/distributions/LaboonChess2-1.0-SNAPSHOT.tar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/distributions/LaboonChess2-1.0-SNAPSHOT.zip" afterPath="$PROJECT_DIR$/LaboonChess2/build/distributions/LaboonChess2-1.0-SNAPSHOT.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/libs/LaboonChess2-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/LaboonChess2/build/libs/LaboonChess2-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_king.png" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_king.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_pawn.png" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_pawn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_rook.png" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_rook.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_king.png" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_king.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_pawn.png" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_pawn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/AboutDialog.fxml" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/AboutDialog.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/LaboonChessDocument.fxml" afterPath="$PROJECT_DIR$/LaboonChess2/build/resources/main/LaboonChessDocument.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" afterPath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java" afterPath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" afterPath="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" afterPath="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" afterPath="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" />
     </list>
     <ignored path="CS1530.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,7 +139,7 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
               </PATH_ELEMENT>
               <PATH_ELEMENT>
-                <option name="myItemId" value="other" />
+                <option name="myItemId" value="build" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
@@ -146,11 +152,11 @@
     <favorites_list name="CS1530" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LaboonChess2/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="75">
               <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding />
             </state>
@@ -160,18 +166,50 @@
       <file leaf-file-name="LaboonChess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="555">
+              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1430#1431#0" expanded="true" />
+                <element signature="e#1490#1491#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LaboonChessDocumentController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LaboonChessDocument.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AboutDialog.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="238" selection-start-line="9" selection-start-column="238" selection-end-line="9" selection-end-column="238" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaboonChessDocumentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="318">
+              <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -525,14 +563,14 @@
         <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/AboutDialog.fxml" />
         <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/LaboonChessDocument.fxml" />
         <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" />
         <option value="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessDocumentControllerTest.java" />
         <option value="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java" />
         <option value="$PROJECT_DIR$/LaboonChess2/build.gradle" />
         <option value="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" />
         <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" />
       </list>
     </option>
   </component>
@@ -581,9 +619,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -714,6 +750,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -721,7 +759,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="FullScreen" value="true" />
@@ -1319,11 +1357,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LaboonChessTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testIsLaboonChessTitle" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testButtonClick" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [build]" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [clean]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [build]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [clean]" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.LaboonChessTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testIsLaboonChessTitle" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testButtonClick" />
       </list>
     </recent_temporary>
   </component>
@@ -1341,7 +1379,8 @@
       <option name="presentableId" value="Default" />
       <updated>1475016410829</updated>
       <workItem from="1475345342341" duration="324000" />
-      <workItem from="1475345698883" duration="551000" />
+      <workItem from="1475345698883" duration="940000" />
+      <workItem from="1475346672449" duration="3837000" />
     </task>
     <task id="LOCAL-00001" summary="Upload Laboon Chess Working Gradle">
       <created>1475044327349</created>
@@ -1393,7 +1432,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="875000" />
+    <option name="totallyTimeSpent" value="5101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1412,19 +1451,19 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2888889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2611111" sideWeight="0.3374817" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2611111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2611111" sideWeight="0.6625183" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29009902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3023426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17715959" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1454,7 +1493,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="Upload test and testfx framework with gradle integration&#10;" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java</url>
+          <line>109</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1523,29 +1572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="238" selection-start-line="9" selection-start-column="238" selection-end-line="9" selection-end-column="238" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" column="98" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1559,26 +1585,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LaboonChess2/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="75">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="318">
+          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="238" selection-start-line="9" selection-start-column="238" selection-end-line="9" selection-end-column="238" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

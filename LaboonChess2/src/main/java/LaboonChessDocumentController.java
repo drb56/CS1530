@@ -107,9 +107,9 @@ public class LaboonChessDocumentController implements Initializable {
     
     @FXML void handleChessboardClickAction(MouseEvent event) {
         // get the source of the click
-        //Object source = event.getSource();
-        ImageView source = (ImageView)event.getSource();
-        Pane parent = (Pane)source.getParent();
+        Object source = event.getSource();
+        ImageView source2 = (ImageView)event.getSource();
+        //Pane parent = (Pane)source.getParent();
     }
     
     @Override
@@ -140,7 +140,7 @@ public class LaboonChessDocumentController implements Initializable {
         
     }
     
-    public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
+    public Node getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
         Node result = null;
         ObservableList<Node> children = gridPane.getChildren();
 
