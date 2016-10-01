@@ -9,6 +9,6 @@ CS1530 group repository
 
 ## Running Gradle
 ```
-cd LaboonChess2
+cd LaboonChess
 gradle build
 ```
