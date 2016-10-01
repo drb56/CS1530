@@ -28,7 +28,7 @@ public class LaboonChessTest extends GuiTest{
     {
         Parent parent = null;
         try {
-            parent = FXMLLoader.load(getClass().getResource("/LaboonChessDocument.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
             return parent;
         } catch (IOException ex) {
             // TODO ...

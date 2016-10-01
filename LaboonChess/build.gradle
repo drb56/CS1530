@@ -1,4 +1,4 @@
-group 'LaboonChess2'
+group 'LaboonChess'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'

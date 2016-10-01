@@ -2,83 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e68578a-0221-4b16-9f8f-85736bbdf220" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.5/taskArtifacts/cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.5/taskArtifacts/cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.5/taskArtifacts/fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.5/taskArtifacts/fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.5/taskArtifacts/outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/.gradle/2.5/taskArtifacts/taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChess.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/LaboonChessDocumentController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/main/laboonchess/LaboonChessAboutDialogController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/classes/test/LaboonChessTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/distributions/LaboonChess2-1.0-SNAPSHOT.tar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/distributions/LaboonChess2-1.0-SNAPSHOT.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/libs/LaboonChess2-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/AboutDialog.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/LaboonChessDocument.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_bishop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_king.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_knight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_pawn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_queen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/black_rook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/chess.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_bishop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_king.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_knight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_pawn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_queen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/resources/main/white_rook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/scripts/LaboonChess2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/scripts/LaboonChess2.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/test-results/binary/test/output.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/test-results/binary/test/output.bin.idx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/build/tmp/jar/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/gradlew" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/settings.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/black_bishop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/black_king.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/black_knight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/black_pawn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/black_queen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/black_rook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/chess.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/white_bishop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/white_king.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/white_knight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/white_pawn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/white_queen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/main/resources/white_rook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/LaboonChess.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/LaboonChess2.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/distributions/LaboonChess2-1.0-SNAPSHOT.tar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/distributions/LaboonChess2-1.0-SNAPSHOT.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/libs/LaboonChess2-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/reports/tests/classes/LaboonChessTest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/reports/tests/css/base-style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/reports/tests/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/reports/tests/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/reports/tests/js/report.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/reports/tests/packages/default-package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/scripts/LaboonChess2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/scripts/LaboonChess2.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/test-results/TEST-LaboonChessTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/test-results/binary/test/output.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/test-results/binary/test/output.bin.idx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/test-results/binary/test/results.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LaboonChess/build/tmp/jar/MANIFEST.MF" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/LaboonChess/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/build/classes/test/LaboonChessTest.class" afterPath="$PROJECT_DIR$/LaboonChess/build/classes/test/LaboonChessTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/build.gradle" afterPath="$PROJECT_DIR$/LaboonChess/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/settings.gradle" afterPath="$PROJECT_DIR$/LaboonChess/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboonChess/src/test/groovy/LaboonChessTest.java" afterPath="$PROJECT_DIR$/LaboonChess/src/test/groovy/LaboonChessTest.java" />
     </list>
     <ignored path="CS1530.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/LaboonChessFX/.gradle/" />
     <ignored path="$PROJECT_DIR$/LaboonChessFX/build/" />
-    <ignored path="$PROJECT_DIR$/LaboonChess2/.gradle/" />
-    <ignored path="$PROJECT_DIR$/LaboonChess2/build/" />
-    <ignored path="$PROJECT_DIR$/LaboonChess3/.gradle/" />
-    <ignored path="$PROJECT_DIR$/LaboonChess3/build/" />
     <ignored path="$PROJECT_DIR$/LaboonChess/.gradle/" />
     <ignored path="$PROJECT_DIR$/LaboonChess/build/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess3/.gradle/" />
+    <ignored path="$PROJECT_DIR$/LaboonChess3/build/" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,9 +54,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/LaboonChess">
-      <ProjectState />
-    </projectState>
-    <projectState path="$PROJECT_DIR$/LaboonChess2">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/LaboonChess3">
@@ -114,13 +72,10 @@
         <task path="Gradle_Test">
           <activation />
         </task>
-        <task path="$PROJECT_DIR$/LaboonChess2">
+        <task path="$PROJECT_DIR$/LaboonChess">
           <activation />
         </task>
         <task path="$PROJECT_DIR$/LaboonChess3">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/LaboonChess">
           <activation />
         </task>
         <projects_view>
@@ -130,14 +85,6 @@
                 <option name="myItemId" value="" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
               </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="LaboonChess2" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Run Configurations" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.RunConfigurationsNode" />
-              </PATH_ELEMENT>
             </PATH>
             <PATH>
               <PATH_ELEMENT>
@@ -145,40 +92,8 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
               </PATH_ELEMENT>
               <PATH_ELEMENT>
-                <option name="myItemId" value="LaboonChess2" />
+                <option name="myItemId" value="LaboonChess" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-            </PATH>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="LaboonChess2" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Tasks" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
-              </PATH_ELEMENT>
-            </PATH>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="LaboonChess2" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Tasks" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="build" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
           </tree_state>
@@ -190,7 +105,18 @@
     <favorites_list name="CS1530" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="LaboonChessTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LaboonChess/src/test/groovy/LaboonChessTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -206,12 +132,12 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$/LaboonChess2" value="C:\Users\Malsby\.gradle\wrapper\dists\gradle-2.13-bin\4xsgxlfjcxvrea7akf941nvc7\gradle-2.13" />
+        <entry key="$PROJECT_DIR$/LaboonChess" value="C:\Users\Malsby\.gradle\wrapper\dists\gradle-2.13-bin\4xsgxlfjcxvrea7akf941nvc7\gradle-2.13" />
       </map>
     </option>
     <option name="myGradleVersions">
       <map>
-        <entry key="$PROJECT_DIR$/LaboonChess2" value="2.13" />
+        <entry key="$PROJECT_DIR$/LaboonChess" value="2.13" />
       </map>
     </option>
     <option name="availableProjects">
@@ -219,15 +145,15 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="LaboonChess2" />
-              <option name="path" value="$PROJECT_DIR$/LaboonChess2" />
+              <option name="name" value="LaboonChess" />
+              <option name="path" value="$PROJECT_DIR$/LaboonChess" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="LaboonChess2" />
-                <option name="path" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="name" value="LaboonChess" />
+                <option name="path" value="$PROJECT_DIR$/LaboonChess" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -236,187 +162,187 @@
     </option>
     <option name="availableTasks">
       <map>
-        <entry key="$PROJECT_DIR$/LaboonChess2">
+        <entry key="$PROJECT_DIR$/LaboonChess">
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'LaboonChess2'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays the components produced by root project 'LaboonChess'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'LaboonChess2'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays the sub-projects of root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="classes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'LaboonChess2'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs this project as a JVM application" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="run" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates Gradle wrapper files. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="wrapper" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles test classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="testClasses" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates Javadoc API documentation for the main source code." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="javadoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Creates OS specific scripts to run the project as a JVM application." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="startScripts" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Compiles the test Groovy source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="compileTestGroovy" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles a jar archive containing the main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="jar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'LaboonChess2'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays the configuration model of root project 'LaboonChess'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Compiles the main Groovy source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="compileGroovy" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs the project as a distribution as-is." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="installDist" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Processes main resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'LaboonChess2'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays the tasks runnable from root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles the main distributions" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="assembleDist" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Initializes a new Gradle build. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="init" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs the unit tests." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="test" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Compiles main Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates Groovydoc API documentation for the main source code." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="groovydoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'LaboonChess2'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="check" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles the outputs of this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="assemble" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Compiles test Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="compileTestJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs the project as a JVM application along with libs and OS specific scripts." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="installApp" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'LaboonChess2'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays all dependencies declared in root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Processes test resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="processTestResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays a help message." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="help" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="build" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Bundles the project as a distribution." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="distTar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Bundles the project as a distribution." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="distZip" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'LaboonChess2'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+                <option name="description" value="Displays the properties of root project 'LaboonChess'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
             </list>
@@ -426,26 +352,26 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/LaboonChess2" value="2950685451844" />
+        <entry key="$PROJECT_DIR$/LaboonChess" value="2950716062716" />
       </map>
     </option>
     <option name="projectBuildClasspath">
       <map>
-        <entry key="$PROJECT_DIR$/LaboonChess2">
+        <entry key="$PROJECT_DIR$/LaboonChess">
           <value>
             <ExternalProjectBuildClasspathPojo>
               <option name="modulesBuildClasspath">
                 <map>
-                  <entry key="$PROJECT_DIR$/LaboonChess2">
+                  <entry key="$PROJECT_DIR$/LaboonChess">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
-                        <option name="path" value="$PROJECT_DIR$/LaboonChess2" />
+                        <option name="path" value="$PROJECT_DIR$/LaboonChess" />
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
                 </map>
               </option>
-              <option name="name" value="LaboonChess2" />
+              <option name="name" value="LaboonChess" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/ant-1.9.6.jar" />
@@ -509,8 +435,8 @@
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-testing-native-2.13.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/gradle-tooling-api-builders-2.13.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.13-bin/4xsgxlfjcxvrea7akf941nvc7/gradle-2.13/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$PROJECT_DIR$/LaboonChess2/buildSrc/src/main/java" />
-                  <option value="$PROJECT_DIR$/LaboonChess2/buildSrc/src/main/groovy" />
+                  <option value="$PROJECT_DIR$/LaboonChess/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/LaboonChess/buildSrc/src/main/groovy" />
                 </list>
               </option>
             </ExternalProjectBuildClasspathPojo>
@@ -528,7 +454,7 @@
         <option value="$PROJECT_DIR$/LaboonChess/src/laboonchess/build.gradle" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/LaboonChessFX/src/main/java/LaboonChess.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/settings.gradle" />
+        <option value="$PROJECT_DIR$/LaboonChess/settings.gradle" />
         <option value="$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChess.java" />
         <option value="$PROJECT_DIR$/LaboonChess3/src/main/java/LaboonChessDocumentController.java" />
         <option value="$PROJECT_DIR$/LaboonChess3/build.gradle" />
@@ -537,16 +463,16 @@
         <option value="$PROJECT_DIR$/LaboonChess/build.gradle" />
         <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/AboutDialog.fxml" />
         <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/LaboonChessDocument.fxml" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessDocumentControllerTest.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/build.gradle" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/resources/fxml/LaboonChessDocument.fxml" />
-        <option value="$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChessDocumentControllerTest.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChessTest.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/build.gradle" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/LaboonChessDocument.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/AboutDialog.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChess.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessDocumentController.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/resources/fxml/LaboonChessDocument.fxml" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessAboutDialogController.java" />
+        <option value="$PROJECT_DIR$/LaboonChess/src/test/groovy/LaboonChessTest.java" />
       </list>
     </option>
   </component>
@@ -577,7 +503,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -595,7 +521,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -622,18 +547,19 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/JavaFX Scene Builder 2.0.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="FullScreen" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/LaboonChess2/src/test/java" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/LaboonChess/src/test/java" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -643,7 +569,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/LaboonChess2/src/test" />
+      <recent name="$PROJECT_DIR$/LaboonChess/src/test" />
       <recent name="$PROJECT_DIR$/LaboonChess3/src/main/resources" />
       <recent name="$PROJECT_DIR$/LaboonChess3/src/main/java" />
     </key>
@@ -654,18 +580,18 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/LaboonChess2/src/main/resources" />
-      <recent name="$PROJECT_DIR$/LaboonChess2/src/main/java" />
+      <recent name="$PROJECT_DIR$/LaboonChess/src/main/resources" />
+      <recent name="$PROJECT_DIR$/LaboonChess/src/main/java" />
       <recent name="$PROJECT_DIR$/LaboonChess/src/main/java" />
       <recent name="$PROJECT_DIR$/LaboonChess/src/main/resources" />
       <recent name="$PROJECT_DIR$/LaboonChess/src/test/java" />
     </key>
   </component>
   <component name="RunManager" selected="Application.LaboonChess">
-    <configuration default="false" name="LaboonChess2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="LaboonChess [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -680,10 +606,10 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="false" name="LaboonChess2 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="LaboonChess [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/LaboonChess2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/LaboonChess" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -700,7 +626,7 @@
     </configuration>
     <configuration default="false" name="LaboonChessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="LaboonChess2" />
+      <module name="LaboonChess" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
@@ -709,7 +635,7 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess2" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -721,7 +647,7 @@
     </configuration>
     <configuration default="false" name="LaboonChessTest.testButtonClick" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="LaboonChess2" />
+      <module name="LaboonChess" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
@@ -730,7 +656,7 @@
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess2" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -742,7 +668,7 @@
     </configuration>
     <configuration default="false" name="LaboonChessTest.testIsLaboonChessTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="LaboonChess2" />
+      <module name="LaboonChess" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
@@ -751,7 +677,7 @@
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess2" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/LaboonChess" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1193,7 +1119,7 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -1212,23 +1138,23 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LaboonChess2" />
+      <module name="LaboonChess" />
       <envs />
       <method />
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.LaboonFX" />
       <item index="1" class="java.lang.String" itemvalue="Application.LaboonChess" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [build]" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [clean]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.LaboonChess [build]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.LaboonChess [clean]" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.LaboonChessTest" />
       <item index="5" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testButtonClick" />
       <item index="6" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testIsLaboonChessTitle" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [build]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.LaboonChess2 [clean]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.LaboonChess [clean]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.LaboonChess [build]" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.LaboonChessTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testIsLaboonChessTitle" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.LaboonChessTest.testButtonClick" />
@@ -1251,6 +1177,7 @@
       <workItem from="1475345342341" duration="324000" />
       <workItem from="1475345698883" duration="940000" />
       <workItem from="1475346672449" duration="5101000" />
+      <workItem from="1475358287860" duration="525000" />
     </task>
     <task id="LOCAL-00001" summary="Upload Laboon Chess Working Gradle">
       <created>1475044327349</created>
@@ -1302,7 +1229,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6365000" />
+    <option name="totallyTimeSpent" value="6890000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1315,22 +1242,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2888889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2611111" sideWeight="0.3374817" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26080477" sideWeight="0.34114978" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2611111" sideWeight="0.6625183" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26080477" sideWeight="0.65885025" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29009902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18305598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17715959" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17700455" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
@@ -1383,15 +1310,15 @@
     <entry file="file://$PROJECT_DIR$/LaboonChessFX/build.gradle" />
     <entry file="file://$PROJECT_DIR$/LaboonChessFX/src/main/java/LaboonChess.java" />
     <entry file="file://$PROJECT_DIR$/LaboonChessFX/src/main/java/test.java" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/laboonchess/Hello.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/laboonchess/Hello.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Launcher.class" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/laboonchess/LaboonChess.class" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/laboonchess/LaboonChess.class" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/settings.gradle" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/gradlew.bat" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/gradlew" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/laboonchess/LaboonChess.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/settings.gradle" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/gradlew.bat" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/gradlew" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/laboonchess/LaboonChess.java" />
     <entry file="file://$PROJECT_DIR$/LaboonChess3/build/resources/main/LaboonChessDocument.fxml" />
     <entry file="file://$PROJECT_DIR$/LaboonChess3/settings.gradle" />
     <entry file="file://$PROJECT_DIR$/LaboonChess3/build.gradle" />
@@ -1409,23 +1336,11 @@
     <entry file="file://$PROJECT_DIR$/LaboonChess/build.gradle" />
     <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessDocumentController.java" />
     <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChess.java" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessDocumentControllerTest.java" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/java/LaboonChessTest.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChessDocumentControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/test/java/LaboonChessTest.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-legacy/4.0.4-alpha/defdba445bcb35a65e6d8e99279840a94e3fd574/testfx-legacy-4.0.4-alpha-sources.jar!/org/loadui/testfx/GuiTest.java" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/screenshot1475094544694.png" />
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/test/groovy/LaboonChessTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/white_king.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess/screenshot1475094544694.png" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/white_king.png" />
     <entry file="file://$PROJECT_DIR$/Deliverable 1/deliverable1.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1433,78 +1348,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/build.gradle">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/AboutDialog.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="238" selection-start-line="9" selection-start-column="238" selection-end-line="9" selection-end-column="238" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/LaboonChessDocument.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/fxml/LaboonChessDocument.fxml">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/AboutDialog.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/LaboonChessDocument.fxml" />
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/fxml/LaboonChessDocument.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/resources/fxml/AboutDialog.fxml">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/resources/fxml/AboutDialog.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChess.java">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessAboutDialogController.java">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessAboutDialogController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LaboonChess2/src/main/java/LaboonChessDocumentController.java">
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/main/java/LaboonChessDocumentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LaboonChess/src/test/groovy/LaboonChessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -1564,12 +1461,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>LaboonChess2</last-edited>
+          <last-edited>LaboonChess</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
