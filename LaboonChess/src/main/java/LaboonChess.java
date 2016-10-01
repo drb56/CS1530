@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import stockfish.Stockfish;
 
 /**
  *
@@ -21,6 +22,13 @@ public class LaboonChess extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
         
         Scene scene = new Scene(root);
+
+        Stockfish stockfish = new Stockfish();
+        if (stockfish.startEngine()) {
+            System.out.println("Engine has started..");
+        } else {
+            System.out.println("Oops! Something went wrong..");
+        }
         
         // set custom app icon
         stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("/images/icon.png")));
