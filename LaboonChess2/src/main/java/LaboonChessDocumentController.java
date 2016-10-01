@@ -1,13 +1,12 @@
+package laboonchess;
+
 import java.io.IOException;
-import java.lang.reflect.TypeVariable;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -31,6 +31,7 @@ import javafx.util.Duration;
  */
 public class LaboonChessDocumentController implements Initializable {
     
+    @FXML private MenuBar mnuMain;
     @FXML private Label lblTestPiece;
     @FXML private Label lblStatus;
     @FXML private Label lblTimer;
@@ -44,13 +45,21 @@ public class LaboonChessDocumentController implements Initializable {
 
         // pause the game timer
         if (gameTimer != null) { gameTimer.pause(); }
-
+        double x, y, length, width;
+        x = mnuMain.getScene().getWindow().getX();
+        y = mnuMain.getScene().getWindow().getY();
+        length = mnuMain.getScene().getWindow().getHeight();
+        width = mnuMain.getScene().getWindow().getWidth();
+        
         Stage aboutDialog;
         aboutDialog = new Stage();
         aboutDialog.setScene(new Scene(FXMLLoader.load(getClass().getResource("AboutDialog.fxml"))));
         aboutDialog.setTitle("About LaboonChess");
         aboutDialog.initModality(Modality.APPLICATION_MODAL);
         aboutDialog.initStyle(StageStyle.UTILITY);
+        aboutDialog.setX(mnuMain.getScene().getWindow().getX() + (mnuMain.getScene().getWindow().getHeight()/9));
+        aboutDialog.setY(mnuMain.getScene().getWindow().getY() + (mnuMain.getScene().getWindow().getWidth()/3));
+        aboutDialog.setResizable(false);
         aboutDialog.showAndWait();
 
         // resume the game timer
@@ -107,18 +116,12 @@ public class LaboonChessDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         
         // get the list of nodes for the chessboard
         ObservableList<Node> children = chessboard.getChildren();
         Node spot = getNodeByRowColumnIndex(0, 2, chessboard);
         Pane mypane = (Pane)getNodeByRowColumnIndex(0, 0, chessboard);
         //mypane.getChildren().add()
-        
-        
-        //Scene myScene = (Scene) chessboard.getScene();
-        //Stage myStage = (Stage) chessboard.getScene().getWindow();
-        
         
         
 //        myStage.focusedProperty().addListener(new ChangeListener<Boolean>()
