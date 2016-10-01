@@ -54,4 +54,7 @@ public class LaboonChess extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    public static String getTranslate(String coordinates){
+        return coordinates;
+    }
 }
