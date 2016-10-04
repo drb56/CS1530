@@ -1,0 +1,10 @@
+## Intellij Ignore
+.idea/
+.gradle/
+
+## Gradle Ignore
+build
+gradle
+
+## Mac Ignore
+.DS_Store
