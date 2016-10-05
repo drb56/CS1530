@@ -19,8 +19,8 @@ public class Stockfish {
 
 //	/Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/java/stockfish/stockfish
 
-	private static final String PATH = "../CS1530/LaboonChess/src/main/java/stockfish/stockfish-7-64-bmi2";
-
+	private static final String MAC_PATH = "../CS1530/LaboonChess/src/main/java/stockfish/stockfish-7-64-bmi2";
+	private static final String WIN_PATH = "\\\\CS1530\\LaboonChess\\src\\main\\java\\stockfish\\stockfish-win-bimi2.exe";
 	/**
 	 * Starts Stockfish engine as a process and initializes it
 	 * 
@@ -29,8 +29,13 @@ public class Stockfish {
 	 */
 	public boolean startEngine() {
 		try {
-			String cmd[] = { "chmod", "744", PATH };
-			engineProcess = Runtime.getRuntime().exec(PATH);
+			String OSName = (System.getProperty("os.name"));
+			if (OSName.contains("Mac")) {
+				engineProcess = Runtime.getRuntime().exec(MAC_PATH);
+			} else {
+				engineProcess = Runtime.getRuntime().exec(WIN_PATH);
+			}
+
 			processReader = new BufferedReader(new InputStreamReader(
 					engineProcess.getInputStream()));
 			processWriter = new OutputStreamWriter(
