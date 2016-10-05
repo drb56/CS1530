@@ -19,7 +19,7 @@ public class Stockfish {
 
 //	/Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/java/stockfish/stockfish
 
-	private static final String PATH = "../CS1530/LaboonChess/src/main/java/stockfish/stockfish";
+	private static final String PATH = "../CS1530/LaboonChess/src/main/java/stockfish/stockfish-7-64-bmi2";
 
 	/**
 	 * Starts Stockfish engine as a process and initializes it
@@ -29,6 +29,7 @@ public class Stockfish {
 	 */
 	public boolean startEngine() {
 		try {
+			String cmd[] = { "chmod", "744", PATH };
 			engineProcess = Runtime.getRuntime().exec(PATH);
 			processReader = new BufferedReader(new InputStreamReader(
 					engineProcess.getInputStream()));
@@ -120,7 +121,8 @@ public class Stockfish {
 	public String getLegalMoves(String fen) {
 		sendCommand("position fen " + fen);
 		sendCommand("d");
-		return getOutput(0).split("Legal moves: ")[1];
+		System.out.println(getOutput(0));
+		return null;
 	}
 
 	/**

@@ -13,7 +13,7 @@ public class StockfishTest {
 		}
 
 		// send commands manually
-		client.sendCommand("uci");
+		client.sendCommand("");
 
 		// receive output dump
 		System.out.println(client.getOutput(0));
