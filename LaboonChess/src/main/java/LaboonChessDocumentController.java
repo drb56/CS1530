@@ -36,6 +36,8 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private GridPane chessboard;
     private int timer_count = 0;
     Timeline gameTimer = null;
+    private boolean isFirstClick = true;
+    private ImageView chessPiece = null;
     
     @FXML
     private void handleAboutAction(ActionEvent event) throws IOException {
@@ -106,10 +108,47 @@ public class LaboonChessDocumentController implements Initializable {
     }
     
     @FXML void handleChessboardClickAction(MouseEvent event) {
-        // get the source of the click
-        Object source = event.getSource();
-        ImageView source2 = (ImageView)event.getSource();
-        //Pane parent = (Pane)source.getParent();
+        // get the source chess square that was clicked
+        Pane curSquare = (Pane) event.getSource();
+
+        // if this is the "first click", then we need to get
+        //      the chess piece here and wait for a second click.
+        //
+        // if this is the "second click", then we need to place
+        //      the previously-obtained chess piece here (if possible).
+        if (isFirstClick) {
+            if (curSquare.getChildren().isEmpty()) {
+                // do nothing. No chess piece here.
+                isFirstClick = true;
+
+            } else {
+                // get the chess piece contained in this square
+                chessPiece = (ImageView) curSquare.getChildren().get(0);
+                isFirstClick = false;
+            }
+        } else {
+            // second click. see if we can place the chess piece
+            //      at this location.
+            if (curSquare.getChildren().isEmpty()) {
+                // good to go
+                curSquare.getChildren().add(0, chessPiece);
+
+            } else if ((curSquare.getChildren().get(0).getId().contains("white") && chessPiece.getId().contains("black"))
+                    || (curSquare.getChildren().get(0).getId().contains("black") && chessPiece.getId().contains("white"))) {
+                // logic to update the array or whatever we have. Show that
+                // the piece on this square has been taken out of play.
+                String removed = curSquare.getChildren().get(0).getId();
+
+                // remove the current chess piece
+                curSquare.getChildren().remove(0);
+
+                // replace the piece on this square
+                curSquare.getChildren().add(0, chessPiece);
+            }
+
+            // done with second-click
+            isFirstClick = true;
+        }
     }
     
     @Override
@@ -140,13 +179,13 @@ public class LaboonChessDocumentController implements Initializable {
         
     }
     
-    public Node getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
-        Node result = null;
+    public Pane getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
+        Pane result = null;
         ObservableList<Node> children = gridPane.getChildren();
 
         for (Node node : children) {
             if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
-                result = node;
+                result = (Pane) node;
                 break;
             }
         }
