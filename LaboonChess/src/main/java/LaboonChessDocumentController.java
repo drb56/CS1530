@@ -40,7 +40,7 @@ public class LaboonChessDocumentController implements Initializable {
     private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
     private ImageView chessPiece = null;    /* holds first chess piece clicked on */
     private Pane chessSquare = null;        /* holds square from which first chess piece was clicked */
-    private String fenMove = null;          /* holds FEN representation of first square and second square */
+    private String san = null;          /* holds standard algebraic notation of first square and second square */
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -145,13 +145,14 @@ public class LaboonChessDocumentController implements Initializable {
             if (curSquare.getChildren().isEmpty()) {
                 /* EMPTY SQUARE */
                 curSquare.getChildren().add(0, chessPiece);             // place the chess piece here
-                fenMove = chessSquare.getId() + curSquare.getId();      // get the move in terms of FEN (e.g. e3d6)
-
+                san = chessSquare.getId() + curSquare.getId();      // get the move in terms of FEN (e.g. e3d6)
+                System.out.println(san);
             } else if ((curSquare.getChildren().get(0).getId().contains("white") && chessPiece.getId().contains("black"))
                     || (curSquare.getChildren().get(0).getId().contains("black") && chessPiece.getId().contains("white"))) {
                 /* OPPONENT PIECE */
 
-                fenMove = chessSquare.getId() + curSquare.getId();  // get the move in terms of FEN (e.g. e3d6)
+                san = chessSquare.getId() + curSquare.getId();  // get the move in terms of FEN (e.g. e3d6)
+                System.out.println(san);
                 curSquare.getChildren().remove(0);                  // remove the current chess piece
                 curSquare.getChildren().add(0, chessPiece);         // insert the first-click piece onto this square
 
@@ -176,5 +177,13 @@ public class LaboonChessDocumentController implements Initializable {
         }
 
         return result;
+    }
+
+    public static String sanToFenstring(String coordinates){
+        return coordinates;
+    }
+    public static boolean isLegalMove(String san){
+
+        return true;
     }
 }
