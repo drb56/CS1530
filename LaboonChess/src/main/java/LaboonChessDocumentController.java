@@ -28,17 +28,25 @@ import javafx.util.Duration;
  * @author Joe Meszar (jwm54@pitt.edu)
  */
 public class LaboonChessDocumentController implements Initializable {
-    
-    @FXML private MenuBar mnuMain;
-    @FXML private Label lblTestPiece;
-    @FXML private Label lblStatus;
-    @FXML private Label lblTimer;
-    @FXML private GridPane chessboard;
-    private int timer_count = 0;
-    Timeline gameTimer = null;
-    private boolean isFirstClick = true;
-    private ImageView chessPiece = null;
-    
+
+    /* FXML references JavaFX GUI objects */
+    @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
+    @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
+    @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
+    @FXML private GridPane chessboard;      /* reference to the chessboard */
+
+    private int timer_count = 0;            /* used for game clock, as the counter */
+    Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
+    private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
+    private ImageView chessPiece = null;    /* holds first chess piece clicked on */
+    private Pane chessSquare = null;        /* holds square from which first chess piece was clicked */
+    private String fenMove = null;          /* holds FEN representation of first square and second square */
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
+
     @FXML
     private void handleAboutAction(ActionEvent event) throws IOException {
         lblStatus.setText("About menu item clicked");
@@ -108,75 +116,52 @@ public class LaboonChessDocumentController implements Initializable {
     }
     
     @FXML void handleChessboardClickAction(MouseEvent event) {
-        // get the source chess square that was clicked
-        Pane curSquare = (Pane) event.getSource();
+        Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
 
-        // if this is the "first click", then we need to get
-        //      the chess piece here and wait for a second click.
-        //
-        // if this is the "second click", then we need to place
-        //      the previously-obtained chess piece here (if possible).
+        /*
+            If this is the "first click", then we need to get
+                the chess piece here and wait for a second click.
+
+            If this is the "second click", then we need to place
+                the previously-obtained chess piece here (if possible).
+        */
         if (isFirstClick) {
             if (curSquare.getChildren().isEmpty()) {
-                // do nothing. No chess piece here.
+                /* DO NOTHING: no chess piece here */
                 isFirstClick = true;
 
             } else {
-                // get the chess piece contained in this square
-                chessPiece = (ImageView) curSquare.getChildren().get(0);
-                isFirstClick = false;
+                /* FIRST-CLICK: set up for the second click */
+                chessSquare = curSquare;                                    // hold reference to this square
+                chessPiece = (ImageView) curSquare.getChildren().get(0);    // hold reference to this piece
+                chessPiece.setOpacity(.6);                                  // set opacity to make it look "selected"
+                isFirstClick = false;                                       // now wait for second-click
             }
         } else {
-            // second click. see if we can place the chess piece
-            //      at this location.
+            /* SECOND-CLICK */
+
+            // see if we can place the chess piece from the
+            //      first click at this square on the board.
             if (curSquare.getChildren().isEmpty()) {
-                // good to go
-                curSquare.getChildren().add(0, chessPiece);
+                /* EMPTY SQUARE */
+                curSquare.getChildren().add(0, chessPiece);             // place the chess piece here
+                fenMove = chessSquare.getId() + curSquare.getId();      // get the move in terms of FEN (e.g. e3d6)
 
             } else if ((curSquare.getChildren().get(0).getId().contains("white") && chessPiece.getId().contains("black"))
                     || (curSquare.getChildren().get(0).getId().contains("black") && chessPiece.getId().contains("white"))) {
-                // logic to update the array or whatever we have. Show that
-                // the piece on this square has been taken out of play.
-                String removed = curSquare.getChildren().get(0).getId();
+                /* OPPONENT PIECE */
 
-                // remove the current chess piece
-                curSquare.getChildren().remove(0);
+                fenMove = chessSquare.getId() + curSquare.getId();  // get the move in terms of FEN (e.g. e3d6)
+                curSquare.getChildren().remove(0);                  // remove the current chess piece
+                curSquare.getChildren().add(0, chessPiece);         // insert the first-click piece onto this square
 
-                // replace the piece on this square
-                curSquare.getChildren().add(0, chessPiece);
+                // logic to update the 2D array
             }
 
-            // done with second-click
-            isFirstClick = true;
+            // finished with second-click
+            isFirstClick = true;            // back to start
+            chessPiece.setOpacity(1);       // opacity set back to show finished
         }
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-        // get the list of nodes for the chessboard
-        ObservableList<Node> children = chessboard.getChildren();
-        Node spot = getNodeByRowColumnIndex(0, 2, chessboard);
-        Pane mypane = (Pane)getNodeByRowColumnIndex(0, 0, chessboard);
-        //mypane.getChildren().add()
-        
-        
-//        myStage.focusedProperty().addListener(new ChangeListener<Boolean>()
-//        {
-//            @Override
-//            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
-//            {
-//                if (newPropertyValue)
-//                {
-//                    System.out.println("Textfield on focus");
-//                }
-//                else
-//                {
-//                    System.out.println("Textfield out focus");
-//                }
-//            }
-//        });
-        
     }
     
     public Pane getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {

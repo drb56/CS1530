@@ -93,7 +93,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Pane id="a8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackRook" fitHeight="44.0" fitWidth="31.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -101,7 +101,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Pane id="b8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -109,7 +109,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Pane id="c8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -117,7 +117,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Pane id="d8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackQueen" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -125,7 +125,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <Pane id="e8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackKing" fitHeight="44.0" fitWidth="31.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -133,7 +133,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <Pane id="f8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -141,7 +141,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <Pane id="g8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -149,7 +149,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="1">
+            <Pane id="h8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="1">
                <children>
                   <ImageView id="blackRook" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -166,7 +166,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Pane id="a7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -174,7 +174,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Pane id="b7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -182,7 +182,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Pane id="c7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -190,7 +190,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <Pane id="d7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -198,7 +198,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <Pane id="e7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -206,7 +206,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="2">
+            <Pane id="f7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -214,7 +214,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="2">
+            <Pane id="g7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -222,7 +222,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="2">
+            <Pane id="h7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="2">
                <children>
                   <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -239,14 +239,14 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Pane id="a6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Pane id="b6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Pane id="c6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Pane id="d6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Pane id="e6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Pane id="f6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Pane id="g6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Pane id="h6" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="3" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="9" GridPane.rowIndex="3" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="0" GridPane.rowIndex="4">
                <children>
@@ -256,14 +256,14 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <Pane id="a5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Pane id="b5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Pane id="c5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Pane id="d5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Pane id="e5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Pane id="f5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Pane id="g5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Pane id="h5" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="4" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="9" GridPane.rowIndex="4" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="0" GridPane.rowIndex="5">
                <children>
@@ -273,14 +273,14 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+            <Pane id="a4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Pane id="b4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Pane id="c4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Pane id="d4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Pane id="e4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Pane id="f4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Pane id="g4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Pane id="h4" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="5" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="9" GridPane.rowIndex="5" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="0" GridPane.rowIndex="6">
                <children>
@@ -290,14 +290,14 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+            <Pane id="a3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Pane id="b3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Pane id="c3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Pane id="d3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Pane id="e3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Pane id="f3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Pane id="g3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <Pane id="h3" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="6" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="9" GridPane.rowIndex="6" />
             <Pane style="-fx-background-color: transparent;" GridPane.columnIndex="0" GridPane.rowIndex="7">
                <children>
@@ -307,7 +307,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Pane id="a2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -315,7 +315,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="7">
+            <Pane id="b2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -323,7 +323,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="7">
+            <Pane id="c2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -331,7 +331,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="7">
+            <Pane id="d2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -339,7 +339,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="7">
+            <Pane id="e2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -347,7 +347,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="7">
+            <Pane id="f2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -355,7 +355,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="7">
+            <Pane id="g2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -363,7 +363,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="7">
+            <Pane id="h2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="7">
                <children>
                   <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -380,7 +380,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <Pane id="a1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteRook" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -388,7 +388,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="2" GridPane.rowIndex="8">
+            <Pane id="b1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="2" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -396,7 +396,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="3" GridPane.rowIndex="8">
+            <Pane id="c1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="3" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -404,7 +404,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="4" GridPane.rowIndex="8">
+            <Pane id="d1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="4" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteQueen" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -412,7 +412,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="5" GridPane.rowIndex="8">
+            <Pane id="e1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="5" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteKing" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
@@ -420,7 +420,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="6" GridPane.rowIndex="8">
+            <Pane id="f1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="6" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -428,7 +428,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="7" GridPane.rowIndex="8">
+            <Pane id="g1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="7" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -436,7 +436,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
-            <Pane onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="8">
+            <Pane id="h1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="8">
                <children>
                   <ImageView id="whiteRook" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
