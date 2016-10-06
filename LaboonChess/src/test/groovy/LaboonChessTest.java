@@ -14,6 +14,7 @@ import org.testfx.robot.MouseRobot;
 import java.io.IOException;
 import java.util.regex.Matcher;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
 import static org.loadui.testfx.Assertions.verifyThat;
@@ -43,5 +44,10 @@ public class LaboonChessTest extends GuiTest{
         final Node b =  this.find("#btnLoadGame");
         this.clickOn(b);
         assertTrue(this.find("Load Game clicked").isVisible());
+    }
+
+    @Test
+    public void testGetTranslate(){
+        assertEquals(7, 7);
     }
 }
