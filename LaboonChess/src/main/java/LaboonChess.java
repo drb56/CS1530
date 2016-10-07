@@ -23,12 +23,7 @@ public class LaboonChess extends Application {
         
         Scene scene = new Scene(root);
 
-        Stockfish stockfish = new Stockfish();
-        if (stockfish.startEngine()) {
-            System.out.println("Engine has started..");
-        } else {
-            System.out.println("Oops! Something went wrong..");
-        }
+
         
         // set custom app icon
         stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("/images/icon.png")));
