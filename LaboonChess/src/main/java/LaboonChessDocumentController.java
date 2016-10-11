@@ -182,8 +182,13 @@ public class LaboonChessDocumentController implements Initializable {
     public static String sanToFenstring(String coordinates){
         return coordinates;
     }
-    public static boolean isLegalMove(String san){
-
-        return true;
-    }
+//    public static boolean isLegalMove(String san){
+//        if(stockfish.isLegalMove(san)){
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//
+//    }
 }
