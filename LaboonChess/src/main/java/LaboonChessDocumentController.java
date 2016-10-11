@@ -22,6 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import stockfish.Stockfish;
 
 /**
  *
@@ -41,10 +42,16 @@ public class LaboonChessDocumentController implements Initializable {
     private ImageView chessPiece = null;    /* holds first chess piece clicked on */
     private Pane chessSquare = null;        /* holds square from which first chess piece was clicked */
     private String san = null;          /* holds standard algebraic notation of first square and second square */
+    private Stockfish stockfish;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        stockfish = new Stockfish();
+        if (stockfish.startEngine()) {
+            System.out.println("Engine has started..");
+        } else {
+            System.out.println("Oops! Something went wrong..");
+        }
     }
 
     @FXML
