@@ -24,24 +24,21 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import stockfish.Stockfish;
 
-/**
- *
- * @author Joe Meszar (jwm54@pitt.edu)
- */
 public class LaboonChessDocumentController implements Initializable {
 
     /* FXML references JavaFX GUI objects */
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
-    @FXML private GridPane chessboard;      /* reference to the chessboard */
+    @FXML private GridPane guiChessboard;   /* reference to the guiChessboard */
 
+    private char[][] chessboard;
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
     private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
-    private ImageView chessPiece = null;    /* holds first chess piece clicked on */
-    private Pane chessSquare = null;        /* holds square from which first chess piece was clicked */
-    private String san = null;          /* holds standard algebraic notation of first square and second square */
+    private ImageView guiChessPiece = null; /* holds first chess piece clicked on */
+    private Pane guiChessSquare = null;     /* holds square from which first chess piece was clicked */
+    private String san = null;              /* holds standard algebraic notation of first square and second square */
     private Stockfish stockfish;
 
     @Override
@@ -50,7 +47,7 @@ public class LaboonChessDocumentController implements Initializable {
         if (stockfish.startEngine()) {
             System.out.println("Engine has started..");
         } else {
-            System.out.println("Oops! Something went wrong..");
+            System.out.println("Oops! I did it again..");
         }
     }
 
@@ -65,7 +62,7 @@ public class LaboonChessDocumentController implements Initializable {
         y = mnuMain.getScene().getWindow().getY();
         length = mnuMain.getScene().getWindow().getHeight();
         width = mnuMain.getScene().getWindow().getWidth();
-        
+
         Stage aboutDialog;
         aboutDialog = new Stage();
         aboutDialog.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxml/AboutDialog.fxml"))));
@@ -80,21 +77,21 @@ public class LaboonChessDocumentController implements Initializable {
         // resume the game timer
         if (gameTimer != null) { gameTimer.play(); }
     }
-    
+
     @FXML
     private void handleExitAction(ActionEvent event) {
         Platform.exit();
     }
-    
+
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
         lblStatus.setText("Load Game clicked");
     }
-    
+
     @FXML
     private void handleNewGameAction(ActionEvent event) {
         lblStatus.setText("New game menu item clicked");
-        
+
         // start or reset the game timer
         timer_count = 0;
         if (gameTimer == null) { // start
@@ -106,22 +103,23 @@ public class LaboonChessDocumentController implements Initializable {
             }));
 
             gameTimer.setCycleCount(Timeline.INDEFINITE);
-            gameTimer.play();   
+            gameTimer.play();
+
         } else { // reset
             timer_count = 0;
         }
     }
-    
+
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
         lblStatus.setText("Save Game clicked");
     }
-    
+
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");
     }
-    
+
     @FXML void handleChessboardClickAction(MouseEvent event) {
         Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
 
@@ -139,10 +137,10 @@ public class LaboonChessDocumentController implements Initializable {
 
             } else {
                 /* FIRST-CLICK: set up for the second click */
-                chessSquare = curSquare;                                    // hold reference to this square
-                chessPiece = (ImageView) curSquare.getChildren().get(0);    // hold reference to this piece
-                chessPiece.setOpacity(.6);                                  // set opacity to make it look "selected"
-                isFirstClick = false;                                       // now wait for second-click
+                guiChessSquare = curSquare;                                    // hold reference to this square
+                guiChessPiece = (ImageView) curSquare.getChildren().get(0);    // hold reference to this piece
+                guiChessPiece.setOpacity(.6);                                  // set opacity to make it look "selected"
+                isFirstClick = false;                                          // now wait for second-click
             }
         } else {
             /* SECOND-CLICK */
@@ -151,27 +149,29 @@ public class LaboonChessDocumentController implements Initializable {
             //      first click at this square on the board.
             if (curSquare.getChildren().isEmpty()) {
                 /* EMPTY SQUARE */
-                curSquare.getChildren().add(0, chessPiece);             // place the chess piece here
-                san = chessSquare.getId() + curSquare.getId();      // get the move in terms of FEN (e.g. e3d6)
-                System.out.println(san);
-            } else if ((curSquare.getChildren().get(0).getId().contains("white") && chessPiece.getId().contains("black"))
-                    || (curSquare.getChildren().get(0).getId().contains("black") && chessPiece.getId().contains("white"))) {
+
+                curSquare.getChildren().add(0, guiChessPiece);         // place the chess piece here
+                san = guiChessSquare.getId() + curSquare.getId();      // get the move in terms of SAN (e.g. e3d6)
+
+            } else if ((curSquare.getChildren().get(0).getId().contains("white") && guiChessPiece.getId().contains("black"))
+                    || (curSquare.getChildren().get(0).getId().contains("black") && guiChessPiece.getId().contains("white"))) {
                 /* OPPONENT PIECE */
 
-                san = chessSquare.getId() + curSquare.getId();  // get the move in terms of FEN (e.g. e3d6)
-                System.out.println(san);
-                curSquare.getChildren().remove(0);                  // remove the current chess piece
-                curSquare.getChildren().add(0, chessPiece);         // insert the first-click piece onto this square
+                san = guiChessSquare.getId() + curSquare.getId();      // get the move in terms of SAN (e.g. e3d6)
+                curSquare.getChildren().remove(0);                     // remove the current chess piece
+                curSquare.getChildren().add(0, guiChessPiece);         // insert the first-click piece onto this square
 
                 // logic to update the 2D array
+                // ............
+
             }
 
             // finished with second-click
-            isFirstClick = true;            // back to start
-            chessPiece.setOpacity(1);       // opacity set back to show finished
+            isFirstClick = true;                // back to start
+            guiChessPiece.setOpacity(1);        // opacity set back to show finished
         }
     }
-    
+
     public Pane getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
         Pane result = null;
         ObservableList<Node> children = gridPane.getChildren();
