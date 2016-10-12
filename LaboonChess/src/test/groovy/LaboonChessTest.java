@@ -14,6 +14,7 @@ import org.testfx.robot.MouseRobot;
 import java.io.IOException;
 import java.util.regex.Matcher;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
 import static org.loadui.testfx.Assertions.verifyThat;
@@ -44,4 +45,27 @@ public class LaboonChessTest extends GuiTest{
         this.clickOn(b);
         assertTrue(this.find("Load Game clicked").isVisible());
     }
+
+    @Test
+    public void testHandleSaveGameAction(){
+        final Node b = this.find("#btnSaveGame");
+        this.clickOn(b);
+        assertTrue(this.find("Save Game clicked").isVisible());
+    }
+
+//    @Test
+//    public void testHandleUndoMoveAction(){
+//        Node a = this.find("#btnSaveGame");
+//        this.clickOn(a);
+//        final Node b = this.find("#mnuUndoMove");
+//        this.clickOn(b);
+//        assertTrue(this.find("Undo Move menu item clicked").isVisible());
+//    }
+
+//    private void handleUndoMoveAction(ActionEvent event) {
+//        lblStatus.setText("Undo Move menu item clicked");
+//    }
+//    private void handleSaveGameAction(ActionEvent event) {
+//        lblStatus.setText("Save Game clicked");
+//    }
 }

@@ -22,21 +22,38 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import stockfish.Stockfish;
 
 /**
  *
  * @author Joe Meszar (jwm54@pitt.edu)
  */
 public class LaboonChessDocumentController implements Initializable {
-    
-    @FXML private MenuBar mnuMain;
-    @FXML private Label lblTestPiece;
-    @FXML private Label lblStatus;
-    @FXML private Label lblTimer;
-    @FXML private GridPane chessboard;
-    private int timer_count = 0;
-    Timeline gameTimer = null;
-    
+
+    /* FXML references JavaFX GUI objects */
+    @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
+    @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
+    @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
+    @FXML private GridPane chessboard;      /* reference to the chessboard */
+
+    private int timer_count = 0;            /* used for game clock, as the counter */
+    Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
+    private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
+    private ImageView chessPiece = null;    /* holds first chess piece clicked on */
+    private Pane chessSquare = null;        /* holds square from which first chess piece was clicked */
+    private String san = null;          /* holds standard algebraic notation of first square and second square */
+    private Stockfish stockfish;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        stockfish = new Stockfish();
+        if (stockfish.startEngine()) {
+            System.out.println("Engine has started..");
+        } else {
+            System.out.println("Oops! Something went wrong..");
+        }
+    }
+
     @FXML
     private void handleAboutAction(ActionEvent event) throws IOException {
         lblStatus.setText("About menu item clicked");
@@ -106,51 +123,79 @@ public class LaboonChessDocumentController implements Initializable {
     }
     
     @FXML void handleChessboardClickAction(MouseEvent event) {
-        // get the source of the click
-        Object source = event.getSource();
-        ImageView source2 = (ImageView)event.getSource();
-        //Pane parent = (Pane)source.getParent();
+        Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
+
+        /*
+            If this is the "first click", then we need to get
+                the chess piece here and wait for a second click.
+
+            If this is the "second click", then we need to place
+                the previously-obtained chess piece here (if possible).
+        */
+        if (isFirstClick) {
+            if (curSquare.getChildren().isEmpty()) {
+                /* DO NOTHING: no chess piece here */
+                isFirstClick = true;
+
+            } else {
+                /* FIRST-CLICK: set up for the second click */
+                chessSquare = curSquare;                                    // hold reference to this square
+                chessPiece = (ImageView) curSquare.getChildren().get(0);    // hold reference to this piece
+                chessPiece.setOpacity(.6);                                  // set opacity to make it look "selected"
+                isFirstClick = false;                                       // now wait for second-click
+            }
+        } else {
+            /* SECOND-CLICK */
+
+            // see if we can place the chess piece from the
+            //      first click at this square on the board.
+            if (curSquare.getChildren().isEmpty()) {
+                /* EMPTY SQUARE */
+                curSquare.getChildren().add(0, chessPiece);             // place the chess piece here
+                san = chessSquare.getId() + curSquare.getId();      // get the move in terms of FEN (e.g. e3d6)
+                System.out.println(san);
+            } else if ((curSquare.getChildren().get(0).getId().contains("white") && chessPiece.getId().contains("black"))
+                    || (curSquare.getChildren().get(0).getId().contains("black") && chessPiece.getId().contains("white"))) {
+                /* OPPONENT PIECE */
+
+                san = chessSquare.getId() + curSquare.getId();  // get the move in terms of FEN (e.g. e3d6)
+                System.out.println(san);
+                curSquare.getChildren().remove(0);                  // remove the current chess piece
+                curSquare.getChildren().add(0, chessPiece);         // insert the first-click piece onto this square
+
+                // logic to update the 2D array
+            }
+
+            // finished with second-click
+            isFirstClick = true;            // back to start
+            chessPiece.setOpacity(1);       // opacity set back to show finished
+        }
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-        // get the list of nodes for the chessboard
-        ObservableList<Node> children = chessboard.getChildren();
-        Node spot = getNodeByRowColumnIndex(0, 2, chessboard);
-        Pane mypane = (Pane)getNodeByRowColumnIndex(0, 0, chessboard);
-        //mypane.getChildren().add()
-        
-        
-//        myStage.focusedProperty().addListener(new ChangeListener<Boolean>()
-//        {
-//            @Override
-//            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
-//            {
-//                if (newPropertyValue)
-//                {
-//                    System.out.println("Textfield on focus");
-//                }
-//                else
-//                {
-//                    System.out.println("Textfield out focus");
-//                }
-//            }
-//        });
-        
-    }
-    
-    public Node getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
-        Node result = null;
+    public Pane getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
+        Pane result = null;
         ObservableList<Node> children = gridPane.getChildren();
 
         for (Node node : children) {
             if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
-                result = node;
+                result = (Pane) node;
                 break;
             }
         }
 
         return result;
     }
+
+    public static String sanToFenstring(String coordinates){
+        return coordinates;
+    }
+//    public static boolean isLegalMove(String san){
+//        if(stockfish.isLegalMove(san)){
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//
+//    }
 }
