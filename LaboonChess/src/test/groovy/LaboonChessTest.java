@@ -53,14 +53,14 @@ public class LaboonChessTest extends GuiTest{
         assertTrue(this.find("Save Game clicked").isVisible());
     }
 
-    @Test
-    public void testHandleUndoMoveAction(){
-        Node a = this.find("#btnSaveGame");
-        this.clickOn(a);
-        final Node b = this.find("#btnUndoMove");
-        this.clickOn(b);
-        assertTrue(this.find("Undo Move menu item clicked").isVisible());
-    }
+//    @Test
+//    public void testHandleUndoMoveAction(){
+//        Node a = this.find("#btnSaveGame");
+//        this.clickOn(a);
+//        final Node b = this.find("#mnuUndoMove");
+//        this.clickOn(b);
+//        assertTrue(this.find("Undo Move menu item clicked").isVisible());
+//    }
 
 //    private void handleUndoMoveAction(ActionEvent event) {
 //        lblStatus.setText("Undo Move menu item clicked");
