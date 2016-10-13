@@ -5,11 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
 import org.loadui.testfx.utils.FXTestUtils;
 import org.testfx.api.FxRobot;
 import org.testfx.robot.MouseRobot;
+import stockfish.Stockfish;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -29,10 +31,12 @@ public class LaboonChessTest extends GuiTest{
     {
         Parent parent = null;
         try {
+//            /Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/resources/fxml/LaboonChessDocument.fxml
             parent = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
             return parent;
         } catch (IOException ex) {
             // TODO ...
+            System.out.println(ex);
             System.exit(1);
         }
         return parent;
