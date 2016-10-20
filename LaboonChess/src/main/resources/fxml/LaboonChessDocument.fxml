@@ -95,7 +95,7 @@
                </children></Pane>
             <Pane fx:id="a8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackRook" fitHeight="44.0" fitWidth="31.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="r" fitHeight="44.0" fitWidth="31.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_rook.png" />
                      </image>
@@ -103,7 +103,7 @@
                </children></Pane>
             <Pane fx:id="b8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="n" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_knight.png" />
                      </image>
@@ -111,7 +111,7 @@
                </children></Pane>
             <Pane fx:id="c8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="b" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_bishop.png" />
                      </image>
@@ -119,7 +119,7 @@
                </children></Pane>
             <Pane fx:id="d8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackQueen" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="q" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_queen.png" />
                      </image>
@@ -127,7 +127,7 @@
                </children></Pane>
             <Pane fx:id="e8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackKing" fitHeight="44.0" fitWidth="31.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="k" fitHeight="44.0" fitWidth="31.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_king.png" />
                      </image>
@@ -135,7 +135,7 @@
                </children></Pane>
             <Pane fx:id="f8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="b" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_bishop.png" />
                      </image>
@@ -143,7 +143,7 @@
                </children></Pane>
             <Pane fx:id="g8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="n" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/black_knight.png" />
                      </image>
@@ -151,7 +151,7 @@
                </children></Pane>
             <Pane fx:id="h8" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 1 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="1">
                <children>
-                  <ImageView id="blackRook" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="r" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_rook.png" />
                      </image>
@@ -168,7 +168,7 @@
                </children></Pane>
             <Pane fx:id="a7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -176,7 +176,7 @@
                </children></Pane>
             <Pane fx:id="b7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -184,7 +184,7 @@
                </children></Pane>
             <Pane fx:id="c7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -192,7 +192,7 @@
                </children></Pane>
             <Pane fx:id="d7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -200,7 +200,7 @@
                </children></Pane>
             <Pane fx:id="e7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -208,7 +208,7 @@
                </children></Pane>
             <Pane fx:id="f7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="6" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -216,7 +216,7 @@
                </children></Pane>
             <Pane fx:id="g7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="7" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -224,7 +224,7 @@
                </children></Pane>
             <Pane fx:id="h7" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="2">
                <children>
-                  <ImageView id="blackPawn" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="p" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/black_pawn.png" />
                      </image>
@@ -309,7 +309,7 @@
                </children></Pane>
             <Pane fx:id="a2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 0 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -317,7 +317,7 @@
                </children></Pane>
             <Pane fx:id="b2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -325,7 +325,7 @@
                </children></Pane>
             <Pane fx:id="c2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -333,7 +333,7 @@
                </children></Pane>
             <Pane fx:id="d2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="4" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -341,7 +341,7 @@
                </children></Pane>
             <Pane fx:id="e2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="5" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -349,7 +349,7 @@
                </children></Pane>
             <Pane fx:id="f2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);" GridPane.columnIndex="6" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -357,7 +357,7 @@
                </children></Pane>
             <Pane fx:id="g2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);" GridPane.columnIndex="7" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -365,7 +365,7 @@
                </children></Pane>
             <Pane fx:id="h2" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 1 0 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="7">
                <children>
-                  <ImageView id="whitePawn" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="P" fitHeight="44.0" fitWidth="31.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_pawn.png" />
                      </image>
@@ -382,7 +382,7 @@
                </children></Pane>
             <Pane fx:id="a1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 1; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteRook" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="R" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_rook.png" />
                      </image>
@@ -390,7 +390,7 @@
                </children></Pane>
             <Pane fx:id="b1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="2" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="N" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_knight.png" />
                      </image>
@@ -398,7 +398,7 @@
                </children></Pane>
             <Pane fx:id="c1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="3" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="B" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_bishop.png" />
                      </image>
@@ -406,7 +406,7 @@
                </children></Pane>
             <Pane fx:id="d1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="4" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteQueen" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="Q" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_queen.png" />
                      </image>
@@ -414,7 +414,7 @@
                </children></Pane>
             <Pane fx:id="e1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="5" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteKing" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView id="K" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@../images/white_king.png" />
                      </image>
@@ -422,7 +422,7 @@
                </children></Pane>
             <Pane fx:id="f1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="6" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteBishop" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="B" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_bishop.png" />
                      </image>
@@ -430,7 +430,7 @@
                </children></Pane>
             <Pane fx:id="g1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888); -fx-border-width: 0 0 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="7" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteKnight" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="N" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_knight.png" />
                      </image>
@@ -438,7 +438,7 @@
                </children></Pane>
             <Pane fx:id="h1" onMouseClicked="#handleChessboardClickAction" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 0 1 1 0; -fx-border-style: solid; -fx-border-color: #999;" GridPane.columnIndex="8" GridPane.rowIndex="8">
                <children>
-                  <ImageView id="whiteRook" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="R" fitHeight="44.0" fitWidth="31.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/white_rook.png" />
                      </image>

@@ -32,7 +32,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
     @FXML private GridPane guiChessboard;   /* reference to the guiChessboard */
 
-    private char[][] chessboard;
+    private char[][] chessboard;            /* 2D array reference of the chessboard (white=PNBRQK) (black=pnbrqk) */
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
     private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
@@ -133,7 +133,7 @@ public class LaboonChessDocumentController implements Initializable {
         if (isFirstClick) {
             if (curSquare.getChildren().isEmpty()) {
                 /* DO NOTHING: no chess piece here */
-                isFirstClick = true;
+                isFirstClick = true;                                           // reset
 
             } else {
                 /* FIRST-CLICK: set up for the second click */
@@ -153,9 +153,8 @@ public class LaboonChessDocumentController implements Initializable {
                 curSquare.getChildren().add(0, guiChessPiece);         // place the chess piece here
                 san = guiChessSquare.getId() + curSquare.getId();      // get the move in terms of SAN (e.g. e3d6)
 
-            } else if ((curSquare.getChildren().get(0).getId().contains("white") && guiChessPiece.getId().contains("black"))
-                    || (curSquare.getChildren().get(0).getId().contains("black") && guiChessPiece.getId().contains("white"))) {
-                /* OPPONENT PIECE */
+            } else if (curSquare.getChildren().get(0).getId().matches("[a-z]") != guiChessPiece.getId().matches("[a-z]")) {
+                /* OPPONENT PIECE EXISTS HERE */
 
                 san = guiChessSquare.getId() + curSquare.getId();      // get the move in terms of SAN (e.g. e3d6)
                 curSquare.getChildren().remove(0);                     // remove the current chess piece
