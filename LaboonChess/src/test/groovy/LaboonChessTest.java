@@ -7,7 +7,10 @@ import org.loadui.testfx.GuiTest;
 
 import java.io.IOException;
 
+import services.FENStringConversion;
 import entities.ChessBoard;
+import services.AlgebraicNotationConversion;
+import entities.Square;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -58,8 +61,19 @@ public class LaboonChessTest extends GuiTest{
 
     @Test
     public void testChessboardToFEN(){
-        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w";
-        assertEquals(chessBoard.toFEN(), FEN);
+
+        char[][] chessboard = new char[][]{
+                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+        };
+        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+        assertEquals(FENStringConversion.chessboardToFEN(chessboard), FEN);
     }
 
     @Test
@@ -70,10 +84,76 @@ public class LaboonChessTest extends GuiTest{
     }
 
     @Test
+    public void testSanTo2DRow2(){
+        assertEquals(chessBoard.sanTo2DRow("g6"), 2);
+    }
+
+    @Test
+    public void testSanTo2DRow3(){
+        assertEquals(chessBoard.sanTo2DRow("h8"), 0);
+    }
+
+    @Test
+    public void testSanTo2DRowOutOfBounds(){
+        assertEquals(chessBoard.sanTo2DRow("a9"), -1);
+    }
+
+    @Test
+    public void testSanTo2DRowOutOfBounds2(){
+        assertEquals(chessBoard.sanTo2DRow("a0"), -1);
+    }
+
+    @Test
+    public void testSanTo2DRowOutOfBounds3(){
+        assertEquals(chessBoard.sanTo2DRow("h9"), -1);
+    }
+
+    @Test
+    public void testSanTo2DRowOutOfBounds4(){
+        assertEquals(chessBoard.sanTo2DRow("h0"), -1);
+    }
+
+    @Test
     public void testSanTo2DCol(){
         assertEquals(chessBoard.sanTo2DCol("a1"), 0);
     }
-    
+
+    @Test
+    public void testSanTo2DCol2(){
+        assertEquals(chessBoard.sanTo2DCol("b3"), 1);
+    }
+
+    @Test
+    public void testSanTo2DCol3(){
+        assertEquals(chessBoard.sanTo2DCol("e4"), 4);
+    }
+
+    @Test
+    public void testSanTo2DCol4(){
+        assertEquals(chessBoard.sanTo2DCol("h4"), 7);
+    }
+
+    @Test
+    public void testSanTo2DColOutOfBounds(){
+        assertEquals(chessBoard.sanTo2DCol("I1"), -1);
+    }
+
+    @Test
+    public void testSanTo2DColOutOfBounds2(){
+        assertEquals(chessBoard.sanTo2DCol("`1"), -1);
+    }
+
+    @Test
+    public void testSanTo2DColOutOfBounds3(){
+        assertEquals(chessBoard.sanTo2DCol("I8"), -1);
+    }
+
+    @Test
+    public void testSanTo2DColOutOfBounds4(){
+        assertEquals(chessBoard.sanTo2DCol("`8"), -1);
+    }
+
+
 //    @Test
 //    public void testGetTranslate(){
 //        assertEquals(AlgebraicNotationConversion.getTranslate(0,1), "a7");

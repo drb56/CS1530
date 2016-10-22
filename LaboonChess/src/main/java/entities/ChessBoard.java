@@ -55,24 +55,21 @@ public class ChessBoard {
     }
 
     public boolean move(String sanFrom, String sanTo) {
-        if(!isLegal(sanFrom, sanTo)){//returns false if isn't a legal move
+        if (!isLegal(sanFrom, sanTo)) {//returns false if isn't a legal move
             System.out.println("ILLEGAL MOVE");
             return false;
-        }
-        else{//changes the board if it is a legal move
+        } else {//changes the board if it is a legal move
             System.out.println("LEGAL MOVE");
             update2DArrayChessboard(sanFrom, sanTo);
-            if(turn == 0){
+            if (turn == 0) {
                 turn = 1;
-            }
-            else{
+            } else {
                 turn = 0;
             }
             lastFen = toFEN();
         }
         return true;
     }
-
     /**
      * Takes two SAN coordinates and moves the chess piece from the start square to
      *      the end square within the 2D chessboard array. Because of the way a chessboard
@@ -106,7 +103,13 @@ public class ChessBoard {
      * @return The given chess square ROW within the 2D chessboard array. (e.g. '7')
      */
     public int sanTo2DRow (final String sanSquare) {
-        return (8 - ((int) sanSquare.charAt(1)) % 48);    // ASCII char (48) is '0'
+        int num = (int)sanSquare.charAt(1) % 48;//num = 8
+        if(num < 1 || num > 8){
+            return -1;
+        }
+        else{
+            return (8 - num);    // ASCII char (48) is '0'
+        }
     }
 
     /**
@@ -116,8 +119,15 @@ public class ChessBoard {
      * @param sanSquare A USCF chessboard coordinate that corresponds to a given chess square. (e.g. 'a1')
      * @return The given chess square COLUMN within the 2D chessboard array. (e.g. '0')
      */
-    public int sanTo2DCol (final String sanSquare) {
-        return ((int) sanSquare.toLowerCase().charAt(0)) % 97;     // ASCII chart (97) is 'a'
+    public int sanTo2DCol (String sanSquare) {
+        sanSquare = sanSquare.toLowerCase();
+        int num = (int)sanSquare.charAt(0) % 97;// ASCII char (97) is 'a'
+        if(num < 0 || num > 7){
+            return -1;
+        }
+        else{
+            return (num);
+        }
     }
 
     /**
