@@ -22,6 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import services.FENStringConversion;
 import stockfish.Stockfish;
 
 public class LaboonChessDocumentController implements Initializable {
@@ -62,6 +63,8 @@ public class LaboonChessDocumentController implements Initializable {
                 { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
                 { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
         };
+
+        System.out.println(FENStringConversion.chessboardToFEN(chessboard));
     }
 
     @FXML
@@ -186,7 +189,6 @@ public class LaboonChessDocumentController implements Initializable {
                 san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
                 update2DArrayChessboard(guiChessSquare.getId(), curSquare.getId());     // keep 2D chessboard array updated
-
             } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                     != guiChessPiece.getId().matches("[a-z]")) {
 
@@ -207,6 +209,7 @@ public class LaboonChessDocumentController implements Initializable {
             // finished with second-click
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);        // opacity set back to show finished
+            System.out.println(FENStringConversion.chessboardToFEN(chessboard));
         }
     }
 
@@ -293,5 +296,21 @@ public class LaboonChessDocumentController implements Initializable {
 //            return false;
 //        }
 //
+//    }
+
+
+//    public String chessboardToFEN(char[][] chessboard){
+//        char[] letterLocs = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+//        char[] numberLocs = new char[]{'8', '7', '6', '5', '4', '3', '2', '1'};
+//        String currBoard = "";
+//
+//        for(int i=0; i<chessboard.length; i++){
+//            for(int j=0; j<chessboard.length; j++){
+//                if(chessboard[i][j] != 0){
+//                    currBoard = currBoard + chessboard[i][j] + letterLocs[j] + numberLocs[i] + " ";
+//                }
+//            }
+//        }
+//        return currBoard;
 //    }
 }
