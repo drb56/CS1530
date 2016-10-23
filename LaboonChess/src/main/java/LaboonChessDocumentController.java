@@ -22,6 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import services.AlgebraicNotationConversion;
 import stockfish.Stockfish;
 
@@ -168,6 +169,7 @@ public class LaboonChessDocumentController implements Initializable {
             If this is the "second click", then we need to place
                 the previously-obtained chess piece here (if possible).
         */
+
         if (isFirstClick) {
             if (curSquare.getChildren().isEmpty()) {
                 /* DO NOTHING: no chess piece here */
@@ -182,38 +184,32 @@ public class LaboonChessDocumentController implements Initializable {
             }
         } else {
             /* SECOND-CLICK */
-
-            // see if we can place the chess piece from the
-            //      first click at this square on the board.
-            if (curSquare.getChildren().isEmpty()) {
+            String fromSquare = guiChessSquare.getId();
+            String toSquare = curSquare.getId();
+            if (chessboard.move(fromSquare, toSquare)) {
+                // see if we can place the chess piece from the
+                //      first click at this square on the board.
+                if (curSquare.getChildren().isEmpty()) {
                 /* EMPTY SQUARE */
 
-                curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
-                san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
-
-                chessboard.update2DArrayChessboard(guiChessSquare.getId(), curSquare.getId());     // keep 2D chessboard array updated
-            } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
-                    != guiChessPiece.getId().matches("[a-z]")) {
-
+                    curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
+                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
+                } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
+                        != guiChessPiece.getId().matches("[a-z]")) {
+                    System.out.println("CALLED HERE");
                 /* OPPONENT PIECE EXISTS HERE */
-                String fromSquare = guiChessSquare.getId();
-                String toSquare = curSquare.getId();
-                san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
-                //if (stockfish.isLegalMove()) {
-                if (true) {
+                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
+
                     curSquare.getChildren().remove(0);                  // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);      // insert the first-click piece onto this square
-
-//                    chessboard.update2DArrayChessboard(fromSquare, toSquare);      // keep 2D chessboard array updated
-                    System.out.println("here");
-                    chessboard.move(fromSquare, toSquare);
                 }
             }
-
             // finished with second-click
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);        // opacity set back to show finished
+
+
 
             System.out.println(chessboard.toFEN());
         }

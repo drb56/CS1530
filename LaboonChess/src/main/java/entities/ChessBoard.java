@@ -60,6 +60,7 @@ public class ChessBoard {
             return false;
         }
         else{//changes the board if it is a legal move
+            System.out.println("LEGAL MOVE");
             update2DArrayChessboard(sanFrom, sanTo);
             if(turn == 0){
                 turn = 1;
@@ -92,7 +93,8 @@ public class ChessBoard {
         int toCol = sanTo2DCol(sanToSquare);
 
         chessboard[toRow][toCol] = chessboard[fromRow][fromCol];        // move piece from start to end square
-        chessboard[fromRow][fromCol] = 0;                               // the start square should now be empty
+        chessboard[fromRow][fromCol] = 0;// the start square should now be empty
+        this.printBoard();
     }
 
     /**
@@ -176,5 +178,17 @@ public class ChessBoard {
             fenBoard = fenBoard + " b";
         }
         return fenBoard;
+    }
+
+    public void printBoard() {
+        for (int x = 0; x < chessboard.length; x++) {
+            char [] row = chessboard[x];
+            for(int y = 0; y < row.length; y++) {
+                char val = row[y];
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("------- CALLED ---------");
     }
 }
