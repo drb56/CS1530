@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
+
+import entities.ChessBoard;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -25,6 +27,7 @@ import javafx.util.Duration;
 import services.AlgebraicNotationConversion;
 import services.FENStringConversion;
 import stockfish.Stockfish;
+import entities.ChessBoard;
 
 public class LaboonChessDocumentController implements Initializable {
 
@@ -34,7 +37,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
     @FXML private GridPane guiChessboard;   /* reference to the guiChessboard */
 
-    private char[][] chessboard;            /* 2D array reference of the chessboard (white=PNBRQK) (black=pnbrqk) */
+//    private char[][] chessboard;            /* 2D array reference of the chessboard (white=PNBRQK) (black=pnbrqk) */
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
     private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
@@ -42,6 +45,7 @@ public class LaboonChessDocumentController implements Initializable {
     private Pane guiChessSquare = null;     /* holds square from which first chess piece was clicked */
     private String san = null;              /* holds standard algebraic notation of first square and second square */
     private Stockfish stockfish;
+    private ChessBoard chessboard;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -53,19 +57,20 @@ public class LaboonChessDocumentController implements Initializable {
             System.out.println("Oops! I did it again..");
         }
 
+        chessboard = new ChessBoard();
         /* build the chessboard */
-        chessboard = new char[][]{
-                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
-        };
+//        chessboard = new char[][]{
+//                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+//                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+//                { 0, 0, 0, 0, 0, 0, 0, 0 },
+//                { 0, 0, 0, 0, 0, 0, 0, 0 },
+//                { 0, 0, 0, 0, 0, 0, 0, 0 },
+//                { 0, 0, 0, 0, 0, 0, 0, 0 },
+//                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+//                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+//        };
 
-        System.out.println(FENStringConversion.chessboardToFEN(chessboard));
+       // System.out.println(FENStringConversion.chessboardToFEN(chessboard));
         System.out.println(AlgebraicNotationConversion.getTranslate(0,1));
     }
 
@@ -190,7 +195,7 @@ public class LaboonChessDocumentController implements Initializable {
                 curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
                 san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
-                AlgebraicNotationConversion.update2DArrayChessboard(chessboard, guiChessSquare.getId(), curSquare.getId());     // keep 2D chessboard array updated
+                chessboard.update2DArrayChessboard(guiChessSquare.getId(), curSquare.getId());     // keep 2D chessboard array updated
             } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                     != guiChessPiece.getId().matches("[a-z]")) {
 
@@ -204,14 +209,14 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().remove(0);                  // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);      // insert the first-click piece onto this square
 
-                    AlgebraicNotationConversion.update2DArrayChessboard(chessboard, fromSquare, toSquare);      // keep 2D chessboard array updated
+                    chessboard.update2DArrayChessboard(fromSquare, toSquare);      // keep 2D chessboard array updated
                 }
             }
 
             // finished with second-click
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);        // opacity set back to show finished
-            System.out.println(FENStringConversion.chessboardToFEN(chessboard));
+//            System.out.println(FENStringConversion.chessboardToFEN(chessboard));
         }
     }
 
