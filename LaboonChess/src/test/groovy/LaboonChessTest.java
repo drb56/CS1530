@@ -1,12 +1,14 @@
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import org.junit.Before;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
 
 import java.io.IOException;
 
 import services.FENStringConversion;
+import entities.ChessBoard;
 import services.AlgebraicNotationConversion;
 import entities.Square;
 import static org.junit.Assert.assertEquals;
@@ -20,6 +22,7 @@ import static org.loadui.testfx.Assertions.verifyThat;
 
 
 public class LaboonChessTest extends GuiTest{
+    private ChessBoard chessBoard;
     public Parent getRootNode()
     {
         Parent parent = null;
@@ -33,6 +36,11 @@ public class LaboonChessTest extends GuiTest{
             System.exit(1);
         }
         return parent;
+    }
+
+    @Before
+    public void beforeTests(){
+        chessBoard = new ChessBoard();
     }
 
     @Test
@@ -67,21 +75,33 @@ public class LaboonChessTest extends GuiTest{
     }
 
     @Test
-    public void testGetTranslate(){
-        assertEquals(AlgebraicNotationConversion.getTranslate(0,1), "a7");
+    //
+    public void testSanTo2DRow () {
+        assertEquals(chessBoard.sanTo2DRow("a1"), 7);
+
     }
+
     @Test
-    public void testReverseTranslate(){
-        Square sq = AlgebraicNotationConversion.reverseTranslate("a7");
-        assertEquals(sq.column, 0);
-        assertEquals(sq.row, 1);
+    public void testSanTo2DCol(){
+        assertEquals(chessBoard.sanTo2DCol("a1"), 0);
     }
-    @Test
-    public void testReverseTranslate2(){
-        Square sq = AlgebraicNotationConversion.reverseTranslate("H8");
-        assertEquals(sq.column, 7);
-        assertEquals(sq.row, 0);
-    }
+    
+//    @Test
+//    public void testGetTranslate(){
+//        assertEquals(AlgebraicNotationConversion.getTranslate(0,1), "a7");
+//    }
+//    @Test
+//    public void testReverseTranslate(){
+//        Square sq = AlgebraicNotationConversion.reverseTranslate("a7");
+//        assertEquals(sq.column, 0);
+//        assertEquals(sq.row, 1);
+//    }
+//    @Test
+//    public void testReverseTranslate2(){
+//        Square sq = AlgebraicNotationConversion.reverseTranslate("H8");
+//        assertEquals(sq.column, 7);
+//        assertEquals(sq.row, 0);
+//    }
 //    @Test
 //    public void testHandleUndoMoveAction(){
 //        Node a = this.find("#btnSaveGame");
