@@ -58,7 +58,7 @@ public class LaboonChessTest extends GuiTest{
 
     @Test
     public void testChessboardToFEN(){
-        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w";
         assertEquals(chessBoard.toFEN(), FEN);
     }
 

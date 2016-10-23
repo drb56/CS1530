@@ -205,13 +205,16 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().remove(0);                  // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);      // insert the first-click piece onto this square
 
-                    chessboard.update2DArrayChessboard(fromSquare, toSquare);      // keep 2D chessboard array updated
+//                    chessboard.update2DArrayChessboard(fromSquare, toSquare);      // keep 2D chessboard array updated
+                    System.out.println("here");
+                    chessboard.move(fromSquare, toSquare);
                 }
             }
 
             // finished with second-click
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);        // opacity set back to show finished
+
             System.out.println(chessboard.toFEN());
         }
     }
