@@ -22,6 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import services.AlgebraicNotationConversion;
 import services.FENStringConversion;
 import stockfish.Stockfish;
 
@@ -65,6 +66,7 @@ public class LaboonChessDocumentController implements Initializable {
         };
 
         System.out.println(FENStringConversion.chessboardToFEN(chessboard));
+        System.out.println(AlgebraicNotationConversion.getTranslate(0,1));
     }
 
     @FXML
