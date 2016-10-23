@@ -7,12 +7,10 @@ import entities.ChessBoard;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
@@ -25,9 +23,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import services.AlgebraicNotationConversion;
-import services.FENStringConversion;
 import stockfish.Stockfish;
-import entities.ChessBoard;
 
 public class LaboonChessDocumentController implements Initializable {
 
@@ -70,7 +66,7 @@ public class LaboonChessDocumentController implements Initializable {
 //                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
 //        };
 
-       // System.out.println(FENStringConversion.chessboardToFEN(chessboard));
+        System.out.println(chessboard.toFEN());
         System.out.println(AlgebraicNotationConversion.getTranslate(0,1));
     }
 
@@ -216,7 +212,7 @@ public class LaboonChessDocumentController implements Initializable {
             // finished with second-click
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);        // opacity set back to show finished
-//            System.out.println(FENStringConversion.chessboardToFEN(chessboard));
+            System.out.println(chessboard.toFEN());
         }
     }
 
