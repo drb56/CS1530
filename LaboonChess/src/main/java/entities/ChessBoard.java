@@ -45,6 +45,7 @@ public class ChessBoard {
                     return true;
                 }
             }
+            return false;
         } catch (MoveGeneratorException e) {
             e.printStackTrace();
         }
@@ -59,7 +60,7 @@ public class ChessBoard {
         int toFirst = sanTo2DCol(sanTo);
         int toSecond = sanTo2DRow(sanTo);
 
-        if(false){//returns false if isn't a legal move
+        if(!isLegal(sanFrom, sanTo)){//returns false if isn't a legal move
             return false;
         }
         else{//changes the board if it is a legal move
