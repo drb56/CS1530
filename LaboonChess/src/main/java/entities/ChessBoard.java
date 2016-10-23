@@ -53,19 +53,12 @@ public class ChessBoard {
     }
 
     public boolean move(String sanFrom, String sanTo) {
-        //if not legal, return FALSE
-        //if legal, adjust 2d array and return TRUE
-        int fromFirst = sanTo2DCol(sanFrom);
-        int fromSecond = sanTo2DRow(sanFrom);
-        int toFirst = sanTo2DCol(sanTo);
-        int toSecond = sanTo2DRow(sanTo);
-
         if(!isLegal(sanFrom, sanTo)){//returns false if isn't a legal move
+            System.out.println("Illegal move");
             return false;
         }
         else{//changes the board if it is a legal move
-            chessboard[toSecond][toFirst] = chessboard[fromSecond][fromFirst];
-            chessboard[fromSecond][toSecond] = 0;
+            update2DArrayChessboard(sanFrom, sanTo);
             if(turn == 0){
                 turn = 1;
             }
