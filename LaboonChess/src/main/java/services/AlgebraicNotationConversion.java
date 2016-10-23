@@ -1,5 +1,7 @@
 package services;
 
+import entities.Square;
+
 /**
  * Created by Craig on 10/22/2016.
  */
@@ -21,8 +23,6 @@ public class AlgebraicNotationConversion {
     }
 
     public static Square reverseTranslate(String an){//an = algebraic notation
-        letterLocs = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
-        numberLocs = new char[]{'8', '7', '6', '5', '4', '3', '2', '1'};
         char x = an.charAt(0);//getting letter from algebraic notation
         char y = an.charAt(1);//getting number from algebraic notation
         int firstCoordinate = 0;

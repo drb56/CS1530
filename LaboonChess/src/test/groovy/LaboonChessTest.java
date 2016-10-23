@@ -1,23 +1,14 @@
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseButton;
-import javafx.stage.Stage;
-import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
-import org.loadui.testfx.utils.FXTestUtils;
-import org.testfx.api.FxRobot;
-import org.testfx.robot.MouseRobot;
-import stockfish.Stockfish;
 
 import java.io.IOException;
-import java.util.regex.Matcher;
+
 import services.FENStringConversion;
 import services.AlgebraicNotationConversion;
-import services.Square;
+import entities.Square;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
@@ -85,7 +76,12 @@ public class LaboonChessTest extends GuiTest{
         Square sq = AlgebraicNotationConversion.reverseTranslate("a7");
         assertEquals(sq.column, 0);
         assertEquals(sq.row, 1);
-       // assertEquals(AlgebraicNotationConversion.reverseTranslate("a7"), (01));
+    }
+    @Test
+    public void testReverseTranslate2(){
+        Square sq = AlgebraicNotationConversion.reverseTranslate("H8");
+        assertEquals(sq.column, 7);
+        assertEquals(sq.row, 0);
     }
 //    @Test
 //    public void testHandleUndoMoveAction(){
