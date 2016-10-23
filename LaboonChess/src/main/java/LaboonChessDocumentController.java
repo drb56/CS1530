@@ -195,8 +195,6 @@ public class LaboonChessDocumentController implements Initializable {
 
                 curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
                 san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
-
-                chessboard.update2DArrayChessboard(guiChessSquare.getId(), curSquare.getId());     // keep 2D chessboard array updated
             } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                     != guiChessPiece.getId().matches("[a-z]")) {
                 /* OPPONENT PIECE EXISTS HERE */
