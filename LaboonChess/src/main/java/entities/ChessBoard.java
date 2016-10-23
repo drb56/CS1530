@@ -25,6 +25,7 @@ public class ChessBoard {
                 { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
                 { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
         };
+        turn = 0;
     }
 
     public ChessBoard(String fen){
@@ -53,6 +54,24 @@ public class ChessBoard {
     public boolean move(String sanFrom, String sanTo) {
         //if not legal, return FALSE
         //if legal, adjust 2d array and return TRUE
+        int fromFirst = sanTo2DCol(sanFrom);
+        int fromSecond = sanTo2DRow(sanFrom);
+        int toFirst = sanTo2DCol(sanTo);
+        int toSecond = sanTo2DRow(sanTo);
+
+        if(false){//returns false if isn't a legal move
+            return false;
+        }
+        else{//changes the board if it is a legal move
+            chessboard[toSecond][toFirst] = chessboard[fromSecond][fromFirst];
+            chessboard[fromSecond][toSecond] = 0;
+            if(turn == 0){
+                turn = 1;
+            }
+            else{
+                turn = 0;
+            }
+        }
         return true;
     }
 
@@ -152,6 +171,12 @@ public class ChessBoard {
                 fenBoard = fenBoard + fenBoardArray[i];
                 onesNumber = 0;
             }
+        }
+        if(turn == 0){
+            fenBoard = fenBoard + " w";
+        }
+        else{
+            fenBoard = fenBoard + " b";
         }
         return fenBoard;
     }
