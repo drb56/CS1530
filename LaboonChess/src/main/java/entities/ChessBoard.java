@@ -11,6 +11,7 @@ import com.github.bhlangonijr.chesslib.move.MoveList;
  */
 public class ChessBoard {
     private char[][] chessboard;
+    private String lastFen;
     private int turn; //0=white 1=black
 
     public ChessBoard(){
@@ -26,21 +27,22 @@ public class ChessBoard {
                 { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
         };
         turn = 0;
+        lastFen = toFEN();
     }
 
     public ChessBoard(String fen){
-
+        lastFen = fen;
     }
 
     public boolean isLegal(String sanFrom, String sanTo) {
-        String fen = this.toFEN();
         Board board = new Board();
-        board.loadFromFEN(fen);
+        board.loadFromFEN(lastFen);
         MoveList moves = null;
         try {
             moves = MoveGenerator.getInstance().generateLegalMoves(board);
             String actualMove = sanFrom + sanTo;
             for (Move move : moves) {
+                System.out.println(move.toString() + " " + actualMove);
                 if (move.toString().equals(actualMove)) {
                     return true;
                 }
@@ -61,6 +63,7 @@ public class ChessBoard {
         int toSecond = sanTo2DRow(sanTo);
 
         if(!isLegal(sanFrom, sanTo)){//returns false if isn't a legal move
+            System.out.println("ILLEGAL MOVE");
             return false;
         }
         else{//changes the board if it is a legal move
@@ -72,6 +75,7 @@ public class ChessBoard {
             else{
                 turn = 0;
             }
+            lastFen = toFEN();
         }
         return true;
     }

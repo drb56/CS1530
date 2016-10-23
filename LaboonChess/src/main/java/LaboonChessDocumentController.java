@@ -212,7 +212,6 @@ public class LaboonChessDocumentController implements Initializable {
             // finished with second-click
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);        // opacity set back to show finished
-            chessboard.move("e2", "e4");
             System.out.println(chessboard.toFEN());
         }
     }
