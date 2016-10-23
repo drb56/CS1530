@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import services.FENStringConversion;
 import services.AlgebraicNotationConversion;
+import services.Square;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
@@ -78,6 +79,13 @@ public class LaboonChessTest extends GuiTest{
     @Test
     public void testGetTranslate(){
         assertEquals(AlgebraicNotationConversion.getTranslate(0,1), "a7");
+    }
+    @Test
+    public void testReverseTranslate(){
+        Square sq = AlgebraicNotationConversion.reverseTranslate("a7");
+        assertEquals(sq.column, 0);
+        assertEquals(sq.row, 1);
+       // assertEquals(AlgebraicNotationConversion.reverseTranslate("a7"), (01));
     }
 //    @Test
 //    public void testHandleUndoMoveAction(){
