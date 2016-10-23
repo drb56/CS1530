@@ -7,10 +7,7 @@ import org.loadui.testfx.GuiTest;
 
 import java.io.IOException;
 
-import services.FENStringConversion;
 import entities.ChessBoard;
-import services.AlgebraicNotationConversion;
-import entities.Square;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -61,19 +58,9 @@ public class LaboonChessTest extends GuiTest{
 
     @Test
     public void testChessboardToFEN(){
+        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w";
 
-        char[][] chessboard = new char[][]{
-                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
-        };
-        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
-        assertEquals(FENStringConversion.chessboardToFEN(chessboard), FEN);
+        assertEquals(chessBoard.toFEN(), FEN);
     }
 
     @Test
