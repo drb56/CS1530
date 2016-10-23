@@ -1,5 +1,11 @@
 package entities;
 
+import com.github.bhlangonijr.chesslib.Board;
+import com.github.bhlangonijr.chesslib.move.Move;
+import com.github.bhlangonijr.chesslib.move.MoveGenerator;
+import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
+import com.github.bhlangonijr.chesslib.move.MoveList;
+
 /**
  * Created by Craig on 10/23/2016.
  */
@@ -25,7 +31,26 @@ public class ChessBoard {
 
     }
 
-    public boolean move(String sanFrom, String sanTo){
+    public boolean isLegal(String sanFrom, String sanTo) {
+        String fen = this.toFEN();
+        Board board = new Board();
+        board.loadFromFEN(fen);
+        MoveList moves = null;
+        try {
+            moves = MoveGenerator.getInstance().generateLegalMoves(board);
+            String actualMove = sanFrom + sanTo;
+            for (Move move : moves) {
+                if (move.toString().equals(actualMove)) {
+                    return true;
+                }
+            }
+        } catch (MoveGeneratorException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean move(String sanFrom, String sanTo) {
         //if not legal, return FALSE
         //if legal, adjust 2d array and return TRUE
         return true;
