@@ -41,20 +41,20 @@ public class LaboonChessTest extends GuiTest{
         chessBoard = new ChessBoard();
     }
 
-    @Test
-    public void testLoadGame()
-    {
-        final Node b =  this.find("#btnLoadGame");
-        this.clickOn(b);
-        assertTrue(this.find("Load Game clicked").isVisible());
-    }
+//    @Test
+//    public void testLoadGame()
+//    {
+//        final Node b =  this.find("#btnLoadGame");
+//        this.clickOn(b);
+//        assertTrue(this.find("Load Game clicked").isVisible());
+//    }
 
-    @Test
-    public void testHandleSaveGameAction(){
-        final Node b = this.find("#btnSaveGame");
-        this.clickOn(b);
-        assertTrue(this.find("Save Game clicked").isVisible());
-    }
+//    @Test
+//    public void testHandleSaveGameAction(){
+//        final Node b = this.find("#btnSaveGame");
+//        this.clickOn(b);
+//        assertTrue(this.find("Save Game clicked").isVisible());
+//    }
 
     @Test
     public void testChessboardToFEN(){
