@@ -16,6 +16,8 @@ import stockfish.Stockfish;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import services.FENStringConversion;
+import services.AlgebraicNotationConversion;
+import services.Square;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
@@ -72,6 +74,18 @@ public class LaboonChessTest extends GuiTest{
         String FEN = "ra8 nb8 bc8 qd8 ke8 bf8 ng8 rh8 pa7 pb7 pc7 pd7 pe7 pf7 pg7 ph7 Pa2 Pb2 Pc2 Pd2 Pe2 Pf2 Pg2 " +
                         "Ph2 Ra1 Nb1 Bc1 Qd1 Ke1 Bf1 Ng1 Rh1 ";
         assertEquals(FENStringConversion.chessboardToFEN(chessboard), FEN);
+    }
+
+    @Test
+    public void testGetTranslate(){
+        assertEquals(AlgebraicNotationConversion.getTranslate(0,1), "a7");
+    }
+    @Test
+    public void testReverseTranslate(){
+        Square sq = AlgebraicNotationConversion.reverseTranslate("a7");
+        assertEquals(sq.column, 0);
+        assertEquals(sq.row, 1);
+       // assertEquals(AlgebraicNotationConversion.reverseTranslate("a7"), (01));
     }
 //    @Test
 //    public void testHandleUndoMoveAction(){
