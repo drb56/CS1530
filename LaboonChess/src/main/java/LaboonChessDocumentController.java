@@ -191,13 +191,15 @@ public class LaboonChessDocumentController implements Initializable {
                 // see if we can place the chess piece from the
                 //      first click at this square on the board.
                 if (curSquare.getChildren().isEmpty()) {
-                /* EMPTY SQUARE */
+                    /* EMPTY SQUARE */
 
-                curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
-                san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
-            } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
-                    != guiChessPiece.getId().matches("[a-z]")) {
-                /* OPPONENT PIECE EXISTS HERE */
+                    curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
+                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
+
+                } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
+                        != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
+
+                    /* OPPONENT PIECE EXISTS HERE */
 
                     san = guiChessSquare.getId() + curSquare.getId();   // get the move in terms of SAN (e.g. e3d6)
 
@@ -209,7 +211,7 @@ public class LaboonChessDocumentController implements Initializable {
             isFirstClick = true;                                        // back to start
             guiChessPiece.setOpacity(1);                                // opacity set back to show finished
 
-            System.out.println(chessboard.toFEN());
+            System.out.println(chessboard.toFEN());                     // DEBUG
         }
     }
 }

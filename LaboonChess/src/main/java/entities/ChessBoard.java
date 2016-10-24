@@ -5,8 +5,6 @@ import com.github.bhlangonijr.chesslib.move.Move;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 import java.security.InvalidParameterException;
 
 public class ChessBoard {
