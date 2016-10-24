@@ -143,7 +143,7 @@ public class ChessBoard {
             int num = (8 - (int)sanSquare.charAt(1) % 48);  // ASCII char (48) is '0'
 
             if(num < 0 || num > 7){
-                throw new InvalidParameterException("sanSquare is invalid");
+                throw new InvalidParameterException(String.format("chessboard row is invalid (%d)", num));
             } else {
                 return num;
             }
@@ -169,7 +169,7 @@ public class ChessBoard {
             int num = (int)sanSquare.charAt(0) % 97;    // ASCII char (97) is 'a'
 
             if(num < 0 || num > 7){
-                throw new InvalidParameterException("sanSquare is invalid");
+                throw new InvalidParameterException(String.format("chessboard column is invalid (%d)", num));
             } else {
                 return (num);
             }
@@ -251,14 +251,20 @@ public class ChessBoard {
      * Pretty-prints the current state of the 2D chessboard array.
      */
     public void printBoard() {
+        System.out.println("   A   B   C   D   E   F   G   H ");
+
+        int boardnum=8;
         for (int x = 0; x < chessboard.length; x++) {
+            System.out.print(String.format("%d ", boardnum));
+
             char [] row = chessboard[x];
             for (int y = 0; y < row.length; y++) {
                 char val = row[y];
-                System.out.print(val + " ");
+                System.out.print(String.format("[%s] ", val==0 ? " " : val));
             }
-            System.out.println();
+
+            System.out.println(String.format("%d", boardnum--));
         }
-        System.out.println("------- CALLED ---------");
+        System.out.println("   A   B   C   D   E   F   G   H ");
     }
 }
