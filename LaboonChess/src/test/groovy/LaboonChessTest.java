@@ -14,22 +14,16 @@ import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
 import static org.loadui.testfx.Assertions.verifyThat;
 
-/**
- * Created by david on 9/28/16.
- */
-
-
 public class LaboonChessTest extends GuiTest{
     private ChessBoard chessBoard;
     public Parent getRootNode()
     {
         Parent parent = null;
         try {
-//            /Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/resources/fxml/LaboonChessDocument.fxml
             parent = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
             return parent;
+
         } catch (IOException ex) {
-            // TODO ...
             System.out.println(ex);
             System.exit(1);
         }
@@ -41,103 +35,59 @@ public class LaboonChessTest extends GuiTest{
         chessBoard = new ChessBoard();
     }
 
-//    @Test
-//    public void testLoadGame()
-//    {
-//        final Node b =  this.find("#btnLoadGame");
-//        this.clickOn(b);
-//        assertTrue(this.find("Load Game clicked").isVisible());
-//    }
-
-//    @Test
-//    public void testHandleSaveGameAction(){
-//        final Node b = this.find("#btnSaveGame");
-//        this.clickOn(b);
-//        assertTrue(this.find("Save Game clicked").isVisible());
-//    }
-
     @Test
-    public void testChessboardToFEN(){
-        String FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w";
-
-        assertEquals(chessBoard.toFEN(), FEN);
-    }
+    public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w"); }
 
     @Test
     //
-    public void testSanTo2DRow () {
-        assertEquals(chessBoard.sanTo2DRow("a1"), 7);
-
-    }
+    public void testSanTo2DRowLowerBound () { assertEquals(chessBoard.sanTo2DRow("a1"), 7); }
 
     @Test
-    public void testSanTo2DRow2(){
+    public void testSanTo2DRowMiddleBound(){
         assertEquals(chessBoard.sanTo2DRow("g6"), 2);
     }
 
     @Test
-    public void testSanTo2DRow3(){
+    public void testSanTo2DRowUpperBound(){
         assertEquals(chessBoard.sanTo2DRow("h8"), 0);
     }
 
     @Test
-    public void testSanTo2DRowOutOfBounds(){
+    public void testSanTo2DRowOutOfBoundsUpper(){
         assertEquals(chessBoard.sanTo2DRow("a9"), -1);
     }
 
     @Test
-    public void testSanTo2DRowOutOfBounds2(){
-        assertEquals(chessBoard.sanTo2DRow("a0"), -1);
-    }
+    public void testSanTo2DRowOutOfBoundsLower(){ assertEquals(chessBoard.sanTo2DRow("a0"), -1); }
 
     @Test
-    public void testSanTo2DRowOutOfBounds3(){
-        assertEquals(chessBoard.sanTo2DRow("h9"), -1);
-    }
-
-    @Test
-    public void testSanTo2DRowOutOfBounds4(){
-        assertEquals(chessBoard.sanTo2DRow("h0"), -1);
-    }
-
-    @Test
-    public void testSanTo2DCol(){
+    public void testSanTo2DColLowerBound(){
         assertEquals(chessBoard.sanTo2DCol("a1"), 0);
     }
 
     @Test
-    public void testSanTo2DCol2(){
+    public void testSanTo2DColMiddleBound(){
         assertEquals(chessBoard.sanTo2DCol("b3"), 1);
     }
 
     @Test
-    public void testSanTo2DCol3(){
+    public void testSanTo2DColMiddleBound2(){
         assertEquals(chessBoard.sanTo2DCol("e4"), 4);
     }
 
     @Test
-    public void testSanTo2DCol4(){
+    public void testSanTo2DColUpperBound(){
         assertEquals(chessBoard.sanTo2DCol("h4"), 7);
     }
 
     @Test
-    public void testSanTo2DColOutOfBounds(){
+    public void testSanTo2DColOutOfBoundsUpper(){
         assertEquals(chessBoard.sanTo2DCol("I1"), -1);
     }
 
     @Test
-    public void testSanTo2DColOutOfBounds2(){
+    public void testSanTo2DColOutOfBoundsLower(){
         assertEquals(chessBoard.sanTo2DCol("`1"), -1);
-    }
-
-    @Test
-    public void testSanTo2DColOutOfBounds3(){
-        assertEquals(chessBoard.sanTo2DCol("I8"), -1);
-    }
-
-    @Test
-    public void testSanTo2DColOutOfBounds4(){
-        assertEquals(chessBoard.sanTo2DCol("`8"), -1);
     }
 
 
@@ -165,11 +115,19 @@ public class LaboonChessTest extends GuiTest{
 //        this.clickOn(b);
 //        assertTrue(this.find("Undo Move menu item clicked").isVisible());
 //    }
-
-//    private void handleUndoMoveAction(ActionEvent event) {
-//        lblStatus.setText("Undo Move menu item clicked");
+//
+//    @Test
+//    public void testLoadGame()
+//    {
+//        final Node b =  this.find("#btnLoadGame");
+//        this.clickOn(b);
+//        assertTrue(this.find("Load Game clicked").isVisible());
 //    }
-//    private void handleSaveGameAction(ActionEvent event) {
-//        lblStatus.setText("Save Game clicked");
+//
+//    @Test
+//    public void testHandleSaveGameAction(){
+//        final Node b = this.find("#btnSaveGame");
+//        this.clickOn(b);
+//        assertTrue(this.find("Save Game clicked").isVisible());
 //    }
 }
