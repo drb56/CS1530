@@ -2,8 +2,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
-
-import entities.ChessBoard;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -16,16 +14,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import org.codehaus.groovy.runtime.powerassert.SourceText;
-import services.AlgebraicNotationConversion;
-import stockfish.Stockfish;
 import entities.ChessBoard;
+import stockfish.Stockfish;
 
 public class LaboonChessDocumentController implements Initializable {
 
@@ -33,43 +28,28 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
-    @FXML private GridPane guiChessboard;   /* reference to the guiChessboard */
 
-//    private char[][] chessboard;            /* 2D array reference of the chessboard (white=PNBRQK) (black=pnbrqk) */
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
     private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
     private ImageView guiChessPiece = null; /* holds first chess piece clicked on */
     private Pane guiChessSquare = null;     /* holds square from which first chess piece was clicked */
     private String san = null;              /* holds standard algebraic notation of first square and second square */
-    private Stockfish stockfish;
-    private ChessBoard chessboard;
+    private Stockfish stockfish;            /* chess API engine */
+    private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         /* start the Stockfish binary */
         stockfish = new Stockfish();
         if (stockfish.startEngine()) {
-            System.out.println("Engine has started..");
+            System.out.println("Stockfish engine started!");
         } else {
-            System.out.println("Oops! I did it again..");
+            System.out.println("Could not start Stockfish engine...");
         }
 
         chessboard = new ChessBoard();
-        /* build the chessboard */
-//        chessboard = new char[][]{
-//                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-//                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-//                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
-//        };
-
-        System.out.println(chessboard.toFEN());
-        System.out.println(AlgebraicNotationConversion.getTranslate(0,1));
+        System.out.println(chessboard.toFEN());     // DEBUG
     }
 
     @FXML
