@@ -40,16 +40,21 @@ public class LaboonChessDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /* start the Stockfish binary */
-        stockfish = new Stockfish();
-        if (stockfish.startEngine()) {
-            System.out.println("Stockfish engine started!");
-        } else {
-            System.out.println("Could not start Stockfish engine...");
-        }
+        try {
+            chessboard = new ChessBoard();              // create a new chessboard instance
+            System.out.println(chessboard.toFEN());     // DEBUG
 
-        chessboard = new ChessBoard();
-        System.out.println(chessboard.toFEN());     // DEBUG
+            /* start the Stockfish binary */
+            stockfish = new Stockfish();
+            if (stockfish.startEngine()) {
+                System.out.println("Stockfish engine started!");
+            } else {
+                throw new RuntimeException("Could not start Stockfish engine...");
+            }
+
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
