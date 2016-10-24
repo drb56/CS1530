@@ -74,7 +74,7 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleAboutAction(ActionEvent event) throws IOException {
-        lblStatus.setText("About menu item clicked");
+        lblStatus.setText("About menu item clicked");           // DEBUG
 
         // pause the game timer (if it has been started)
         if (gameTimer != null) { gameTimer.pause(); }
@@ -123,7 +123,7 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
-        lblStatus.setText("Load Game clicked");
+        lblStatus.setText("Load Game clicked");                 // DEBUG
     }
 
 
@@ -136,7 +136,7 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleNewGameAction(ActionEvent event) {
-        lblStatus.setText("New game menu item clicked");
+        lblStatus.setText("New game menu item clicked");        // DEBUG
 
         // start or reset the game timer
         timer_count = 0;
@@ -166,7 +166,7 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
-        lblStatus.setText("Save Game clicked");
+        lblStatus.setText("Save Game clicked");                 // DEBUG
     }
 
 
@@ -180,8 +180,9 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
-        lblStatus.setText("Undo Move menu item clicked");
+        lblStatus.setText("Undo Move menu item clicked");       // DEBUG
     }
+
 
     /**
      *  Handles the logic for when a user "plays" on the GUI chessboard. All "plays" are done by
