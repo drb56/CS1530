@@ -199,7 +199,7 @@ public class LaboonChessDocumentController implements Initializable {
                     != guiChessPiece.getId().matches("[a-z]")) {
                 /* OPPONENT PIECE EXISTS HERE */
 
-                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
+                    san = guiChessSquare.getId() + curSquare.getId();   // get the move in terms of SAN (e.g. e3d6)
 
                     curSquare.getChildren().remove(0);                  // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);      // insert the first-click piece onto this square
@@ -207,38 +207,9 @@ public class LaboonChessDocumentController implements Initializable {
             }
             // finished with second-click
             isFirstClick = true;                                        // back to start
-            guiChessPiece.setOpacity(1);        // opacity set back to show finished
-
-
+            guiChessPiece.setOpacity(1);                                // opacity set back to show finished
 
             System.out.println(chessboard.toFEN());
         }
     }
-//    public Pane getNodeByRowColumnIndex(final int row, final int column, GridPane gridPane) {
-//        Pane result = null;
-//        ObservableList<Node> children = gridPane.getChildren();
-//
-//        for (Node node : children) {
-//            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
-//                result = (Pane) node;
-//                break;
-//            }
-//        }
-//
-//        return result;
-//    }
-
-    public static String sanToFenstring(String coordinates){
-        return coordinates;
-    }
-//    public static boolean isLegalMove(String san){
-//        if(stockfish.isLegalMove(san)){
-//            return true;
-//        }
-//        else{
-//            return false;
-//        }
-//
-//    }
-
 }
