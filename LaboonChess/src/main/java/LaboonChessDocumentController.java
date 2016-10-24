@@ -2,8 +2,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
-
-import entities.ChessBoard;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -16,16 +14,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import org.codehaus.groovy.runtime.powerassert.SourceText;
-import services.AlgebraicNotationConversion;
-import stockfish.Stockfish;
 import entities.ChessBoard;
+import stockfish.Stockfish;
 
 public class LaboonChessDocumentController implements Initializable {
 
@@ -33,57 +28,65 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
-    @FXML private GridPane guiChessboard;   /* reference to the guiChessboard */
 
-//    private char[][] chessboard;            /* 2D array reference of the chessboard (white=PNBRQK) (black=pnbrqk) */
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
     private boolean isFirstClick = true;    /* determines if this is to be considered the "first" or "second" chess board click */
     private ImageView guiChessPiece = null; /* holds first chess piece clicked on */
     private Pane guiChessSquare = null;     /* holds square from which first chess piece was clicked */
     private String san = null;              /* holds standard algebraic notation of first square and second square */
-    private Stockfish stockfish;
-    private ChessBoard chessboard;
+    private Stockfish stockfish;            /* chess API engine */
+    private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
 
+
+    /**
+     * First-running method that builds the objects and dependencies needed to run the program. Here,
+     *      the ChessBoard object is initialized and the Stockfish binary is loaded.
+     *
+     * TODO: Determine how to make Stockfish run in all environments (WIN, MAC, LINUX)
+     *
+     * @param url The location of the default fxml document for the program.
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /* start the Stockfish binary */
-        stockfish = new Stockfish();
-        if (stockfish.startEngine()) {
-            System.out.println("Engine has started..");
-        } else {
-            System.out.println("Oops! I did it again..");
+        try {
+            chessboard = new ChessBoard();              // create a new chessboard instance
+            System.out.println(chessboard.toFEN());     // DEBUG
+
+            /* Start the Stockfish binary */
+            stockfish = new Stockfish();
+            if (stockfish.startEngine()) {
+                System.out.println("Stockfish engine started!");
+            } else {
+                throw new RuntimeException("Could not start Stockfish engine...");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
         }
-
-        chessboard = new ChessBoard();
-        /* build the chessboard */
-//        chessboard = new char[][]{
-//                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-//                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 0, 0, 0, 0, 0, 0, 0, 0 },
-//                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-//                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
-//        };
-
-        System.out.println(chessboard.toFEN());
-        System.out.println(AlgebraicNotationConversion.getTranslate(0,1));
     }
 
+
+    /**
+     * Opens the "About" modal dialog window.
+     *
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
     @FXML
     private void handleAboutAction(ActionEvent event) throws IOException {
-        lblStatus.setText("About menu item clicked");
+        lblStatus.setText("About menu item clicked");           // DEBUG
 
-        // pause the game timer
+        // pause the game timer (if it has been started)
         if (gameTimer != null) { gameTimer.pause(); }
+
+        /* Determine the screen location to place the "About" dialog window */
         double x, y, length, width;
         x = mnuMain.getScene().getWindow().getX();
         y = mnuMain.getScene().getWindow().getY();
         length = mnuMain.getScene().getWindow().getHeight();
         width = mnuMain.getScene().getWindow().getWidth();
 
+        /* Build the "About" modal dialog window */
         Stage aboutDialog;
         aboutDialog = new Stage();
         aboutDialog.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxml/AboutDialog.fxml"))));
@@ -99,19 +102,41 @@ public class LaboonChessDocumentController implements Initializable {
         if (gameTimer != null) { gameTimer.play(); }
     }
 
+
+    /**
+     * Gracefully exits the program.
+     *
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
     @FXML
     private void handleExitAction(ActionEvent event) {
         Platform.exit();
     }
 
+
+    /**
+     * Opens a dialog to choose a saved-game in Portable Game Notation (PGN) format.
+     *
+     * TODO: Write the entire logic needed to Load an already-saved chess game in PGN format.
+     *
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
-        lblStatus.setText("Load Game clicked");
+        lblStatus.setText("Load Game clicked");                 // DEBUG
     }
 
+
+    /**
+     * Resets the chessboard to the starting layout, and also resets the timer.
+     *
+     * TODO: Reset the chess pieces on the GUI and also reset the ChessBoard object.
+     *
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
     @FXML
     private void handleNewGameAction(ActionEvent event) {
-        lblStatus.setText("New game menu item clicked");
+        lblStatus.setText("New game menu item clicked");        // DEBUG
 
         // start or reset the game timer
         timer_count = 0;
@@ -131,15 +156,33 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+
+    /**
+     * Opens a dialog to save the current game in Portable Game Notation (PGN) format.
+     *
+     * TODO: Write the entire logic needed to Save the chess game in PGN format.
+     *
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
-        lblStatus.setText("Save Game clicked");
+        lblStatus.setText("Save Game clicked");                 // DEBUG
     }
 
+
+    /**
+     * Using a log of FEN moves, will undo the last move and revert
+     *      the chessboard back to its previous state.
+     *
+     * TODO: Write the entire logic needed to Undo a chess move.
+     *
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
-        lblStatus.setText("Undo Move menu item clicked");
+        lblStatus.setText("Undo Move menu item clicked");       // DEBUG
     }
+
 
     /**
      *  Handles the logic for when a user "plays" on the GUI chessboard. All "plays" are done by
@@ -153,65 +196,61 @@ public class LaboonChessDocumentController implements Initializable {
      *              - If a piece exists, store it and wait for "Second Click".
      *
      *          2. "Second Click"
-     *              - Determine if this second click location is a VALID chess move.
-     *                  - Based off the "First Click" and what type of chess piece.
-     *              - If valid, move the chess piece from the "First Click".
-     *                  location to the "Second Click" location on the chess board.
+     *              - Determine if this second click location is a VALID chess move
+     *                  (based off the "First Click" and what type of chess piece)
+     *              - If valid, move the chess piece from the "First Click" location
+     *                  to the "Second Click" location on the chess board.
      *
-     * @param event The mouseclick event. Holds the GUI object that was clicked.
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
     @FXML void handleChessboardClickAction(MouseEvent event) {
-        Pane curSquare = (Pane) event.getSource();                              // get the source chess square that was clicked
-
-        /*
-            If this is the "first click", then we need to get
-                the chess piece here and wait for a second click.
-
-            If this is the "second click", then we need to place
-                the previously-obtained chess piece here (if possible).
-        */
+        Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
 
         if (isFirstClick) {
+            /* FIRST-CLICK */
+
             if (curSquare.getChildren().isEmpty()) {
                 /* DO NOTHING: no chess piece here */
-                isFirstClick = true;                                            // reset
+                isFirstClick = true;                                        // reset
 
             } else {
                 /* FIRST-CLICK: set up for the second click */
-                guiChessSquare = curSquare;                                     // hold reference to this square
-                guiChessPiece = (ImageView) curSquare.getChildren().get(0);     // hold reference to this piece
-                guiChessPiece.setOpacity(.6);                                   // set opacity to make it look "selected"
-                isFirstClick = false;                                           // now wait for second-click
+                guiChessSquare = curSquare;                                 // hold reference to this square
+                guiChessPiece = (ImageView) curSquare.getChildren().get(0); // hold reference to this piece
+                guiChessPiece.setOpacity(.6);                               // set opacity to make it look "selected"
+                isFirstClick = false;                                       // now wait for second-click
             }
         } else {
             /* SECOND-CLICK */
-            String fromSquare = guiChessSquare.getId();
-            String toSquare = curSquare.getId();
+            String fromSquare = guiChessSquare.getId();                     // get the "first-click" chess square
+            String toSquare = curSquare.getId();                            // get the "second-click" chess square
+
             if (chessboard.move(fromSquare, toSquare)) {
-                // see if we can place the chess piece from the
-                //      first click at this square on the board.
+                /*
+                    See if we can place the chess piece from the
+                    first click at this square on the board.
+                */
                 if (curSquare.getChildren().isEmpty()) {
-                    /* EMPTY SQUARE */
+                    /* EMPTY SQUARE HERE */
 
                     curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
                     san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
                 } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                         != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
-
                     /* OPPONENT PIECE EXISTS HERE */
 
-                    san = guiChessSquare.getId() + curSquare.getId();   // get the move in terms of SAN (e.g. e3d6)
+                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
-                    curSquare.getChildren().remove(0);                  // remove the current chess piece
-                    curSquare.getChildren().add(0, guiChessPiece);      // insert the first-click piece onto this square
+                    curSquare.getChildren().remove(0);                      // remove the current chess piece
+                    curSquare.getChildren().add(0, guiChessPiece);          // insert the first-click piece onto this square
                 }
             }
             // finished with second-click
-            isFirstClick = true;                                        // back to start
-            guiChessPiece.setOpacity(1);                                // opacity set back to show finished
+            isFirstClick = true;                        // back to start (wait for a "first-click" again)
+            guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
-            System.out.println(chessboard.toFEN());                     // DEBUG
+            System.out.println(chessboard.toFEN());     // DEBUG
         }
     }
 }
