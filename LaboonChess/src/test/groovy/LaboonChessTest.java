@@ -150,4 +150,30 @@ public class LaboonChessTest extends GuiTest{
     public void testSanTo2DColOutOfBoundsLower(){
         assertEquals(chessBoard.sanTo2DCol("`1"), -1);
     }
+
+    /**
+     * Tests that when the user inputs an illegal move isLegal() method returns false
+     */
+    @Test
+    public void testIsLegalReturnsFalse() {
+        assertEquals(chessBoard.isLegal("b2", "c2"), false);
+    }
+
+    /**
+     * Tests that when the user inputs a legal move it returns true
+     * This test in particular will move b2->b3
+     */
+    @Test
+    public void testIsLegalPawnMoveOne() {
+        assertEquals(chessBoard.isLegal("b2", "b3"), true);
+    }
+
+    /**
+     * Tests that when the user inputs a legal move it returns true
+     * This test in particular will move b2->b4
+     */
+    @Test
+    public void testIsLegalPawnMoveTwo() {
+        assertEquals(chessBoard.isLegal("b2", "b4"), true);
+    }
 }

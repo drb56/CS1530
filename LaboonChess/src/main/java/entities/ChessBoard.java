@@ -218,8 +218,20 @@ public class ChessBoard {
             }
         }
 
-        char[] fenBoardArray = fenBoard.toCharArray();
-        fenBoard = "";
+        fenBoard = generateFEN(fenBoard.toCharArray());
+        fenBoard = fenBoard + " " + turn();
+        return fenBoard;
+    }
+
+    /**
+     * This method will take in an array which represents the board state and correctly format it
+     *      into a FEN string.
+     *
+     * @param fenBoardArray - Array of a String which represents a board, will give a FEN string
+     * @return Correctly formatted FEN String
+     */
+    private String generateFEN(char[] fenBoardArray){
+        String fenBoard = "";
         int onesNumber = 0;
 
         for (int i=0; i<fenBoardArray.length; i++) {
@@ -238,14 +250,21 @@ public class ChessBoard {
                 onesNumber = 0;
             }
         }
-        if (turn == 0) {
-            fenBoard = fenBoard + " w";
-        } else {
-            fenBoard = fenBoard + " b";
-        }
+
         return fenBoard;
     }
 
+    /**
+     Returns whose turn it is
+     @Return: char 'w' if whites turn, 'b' if blacks turn
+     */
+    private char turn(){
+        if (turn == 0) {
+            return 'w';
+        } else {
+            return 'b';
+        }
+    }
 
     /**
      * Pretty-prints the current state of the 2D chessboard array.
