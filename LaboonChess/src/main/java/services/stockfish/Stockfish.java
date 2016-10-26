@@ -1,4 +1,4 @@
-package stockfish;
+package services.stockfish;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,10 +17,10 @@ public class Stockfish {
 	private BufferedReader processReader;
 	private OutputStreamWriter processWriter;
 
-//	/Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/java/stockfish/stockfish
+//	/Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/java/services.stockfish/services.stockfish
 
-	private static final String MAC_PATH = "../CS1530/LaboonChess/src/main/java/stockfish/stockfish-7-64-bmi2";
-	private static final String WIN_PATH = "\\\\CS1530\\LaboonChess\\src\\main\\java\\stockfish\\stockfish-win-bimi2.exe";
+	private static final String MAC_PATH = "../CS1530/LaboonChess/src/main/java/services/stockfish/stockfish-7-64-bmi2";
+	private static final String WIN_PATH = "\\\\CS1530\\LaboonChess\\src\\main\\java\\services\\stockfish\\stockfish-win-bimi2.exe";
 	/**
 	 * Starts Stockfish engine as a process and initializes it
 	 * 

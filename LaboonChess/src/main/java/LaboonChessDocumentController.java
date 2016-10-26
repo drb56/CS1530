@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import entities.ChessBoard;
-import stockfish.Stockfish;
+import services.stockfish.Stockfish;
 
 public class LaboonChessDocumentController implements Initializable {
 

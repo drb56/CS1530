@@ -1,4 +1,4 @@
-package stockfish;
+package services.stockfish;
 
 public class StockfishTest {
 	public static void main(String[] args) {
