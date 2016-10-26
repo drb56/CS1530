@@ -30,6 +30,9 @@ public class LaboonChessTest extends GuiTest{
         return parent;
     }
 
+    /**
+     * Creates a new chessboard object for the rest of the tests to use.
+     */
     @Before
     public void beforeTests(){
         chessBoard = new ChessBoard();
@@ -38,96 +41,113 @@ public class LaboonChessTest extends GuiTest{
     @Test
     public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w"); }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper row. "1" is the 7th row of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
-    //
     public void testSanTo2DRowLowerBound () { assertEquals(chessBoard.sanTo2DRow("a1"), 7); }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper row. "6" is the 2nd row of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DRowMiddleBound(){
         assertEquals(chessBoard.sanTo2DRow("g6"), 2);
     }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper row. "8" is the 0th row of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DRowUpperBound(){
         assertEquals(chessBoard.sanTo2DRow("h8"), 0);
     }
 
+    /**
+     * Tests invalid input (algebraic notation) returns -1 to catch invalid input. "9" is not a valid row
+     * for the chessboard.
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DRowOutOfBoundsUpper(){
         assertEquals(chessBoard.sanTo2DRow("a9"), -1);
     }
 
+    /**
+     * Tests invalid input (algebraic notation) returns -1 to catch invalid input. "0" is not a valid row
+     * for the chessboard.
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DRowOutOfBoundsLower(){ assertEquals(chessBoard.sanTo2DRow("a0"), -1); }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper column. "a" is the 0th column of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DColLowerBound(){
         assertEquals(chessBoard.sanTo2DCol("a1"), 0);
     }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper column. "b" is the 1st column of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DColMiddleBound(){
         assertEquals(chessBoard.sanTo2DCol("b3"), 1);
     }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper column. "e" is the 4th column of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DColMiddleBound2(){
         assertEquals(chessBoard.sanTo2DCol("e4"), 4);
     }
 
+    /**
+     * Tests valid input (algebraic notation) returns the proper column. "h" is the 7th column of a chessboard
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DColUpperBound(){
         assertEquals(chessBoard.sanTo2DCol("h4"), 7);
     }
 
+    /**
+     * Tests invalid input (algebraic notation) and returns -1 to catch invalid input. "I" is not a
+     * valid column for the chessboard.
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DColOutOfBoundsUpper(){
         assertEquals(chessBoard.sanTo2DCol("I1"), -1);
     }
 
+    /**
+     * Tests invalid input (algebraic notation) and returns -1 to catch invalid input. "`" is not a
+     * valid column for the chessboard.
+     * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
+     * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
+     */
     @Test
     public void testSanTo2DColOutOfBoundsLower(){
         assertEquals(chessBoard.sanTo2DCol("`1"), -1);
     }
-
-
-//    @Test
-//    public void testGetTranslate(){
-//        assertEquals(AlgebraicNotationConversion.getTranslate(0,1), "a7");
-//    }
-//    @Test
-//    public void testReverseTranslate(){
-//        Square sq = AlgebraicNotationConversion.reverseTranslate("a7");
-//        assertEquals(sq.column, 0);
-//        assertEquals(sq.row, 1);
-//    }
-//    @Test
-//    public void testReverseTranslate2(){
-//        Square sq = AlgebraicNotationConversion.reverseTranslate("H8");
-//        assertEquals(sq.column, 7);
-//        assertEquals(sq.row, 0);
-//    }
-//    @Test
-//    public void testHandleUndoMoveAction(){
-//        Node a = this.find("#btnSaveGame");
-//        this.clickOn(a);
-//        final Node b = this.find("#mnuUndoMove");
-//        this.clickOn(b);
-//        assertTrue(this.find("Undo Move menu item clicked").isVisible());
-//    }
-//
-//    @Test
-//    public void testLoadGame()
-//    {
-//        final Node b =  this.find("#btnLoadGame");
-//        this.clickOn(b);
-//        assertTrue(this.find("Load Game clicked").isVisible());
-//    }
-//
-//    @Test
-//    public void testHandleSaveGameAction(){
-//        final Node b = this.find("#btnSaveGame");
-//        this.clickOn(b);
-//        assertTrue(this.find("Save Game clicked").isVisible());
-//    }
 }
