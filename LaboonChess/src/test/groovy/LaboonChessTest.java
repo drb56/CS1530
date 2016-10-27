@@ -38,6 +38,9 @@ public class LaboonChessTest extends GuiTest{
         chessBoard = new ChessBoard();
     }
 
+    /**
+     * Tests that when the game starts, the correct Fen string is created.
+     */
     @Test
     public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w"); }
 
