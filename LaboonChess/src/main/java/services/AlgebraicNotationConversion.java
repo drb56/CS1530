@@ -36,9 +36,6 @@ public class AlgebraicNotationConversion {
             }
 
         }
-        //System.out.println("first coordinate is: " + firstCoordinate);//97
-        //System.out.println("second coordinate is: " + secondCoordinate);//55
-        // if a7 return 0,1
         return new Square(firstCoordinate, secondCoordinate);
         //return new Square(1,0);//can use .row or .column
 
