@@ -213,6 +213,11 @@ public class LaboonChessDocumentController implements Initializable {
                 /* DO NOTHING: no chess piece here */
                 isFirstClick = true;                                        // reset
 
+            } else if ((chessboard.turn() == 'w' && ((ImageView)curSquare.getChildren().get(0)).getId().matches("[a-z]"))
+                    || (chessboard.turn() == 'b' && ((ImageView)curSquare.getChildren().get(0)).getId().matches("[A-Z]"))) {
+                /* DO NOTHING: user clicked on the opposing team's chess piece */
+                isFirstClick = true;
+
             } else {
                 /* FIRST-CLICK: set up for the second click */
                 guiChessSquare = curSquare;                                 // hold reference to this square
@@ -245,12 +250,19 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().remove(0);                      // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);          // insert the first-click piece onto this square
                 }
-            }
-            // finished with second-click
-            isFirstClick = true;                        // back to start (wait for a "first-click" again)
-            guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
-            System.out.println(chessboard.toFEN());     // DEBUG
+                // finished with second-click
+                isFirstClick = true;                        // back to start (wait for a "first-click" again)
+                guiChessPiece.setOpacity(1);                // opacity set back to show finished
+
+                System.out.println(chessboard.toFEN());     // DEBUG
+
+            } else if (guiChessSquare.equals(curSquare)) {
+                /* USER CLICKED ON CURRENTLY HIGHLIGHTED PIECE */
+
+                isFirstClick = true;                        // back to start
+                guiChessPiece.setOpacity(1);                // Unhighlight the currently highlighted piece
+            }
         }
     }
 }
