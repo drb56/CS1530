@@ -55,15 +55,13 @@ public class ChessBoard {
             moves = MoveGenerator.getInstance().generateLegalMoves(board);
             String actualMove = sanFrom + sanTo;
 
-            for (Move move : moves) {
-                System.out.println(move.toString() + " " + actualMove);
-                if (move.toString().equals(actualMove)) {
-                    return true;
-                }
+            // performs lazy matching to see if the actualMove
+            //      is contained within the list of legal moves
+            if (moves.toString().contains(actualMove)) {
+                return true;
+            } else {
+                return false;
             }
-
-            return false;
-
         } catch (MoveGeneratorException e) {
             e.printStackTrace();
         }
