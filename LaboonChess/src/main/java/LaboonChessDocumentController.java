@@ -222,7 +222,7 @@ public class LaboonChessDocumentController implements Initializable {
                 /* FIRST-CLICK: set up for the second click */
                 guiChessSquare = curSquare;                                 // hold reference to this square
                 guiChessPiece = (ImageView) curSquare.getChildren().get(0); // hold reference to this piece
-                guiChessPiece.setOpacity(.6);                               // set opacity to make it look "selected"
+                guiChessPiece.setOpacity(.5);                               // set opacity to make it look "selected"
                 isFirstClick = false;                                       // now wait for second-click
             }
         } else {
@@ -230,7 +230,13 @@ public class LaboonChessDocumentController implements Initializable {
             String fromSquare = guiChessSquare.getId();                     // get the "first-click" chess square
             String toSquare = curSquare.getId();                            // get the "second-click" chess square
 
-            if (chessboard.move(fromSquare, toSquare)) {
+            if (guiChessSquare.equals(curSquare)) {
+                /* USER CLICKED ON THEIR CURRENTLY HIGHLIGHTED PIECE */
+
+                guiChessPiece.setOpacity(1);                // Unhighlight the currently highlighted piece
+                isFirstClick = true;                        // back to start
+
+            } else if (chessboard.move(fromSquare, toSquare)) {
                 /*
                     See if we can place the chess piece from the
                     first click at this square on the board.
@@ -256,12 +262,6 @@ public class LaboonChessDocumentController implements Initializable {
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
                 System.out.println(chessboard.toFEN());     // DEBUG
-
-            } else if (guiChessSquare.equals(curSquare)) {
-                /* USER CLICKED ON CURRENTLY HIGHLIGHTED PIECE */
-
-                isFirstClick = true;                        // back to start
-                guiChessPiece.setOpacity(1);                // Unhighlight the currently highlighted piece
             }
         }
     }
