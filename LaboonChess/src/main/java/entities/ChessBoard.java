@@ -253,8 +253,8 @@ public class ChessBoard {
     }
 
     /**
-     Returns whose turn it is
-     @Return: char 'w' if whites turn, 'b' if blacks turn
+     *Returns whose turn it is
+     *@Return: char 'w' if whites turn, 'b' if blacks turn
      */
     public char turn(){
         if (turn == 0) {
