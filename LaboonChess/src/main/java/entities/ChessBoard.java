@@ -11,7 +11,8 @@ public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
     private String lastFen;         /* holds the last FEN string representing the 2D chessboard array */
     private int turn;               /* holds which team is to go next (0=white 1=black) */
-
+    private boolean hasWhiteKingBeenMoved = false;
+    private boolean hasBlackKingBeenMoved = false;
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
      *      layout, the Turn is set to White, and the FEN string is the representation
@@ -80,6 +81,9 @@ public class ChessBoard {
      * @return True if the move was valid; otherwise False.
      */
     public boolean move(String sanFrom, String sanTo) {
+        checkIfKingMoved();
+        System.out.println("hasBlackKingMoved = " + hasBlackKingBeenMoved);
+        System.out.println("hasWhiteKingMoved = " + hasWhiteKingBeenMoved);
         if (!isLegal(sanFrom, sanTo)) {             //returns false if isn't a legal move
             System.out.println("ILLEGAL MOVE");
             return false;
@@ -229,6 +233,38 @@ public class ChessBoard {
      * @return Correctly formatted FEN String
      */
     private String generateFEN(char[] fenBoardArray){
+        String boardFen = generateBoardFen(fenBoardArray);
+
+        System.out.println("the boardfen is fucking " + boardFen);
+        System.out.println("looking for black king(k) = " + chessboard[0][4]);
+        System.out.println("looking for white king(K) = " + chessboard[7][4]);
+//        String castling = generateCastleFen(fenBoardArray);
+//        String halfMove = generateHalfMoveFen(fenBoardArray);
+
+//        String fenBoard = "";
+//        int onesNumber = 0;
+//
+//        for (int i=0; i<fenBoardArray.length; i++) {
+//            if (fenBoardArray[i] == '0') {
+//                onesNumber++;
+//
+//                if (i == fenBoardArray.length-1) {
+//                    fenBoard = fenBoard + onesNumber;
+//                }
+//
+//            } else {
+//                if (onesNumber > 0) {
+//                    fenBoard = fenBoard + onesNumber;
+//                }
+//                fenBoard = fenBoard + fenBoardArray[i];
+//                onesNumber = 0;
+//            }
+//        }
+//
+        return boardFen;
+    }
+
+    private String generateBoardFen(char[] fenBoardArray){
         String fenBoard = "";
         int onesNumber = 0;
 
@@ -248,10 +284,14 @@ public class ChessBoard {
                 onesNumber = 0;
             }
         }
-
+        //System.out.println("the mfer fenboard is " + fenBoard);
         return fenBoard;
     }
 
+//    private String generateCastleFen(char[] fenBoardArray){
+//
+//        return fenBoardArray;
+//    }
     /**
      *Returns whose turn it is
      *@Return: char 'w' if whites turn, 'b' if blacks turn
@@ -283,5 +323,14 @@ public class ChessBoard {
             System.out.println(String.format("%d", boardnum--));
         }
         System.out.println("   A   B   C   D   E   F   G   H ");
+    }
+
+    private void checkIfKingMoved(){
+        if (chessboard[0][4] != 'k') {
+            hasBlackKingBeenMoved = true;
+        }
+        if (chessboard[7][4] != 'K'){
+            hasWhiteKingBeenMoved = true;
+        }
     }
 }
