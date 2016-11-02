@@ -179,4 +179,12 @@ public class LaboonChessTest extends GuiTest{
     public void testIsLegalPawnMoveTwo() {
         assertEquals(chessBoard.isLegal("b2", "b4"), true);
     }
+
+    /**
+     * Tests that the reverse of the original board is as it should be
+     */
+    @Test
+    public void testReverseFEN() {
+        assertEquals(chessBoard.reverseFEN(), "RNBKQBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbkqbnr");
+    }
 }
