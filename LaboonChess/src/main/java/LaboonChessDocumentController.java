@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -28,6 +29,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
+    @FXML private GridPane guiChessboard;   /* Chessboard gui, for interacting with chess pieces */
 
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
@@ -37,6 +39,7 @@ public class LaboonChessDocumentController implements Initializable {
     private String san = null;              /* holds standard algebraic notation of first square and second square */
     private Stockfish stockfish;            /* chess API engine */
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
+    private boolean playerIsWhite = false;   /* determines whether player is white or black */
 
 
     /**
@@ -58,6 +61,8 @@ public class LaboonChessDocumentController implements Initializable {
             stockfish = new Stockfish();
             if (stockfish.startEngine()) {
                 System.out.println("Stockfish engine started!");
+                // send commands manually
+
             } else {
                 throw new RuntimeException("Could not start Stockfish engine...");
             }
@@ -66,6 +71,38 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+    /**
+     * Move the chess piece using stock fish
+     *
+     * @param fen fen string
+     * @param timeWait time for waiting, longer = more difficult
+     */
+    public void moveStockFish(String fen, int timeWait) {
+        stockfish.sendCommand("");
+        // receive output dump
+        System.out.println(stockfish.getOutput(0));
+        String move = stockfish.getBestMove(fen, timeWait);
+        String fromSquareStr = move.substring(0, 2);
+        String toSquareStr = move.substring(2, 4);
+
+        if (chessboard.move(fromSquareStr, toSquareStr)) {
+            Pane fromSquare = getChessSquare(fromSquareStr);
+            Pane toSquare = getChessSquare(toSquareStr);
+
+            guiChessPiece = (ImageView) fromSquare.getChildren().get(0); // hold reference to this piece
+            fromSquare.getChildren().remove(0);                          // remove the chess piece in original square
+            toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
+        }
+    }
+
+    /**
+     *  Gets the square given algebraic coordinate from fxml board
+     *
+     *  @param coordinate Algebraic coordinate string that correlates with the pane
+     */
+    public Pane getChessSquare(String coordinate) {
+        return (Pane) guiChessboard.getScene().lookup("#"+coordinate);
+    }
 
     /**
      * Opens the "About" modal dialog window.
@@ -154,6 +191,10 @@ public class LaboonChessDocumentController implements Initializable {
         } else { // reset
             timer_count = 0;
         }
+        if(!playerIsWhite) {
+            moveStockFish("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", 100);
+        }
+
     }
 
 
@@ -205,7 +246,6 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML void handleChessboardClickAction(MouseEvent event) {
         Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
-
         if (isFirstClick) {
             /* FIRST-CLICK */
 
@@ -216,6 +256,10 @@ public class LaboonChessDocumentController implements Initializable {
             } else if ((chessboard.turn() == 'w' && ((ImageView)curSquare.getChildren().get(0)).getId().matches("[a-z]"))
                     || (chessboard.turn() == 'b' && ((ImageView)curSquare.getChildren().get(0)).getId().matches("[A-Z]"))) {
                 /* DO NOTHING: user clicked on the opposing team's chess piece */
+                isFirstClick = true;
+
+            } else if ((chessboard.turn() == 'w' && !playerIsWhite) || (chessboard.turn() == 'b' && playerIsWhite)) {
+                /* DO NOTHING: not player's designated turn */
                 isFirstClick = true;
 
             } else {
@@ -261,7 +305,8 @@ public class LaboonChessDocumentController implements Initializable {
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
-                System.out.println(chessboard.toFEN());     // DEBUG
+                moveStockFish(chessboard.toFEN(), 100);
+                // System.out.println("FEN: " + chessboard.toFEN());     // DEBUG
             }
         }
     }
