@@ -238,7 +238,7 @@ public class ChessBoard {
         System.out.println("the boardfen is fucking " + boardFen);
         System.out.println("looking for black king(k) = " + chessboard[0][4]);
         System.out.println("looking for white king(K) = " + chessboard[7][4]);
-//        String castling = generateCastleFen(fenBoardArray);
+        String castling = generateCastleFen(fenBoardArray);
 //        String halfMove = generateHalfMoveFen(fenBoardArray);
 
 //        String fenBoard = "";
@@ -260,8 +260,8 @@ public class ChessBoard {
 //                onesNumber = 0;
 //            }
 //        }
-//
-        return boardFen;
+        //String turn = "" + turn();
+        return boardFen + castling;
     }
 
     private String generateBoardFen(char[] fenBoardArray){
@@ -288,10 +288,12 @@ public class ChessBoard {
         return fenBoard;
     }
 
-//    private String generateCastleFen(char[] fenBoardArray){
-//
-//        return fenBoardArray;
-//    }
+    private String generateCastleFen(char[] fenBoardArray){
+        if(hasBlackKingBeenMoved && hasWhiteKingBeenMoved){
+            return " -";
+        }
+        return "";
+    }
     /**
      *Returns whose turn it is
      *@Return: char 'w' if whites turn, 'b' if blacks turn
