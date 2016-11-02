@@ -71,6 +71,10 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+    public void movePiece(Pane fromSquare, Pane toSquare) {
+
+    }
+
     /**
      * Move the chess piece using stock fish
      *
@@ -85,12 +89,21 @@ public class LaboonChessDocumentController implements Initializable {
         String fromSquareStr = move.substring(0, 2);
         String toSquareStr = move.substring(2, 4);
 
+        System.out.println("AI moving from: " + fromSquareStr);
+        System.out.println("To: " + toSquareStr);
         if (chessboard.move(fromSquareStr, toSquareStr)) {
+
             Pane fromSquare = getChessSquare(fromSquareStr);
             Pane toSquare = getChessSquare(toSquareStr);
 
+            // Empty square
             guiChessPiece = (ImageView) fromSquare.getChildren().get(0); // hold reference to this piece
             fromSquare.getChildren().remove(0);                          // remove the chess piece in original square
+
+            if (!toSquare.getChildren().isEmpty()) {
+                toSquare.getChildren().remove(0);
+            }
+
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
         }
     }
