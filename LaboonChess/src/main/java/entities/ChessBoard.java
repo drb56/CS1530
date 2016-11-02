@@ -44,7 +44,6 @@ public class ChessBoard {
         lastFen = fen;
     }
 
-
     /**
      * Determines if a chess move is a valid/legal move, given a
      *      starting and ending chess square in SAN notation (e.g. "a1")

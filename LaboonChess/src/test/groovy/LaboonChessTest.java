@@ -16,6 +16,7 @@ import static org.loadui.testfx.Assertions.verifyThat;
 
 public class LaboonChessTest extends GuiTest{
     private ChessBoard chessBoard;
+    private ChessBoard chessBoard2;
     public Parent getRootNode()
     {
         Parent parent = null;
@@ -36,6 +37,7 @@ public class LaboonChessTest extends GuiTest{
     @Before
     public void beforeTests(){
         chessBoard = new ChessBoard();
+        chessBoard2 = new ChessBoard("r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w");
     }
 
     /**
