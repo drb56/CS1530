@@ -70,13 +70,11 @@ public class ChessBoard {
                     int numEmptySpaces = Integer.parseInt(Character.toString(row[j]));
                     for(int k=0; k<numEmptySpaces; k++) {
                         chessboard[i][rowNum] = 0;
-                        System.out.println("Adding: " + 0);
                         rowNum++;
                     }
                 }
                 else {
                     chessboard[i][rowNum] = row[j];
-                    System.out.println("Adding: " + row[j]);
                     rowNum++;
                 }
             }
