@@ -49,6 +49,7 @@ public class ChessBoard {
         lastFen = fen;
         String[] fenArray = fen.split(" ");
         String[] fenBeginning = fenArray[0].split("/");
+        boardFen = fenArray[0];
         if(fenArray[1].equals("w")) {
             turn = 0;
         }
@@ -59,6 +60,11 @@ public class ChessBoard {
         populateBoard(fenBeginning);
     }
 
+    /**
+     * physically populates the chessboard with the values that should be there
+     *
+     * @param fen array of each row in the board
+     */
     private void populateBoard(String[] fen) {
         int rowNum;
         for(int i=0; i<fen.length; i++) {
@@ -81,6 +87,12 @@ public class ChessBoard {
         }
     }
 
+    /**
+     * checking if the current character can be parsed into an int or not
+     *
+     * @param value the value to be parsed
+     * @return true if it can be parsed, false otherwise
+     */
     private boolean tryParseInt(String value) {
         try {
             Integer.parseInt(value);
