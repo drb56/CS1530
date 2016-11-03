@@ -189,4 +189,20 @@ public class LaboonChessTest extends GuiTest{
     public void testReverseFEN() {
         assertEquals(chessBoard.reverseFEN(), "RNBKQBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbkqbnr");
     }
+
+    /**
+     * Tests that the reverse of a complicated board is as it should be
+     */
+    @Test
+    public void testReverseFENComplicatedBoard() {
+        assertEquals(chessBoard2.reverseFEN(), "R1BKQ1NR/PPPP2PP/2N1PP2/2B5/8/npp4n/p2ppppp/r1bkqb1r");
+    }
+
+    /**
+     * Tests that the creation of a ChessBoard object creates the correct chessboard
+     */
+    @Test
+    public void testChessBoardGivenFEN() {
+        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w");
+    }
 }

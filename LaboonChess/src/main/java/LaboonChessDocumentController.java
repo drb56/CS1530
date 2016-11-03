@@ -262,7 +262,7 @@ public class LaboonChessDocumentController implements Initializable {
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
                 System.out.println(chessboard.toFEN());     // DEBUG
-                System.out.println(chessboard.reverseFEN()); // shouldnt there be a ".flipBoard" or some action method?
+                System.out.println(chessboard.reverseFEN());
             }
         }
     }
