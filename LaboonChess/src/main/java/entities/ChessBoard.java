@@ -5,11 +5,18 @@ import com.github.bhlangonijr.chesslib.move.Move;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
+import com.sun.tools.javac.util.ArrayUtils;
+
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
     private String lastFen;         /* holds the last FEN string representing the 2D chessboard array */
+    private String boardFen;        /* holds the beginning portion of the FEN string that has the locations of each piece */
     private int turn;               /* holds which team is to go next (0=white 1=black) */
 
     /**
@@ -36,7 +43,6 @@ public class ChessBoard {
     public ChessBoard(String fen) {
         lastFen = fen;
     }
-
 
     /**
      * Determines if a chess move is a valid/legal move, given a
@@ -189,6 +195,14 @@ public class ChessBoard {
         return chessboard[sanTo2DRow(sanSquare)][sanTo2DCol(sanSquare)];
     }
 
+    /**
+     * Reverses the beginning of the FEN string to allow for board reversal
+     *
+     * @return String representing the reversed board
+     */
+    public String reverseFEN() {
+        return new StringBuilder(new String(boardFen.toCharArray())).reverse().toString();
+    }
 
     /**
      * Returns the current state of the 2D chessboard array into a proper
@@ -215,8 +229,8 @@ public class ChessBoard {
                 fenBoard = fenBoard + '/';
             }
         }
-
         fenBoard = generateFEN(fenBoard.toCharArray());
+        boardFen = fenBoard;
         fenBoard = fenBoard + " " + turn();
         return fenBoard;
     }
