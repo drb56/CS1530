@@ -40,8 +40,56 @@ public class ChessBoard {
         lastFen = toFEN();
     }
 
+    /**
+     * Creates a ChessBoard from a FEN string. Used for loading a game.
+     *
+     * @param fen the FEN string to create a board from
+     */
     public ChessBoard(String fen) {
         lastFen = fen;
+        String[] fenArray = fen.split(" ");
+        String[] fenBeginning = fenArray[0].split("/");
+        if(fenArray[1].equals("w")) {
+            turn = 0;
+        }
+        else {
+            turn = 1;
+        }
+        chessboard = new char[8][8];
+        populateBoard(fenBeginning);
+    }
+
+    private void populateBoard(String[] fen) {
+        int rowNum;
+        for(int i=0; i<fen.length; i++) {
+            char[] row = fen[i].toCharArray();
+            rowNum = 0;
+
+            for(int j=0; j<row.length; j++) {
+                if(tryParseInt(Character.toString(row[j]))) {
+                    int numEmptySpaces = Integer.parseInt(Character.toString(row[j]));
+                    for(int k=0; k<numEmptySpaces; k++) {
+                        chessboard[i][rowNum] = 0;
+                        System.out.println("Adding: " + 0);
+                        rowNum++;
+                    }
+                }
+                else {
+                    chessboard[i][rowNum] = row[j];
+                    System.out.println("Adding: " + row[j]);
+                    rowNum++;
+                }
+            }
+        }
+    }
+
+    private boolean tryParseInt(String value) {
+        try {
+            Integer.parseInt(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     /**

@@ -38,6 +38,7 @@ public class LaboonChessTest extends GuiTest{
     public void beforeTests(){
         chessBoard = new ChessBoard();
         chessBoard2 = new ChessBoard("r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w");
+//        chessBoard2 = new ChessBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w");
     }
 
     /**
@@ -188,5 +189,11 @@ public class LaboonChessTest extends GuiTest{
     @Test
     public void testReverseFEN() {
         assertEquals(chessBoard.reverseFEN(), "RNBKQBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbkqbnr");
+    }
+
+    @Test
+    public void testChessBoardGivenFEN() {
+        chessBoard2.printBoard();
+
     }
 }
