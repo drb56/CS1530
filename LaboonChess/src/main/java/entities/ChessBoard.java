@@ -227,8 +227,9 @@ public class ChessBoard {
         }
 
         fenBoard = generateFEN(fenBoard.toCharArray());
-        System.out.println(fenBoard + " " + turn() + castling);//generateCastleFen(chessboard)
+        //System.out.println(fenBoard + " " + turn() + castling);//generateCastleFen(chessboard)
         fenBoard = fenBoard + " " + turn();
+        fenBoard = fenBoard + "" + castling;
         return fenBoard;
     }
 
