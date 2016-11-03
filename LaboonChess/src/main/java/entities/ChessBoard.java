@@ -300,6 +300,7 @@ public class ChessBoard {
         fenBoard = generateFEN(fenBoard.toCharArray());
         boardFen = fenBoard;
         fenBoard = fenBoard + " " + turn();
+        fenBoard = fenBoard + "" + castling;
         return fenBoard;
     }
 
