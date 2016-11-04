@@ -42,15 +42,16 @@
                 </Menu>
                 <Menu mnemonicParsing="true" text="_Edit">
                     <items>
-                        <MenuItem fx:id="mnuUndoMove" mnemonicParsing="true" onAction="#handleUndoMoveAction" text="_Undo Move">
-                            <accelerator>
-                                <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                            </accelerator></MenuItem>
                         <MenuItem fx:id="mnuFlipBoard" mnemonicParsing="true" onAction="#handleFlipBoardAction" text="_Flip Board">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuUndoMove" mnemonicParsing="true" onAction="#handleUndoMoveAction" text="_Undo Move">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator></MenuItem>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="true" text="_Help">
