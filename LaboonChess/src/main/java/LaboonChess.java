@@ -25,9 +25,12 @@ public class LaboonChess extends Application {
         
         // set custom app icon
         stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("/images/icon.png")));
-        
+
         // set custom title
         stage.setTitle("Laboon Chess");
+
+        // load the custom CSS file for the chessboard styling
+        scene.getStylesheets().add(getClass().getResource("/css/chessboard.css").toExternalForm());
         
         // import custom chess font
         // usage: -fx-font-family: PIXymbolsChessW95-Regular
