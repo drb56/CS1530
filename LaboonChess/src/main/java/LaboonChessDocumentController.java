@@ -4,17 +4,24 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.Transition;
+import javafx.animation.RotateTransition;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,6 +35,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
+    @FXML private GridPane guiChessboard;    /* holds the GUI chessboard */
 
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
@@ -263,6 +271,33 @@ public class LaboonChessDocumentController implements Initializable {
 
                 System.out.println(chessboard.toFEN());     // DEBUG
             }
+        }
+    }
+
+
+    /**
+     * Handles logic for when the Flip Board menu item is clicked. When this occurs, the
+     * chessboard is visually "flipped" around to show the black chess pieces on the bottom and
+     * the white chess pieces on top (or vice versa).
+     *
+     * This actually occurs using JavaFX's rotation property built into the GridPane node
+     * (aka the chessboard) and the Pane nodes (aka the chess squares). The rotation is set at
+     * 180 degrees to simulate the flipping.
+     *
+     * @param event The user action event that was used to trigger this method. Contains the Flip Board object.
+     */
+    @FXML void handleFlipBoardAction(ActionEvent event) {
+        // rotate the chessboard
+        guiChessboard.rotateProperty().setValue((guiChessboard.rotateProperty().getValue() + 180) % 360);
+
+        // rotate the pieces in the chessboard
+        for (Node square : guiChessboard.getChildren()) {
+            square.rotateProperty().setValue((square.rotateProperty().getValue() + 180) % 360);
+
+            // set up new border-lines for the rotated board
+//            if (square.rotateProperty().getValue() == 180) {
+//                square.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 1; -fx-border-style: solid; -fx-border-color: #999;");
+//            }
         }
     }
 }
