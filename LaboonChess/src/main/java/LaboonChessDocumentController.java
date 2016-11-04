@@ -284,6 +284,9 @@ public class LaboonChessDocumentController implements Initializable {
      * (aka the chessboard) and the Pane nodes (aka the chess squares). The rotation is set at
      * 180 degrees to simulate the flipping.
      *
+     * The coordinates (Panes) that border the chessboard are also looked at and their
+     * CSS properties are flipped to correspond with the flipping of the board.
+     *
      * @param event The user action event that was used to trigger this method. Contains the Flip Board object.
      */
     @FXML void handleFlipBoardAction(ActionEvent event) {
@@ -292,12 +295,24 @@ public class LaboonChessDocumentController implements Initializable {
 
         // rotate the pieces in the chessboard
         for (Node square : guiChessboard.getChildren()) {
+            // rotate
             square.rotateProperty().setValue((square.rotateProperty().getValue() + 180) % 360);
 
-            // set up new border-lines for the rotated board
-//            if (square.rotateProperty().getValue() == 180) {
-//                square.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd); -fx-border-width: 1 0 0 1; -fx-border-style: solid; -fx-border-color: #999;");
-//            }
+            // if this is a coordinate on the outside of the chessboard,
+            //      then flip the border around to keep the border correct
+            //      for the chessboard
+            String id = square.getId();
+            if (square.rotateProperty().getValue() == 0) {
+                // default layout
+                if (id != null && asdf.matches("[A-Z0-9]")) {
+                    square.getStyleClass().remove("flipped");
+                }
+            } else {
+                // flipped
+                if (id != null && asdf.matches("[A-Z0-9]")) {
+                    square.getStyleClass().add("flipped");
+                }
+            }
         }
     }
 }
