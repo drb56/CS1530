@@ -304,12 +304,12 @@ public class LaboonChessDocumentController implements Initializable {
             String id = square.getId();
             if (square.rotateProperty().getValue() == 0) {
                 // default layout
-                if (id != null && asdf.matches("[A-Z0-9]")) {
+                if (id != null && id.matches("[A-Z0-9]")) {
                     square.getStyleClass().remove("flipped");
                 }
             } else {
                 // flipped
-                if (id != null && asdf.matches("[A-Z0-9]")) {
+                if (id != null && id.matches("[A-Z0-9]")) {
                     square.getStyleClass().add("flipped");
                 }
             }
