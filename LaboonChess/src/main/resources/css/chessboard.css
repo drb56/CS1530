@@ -1,0 +1,72 @@
+/*
+    This CSS file is used to avoid the redundant code-copying of the
+    border width, border style, border color, and background color
+    for the chessboard GUI.
+
+    This is also used for the "flipping" or "rotating" action that
+    occurs with the chessboard when the user wants the white and
+    black pieces to flip around.
+*/
+
+
+
+
+/*
+    Chessboard square coloring
+*/
+.black{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #666, #888);
+}
+.white {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee, #ddd);
+}
+
+
+
+/*
+    This puts a border around the chessboard.
+    (ABCDEFGH and 12345678 coordinates)
+
+    Each Pane around the chessboard is given a
+    border on the side that faces the chessboard,
+    giving an outline.
+*/
+.leftCoord {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-style: solid;
+    -fx-border-color: #999;
+}
+.leftCoord.flipped {
+    -fx-border-width: 0 0 0 1;
+}
+
+.rightCoord {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 0 1;
+    -fx-border-style: solid;
+    -fx-border-color: #999;
+}
+.rightCoord.flipped {
+    -fx-border-width: 0 1 0 0;
+}
+
+.topCoord {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-style: solid;
+    -fx-border-color: #999;
+}
+.topCoord.flipped {
+    -fx-border-width: 1 0 0 0;
+}
+
+.bottomCoord {
+    -fx-background-color: transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-style: solid;
+    -fx-border-color: #999;
+}
+.bottomCoord.flipped {
+    -fx-border-width: 0 0 1 0;
+}
