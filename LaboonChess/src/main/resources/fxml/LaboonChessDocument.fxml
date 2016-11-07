@@ -705,7 +705,7 @@
             </children>
         </GridPane>
 
-        <Separator layoutX="25.0" layoutY="440.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Separator layoutX="25.0" layoutY="440.0" prefWidth="200.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
 
         <Button fx:id="btnLoadGame" alignment="CENTER" layoutX="14.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleLoadGameAction" prefHeight="30.0" prefWidth="129.0" text="_Load Game" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="14.0" />
         <Button fx:id="btnSaveGame" alignment="CENTER" layoutX="179.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleSaveGameAction" prefHeight="30.0" prefWidth="129.0" snapToPixel="false" text="_Save Game" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" />

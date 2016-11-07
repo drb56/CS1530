@@ -1,17 +1,10 @@
 package entities;
 
 import com.github.bhlangonijr.chesslib.Board;
-import com.github.bhlangonijr.chesslib.move.Move;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
-//import com.sun.tools.javac.util.ArrayUtils;
-
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
@@ -24,7 +17,8 @@ public class ChessBoard {
     private boolean hasRook07BeenMoved = false;
     private boolean hasRook70BeenMoved = false;
     private boolean hasRook77BeenMoved = false;
-    String castling = "";
+    private String castling = "";
+
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
      *      layout, the Turn is set to White, and the FEN string is the representation

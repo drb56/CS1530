@@ -4,10 +4,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.Transition;
-import javafx.animation.RotateTransition;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,11 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.transform.Rotate;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -54,7 +49,7 @@ public class LaboonChessDocumentController implements Initializable {
      * TODO: Determine how to make Stockfish run in all environments (WIN, MAC, LINUX)
      *
      * @param url The location of the default fxml document for the program.
-     * @param rb
+     * @param rb n/a
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -86,13 +81,6 @@ public class LaboonChessDocumentController implements Initializable {
 
         // pause the game timer (if it has been started)
         if (gameTimer != null) { gameTimer.pause(); }
-
-        /* Determine the screen location to place the "About" dialog window */
-        double x, y, length, width;
-        x = mnuMain.getScene().getWindow().getX();
-        y = mnuMain.getScene().getWindow().getY();
-        length = mnuMain.getScene().getWindow().getHeight();
-        width = mnuMain.getScene().getWindow().getWidth();
 
         /* Build the "About" modal dialog window */
         Stage aboutDialog;
