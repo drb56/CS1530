@@ -5,7 +5,7 @@ import com.github.bhlangonijr.chesslib.move.Move;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
-import com.sun.tools.javac.util.ArrayUtils;
+//import com.sun.tools.javac.util.ArrayUtils;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
@@ -18,7 +18,13 @@ public class ChessBoard {
     private String lastFen;         /* holds the last FEN string representing the 2D chessboard array */
     private String boardFen;        /* holds the beginning portion of the FEN string that has the locations of each piece */
     private int turn;               /* holds which team is to go next (0=white 1=black) */
-
+    private boolean hasWhiteKingBeenMoved = false;
+    private boolean hasBlackKingBeenMoved = false;
+    private boolean hasRook00BeenMoved = false;
+    private boolean hasRook07BeenMoved = false;
+    private boolean hasRook70BeenMoved = false;
+    private boolean hasRook77BeenMoved = false;
+    String castling = "";
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
      *      layout, the Turn is set to White, and the FEN string is the representation
@@ -144,6 +150,10 @@ public class ChessBoard {
      * @return True if the move was valid; otherwise False.
      */
     public boolean move(String sanFrom, String sanTo) {
+        checkIfKingMoved();
+        checkIfRookMoved();
+        System.out.println("hasBlackKingMoved = " + hasBlackKingBeenMoved);
+        System.out.println("hasWhiteKingMoved = " + hasWhiteKingBeenMoved);
         if (!isLegal(sanFrom, sanTo)) {             //returns false if isn't a legal move
             System.out.println("ILLEGAL MOVE");
             return false;
@@ -290,6 +300,7 @@ public class ChessBoard {
         fenBoard = generateFEN(fenBoard.toCharArray());
         boardFen = fenBoard;
         fenBoard = fenBoard + " " + turn();
+        fenBoard = fenBoard + "" + castling;
         return fenBoard;
     }
 
@@ -301,6 +312,14 @@ public class ChessBoard {
      * @return Correctly formatted FEN String
      */
     private String generateFEN(char[] fenBoardArray){
+        String boardFen = generateBoardFen(fenBoardArray);
+        castling = generateCastleFen(chessboard);
+//        String halfMove = generateHalfMoveFen(fenBoardArray);
+
+        return boardFen;
+    }
+
+    private String generateBoardFen(char[] fenBoardArray){
         String fenBoard = "";
         int onesNumber = 0;
 
@@ -320,10 +339,51 @@ public class ChessBoard {
                 onesNumber = 0;
             }
         }
-
         return fenBoard;
     }
 
+    private String generateCastleFen(char[][] chessboard){
+        String blackKingCastle = "";
+        String blackQueenCastle = "";
+        String whiteKingCastle = "";
+        String whiteQueenCastle = "";
+        if(hasBlackKingBeenMoved && hasWhiteKingBeenMoved){
+            return " -";
+        }
+        if ( !hasRook00BeenMoved && !hasBlackKingBeenMoved ){
+            blackQueenCastle = "q";
+        }
+        if ( !hasRook07BeenMoved && !hasBlackKingBeenMoved ){
+            blackKingCastle = "k";
+        }
+        if ( !hasRook70BeenMoved && !hasWhiteKingBeenMoved ){
+            whiteQueenCastle = "Q";
+        }
+        if ( !hasRook77BeenMoved && !hasWhiteKingBeenMoved ){
+            whiteKingCastle = "K";
+        }
+        if ( blackKingCastle.equals("") && blackQueenCastle.equals("") && whiteKingCastle.equals("") && whiteQueenCastle.equals("")){
+            return " -";
+        }
+        // else if( chessboard[0][3] == 0 && chessboard[0][2] == 0 && chessboard[0][1] == 0 && !hasRook00BeenMoved && !hasBlackKingBeenMoved ){
+        //     blackQueenCastle = "q";
+        //     System.out.println("castling should be q");
+        // }
+        // else if( chessboard[0][5] == 0 && chessboard[0][6] == 0 && !hasRook07BeenMoved && !hasBlackKingBeenMoved ){
+        //     blackKingCastle = "k";
+        //     System.out.println("castling should be k");
+        // }
+        // else if( chessboard[7][3] == 0 && chessboard[7][2] == 0 && chessboard[7][1] == 0 && !hasRook70BeenMoved && !hasWhiteKingBeenMoved ){
+        //     whiteQueenCastle = "Q";
+        // }
+        // else if( chessboard[7][5] == 0 && chessboard[7][6] == 0 && !hasRook77BeenMoved && !hasWhiteKingBeenMoved){
+        //     whiteKingCastle = "K";
+        // }
+        // else{
+        //     return " -";
+        // }
+        return " " + blackKingCastle + blackQueenCastle + whiteKingCastle + whiteQueenCastle;
+    }
     /**
      *Returns whose turn it is
      *@Return: char 'w' if whites turn, 'b' if blacks turn
@@ -342,9 +402,9 @@ public class ChessBoard {
     public void printBoard() {
         System.out.println("   A   B   C   D   E   F   G   H ");
 
-        int boardnum=8;
+        int boardNum=8;
         for (int x = 0; x < chessboard.length; x++) {
-            System.out.print(String.format("%d ", boardnum));
+            System.out.print(String.format("%d ", boardNum));
 
             char [] row = chessboard[x];
             for (int y = 0; y < row.length; y++) {
@@ -352,8 +412,32 @@ public class ChessBoard {
                 System.out.print(String.format("[%s] ", val==0 ? " " : val));
             }
 
-            System.out.println(String.format("%d", boardnum--));
+            System.out.println(String.format("%d", boardNum--));
         }
         System.out.println("   A   B   C   D   E   F   G   H ");
+    }
+
+    private void checkIfKingMoved(){
+        if (chessboard[0][4] != 'k') {
+            hasBlackKingBeenMoved = true;
+        }
+        if (chessboard[7][4] != 'K'){
+            hasWhiteKingBeenMoved = true;
+        }
+    }
+
+    private void checkIfRookMoved(){
+        if (chessboard[0][0] != 'r'){
+            hasRook00BeenMoved = true;
+        }
+        if (chessboard[0][7] != 'r'){
+            hasRook07BeenMoved = true;
+        }
+        if (chessboard[7][0] != 'R'){
+            hasRook70BeenMoved = true;
+        }
+        if (chessboard[7][7] != 'R'){
+            hasRook77BeenMoved = true;
+        }
     }
 }
