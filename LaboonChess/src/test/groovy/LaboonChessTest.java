@@ -42,7 +42,7 @@ public class LaboonChessTest extends GuiTest{
      * Tests that when the game starts, the correct Fen string is created.
      */
     @Test
-    public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w"); }
+    public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w kqKQ"); }
 
     /**
      * Tests valid input (algebraic notation) returns the proper row. "1" is the 7th row of a chessboard
