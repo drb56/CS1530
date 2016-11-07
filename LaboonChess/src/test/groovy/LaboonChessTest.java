@@ -203,6 +203,6 @@ public class LaboonChessTest extends GuiTest{
      */
     @Test
     public void testChessBoardGivenFEN() {
-        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w");
+        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w kqKQ");
     }
 }
