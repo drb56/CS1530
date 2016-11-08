@@ -1,17 +1,10 @@
 package entities;
 
 import com.github.bhlangonijr.chesslib.Board;
-import com.github.bhlangonijr.chesslib.move.Move;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
-//import com.sun.tools.javac.util.ArrayUtils;
-
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
@@ -24,7 +17,8 @@ public class ChessBoard {
     private boolean hasRook07BeenMoved = false;
     private boolean hasRook70BeenMoved = false;
     private boolean hasRook77BeenMoved = false;
-    String castling = "";
+    private String castling = "";
+
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
      *      layout, the Turn is set to White, and the FEN string is the representation
@@ -313,7 +307,7 @@ public class ChessBoard {
      */
     private String generateFEN(char[] fenBoardArray){
         String boardFen = generateBoardFen(fenBoardArray);
-        castling = generateCastleFen(chessboard);
+        castling = generateCastleFen();
 //        String halfMove = generateHalfMoveFen(fenBoardArray);
 
         return boardFen;
@@ -342,7 +336,7 @@ public class ChessBoard {
         return fenBoard;
     }
 
-    private String generateCastleFen(char[][] chessboard){
+    private String generateCastleFen(){
         String blackKingCastle = "";
         String blackQueenCastle = "";
         String whiteKingCastle = "";
@@ -365,23 +359,6 @@ public class ChessBoard {
         if ( blackKingCastle.equals("") && blackQueenCastle.equals("") && whiteKingCastle.equals("") && whiteQueenCastle.equals("")){
             return " -";
         }
-        // else if( chessboard[0][3] == 0 && chessboard[0][2] == 0 && chessboard[0][1] == 0 && !hasRook00BeenMoved && !hasBlackKingBeenMoved ){
-        //     blackQueenCastle = "q";
-        //     System.out.println("castling should be q");
-        // }
-        // else if( chessboard[0][5] == 0 && chessboard[0][6] == 0 && !hasRook07BeenMoved && !hasBlackKingBeenMoved ){
-        //     blackKingCastle = "k";
-        //     System.out.println("castling should be k");
-        // }
-        // else if( chessboard[7][3] == 0 && chessboard[7][2] == 0 && chessboard[7][1] == 0 && !hasRook70BeenMoved && !hasWhiteKingBeenMoved ){
-        //     whiteQueenCastle = "Q";
-        // }
-        // else if( chessboard[7][5] == 0 && chessboard[7][6] == 0 && !hasRook77BeenMoved && !hasWhiteKingBeenMoved){
-        //     whiteKingCastle = "K";
-        // }
-        // else{
-        //     return " -";
-        // }
         return " " + blackKingCastle + blackQueenCastle + whiteKingCastle + whiteQueenCastle;
     }
     /**
