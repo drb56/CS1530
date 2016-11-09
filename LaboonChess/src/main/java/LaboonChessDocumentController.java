@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +14,17 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.effect.ColorInput;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -67,6 +75,98 @@ public class LaboonChessDocumentController implements Initializable {
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    /**
+     * Changes the color of the chess pieces to the option selected.
+     *
+     * @param event The color option selected.
+     */
+    @FXML
+    private void handleColorChangeAction(ActionEvent event) throws IOException {
+        // get the chosen color
+        RadioMenuItem item = (RadioMenuItem) event.getSource();
+        String color1 = "", color2 = "";
+
+        switch (item.getId()) {
+            case "chunli":
+                color1 = "#204194"; // darksteelblue
+                color2 = "#d5c541"; // goldenrod
+                break;
+            case "deadpool":
+                color1 = "#040603"; // black
+                color2 = "#a5090c"; // firebrick
+                break;
+            case "election":
+                color1 = "#49a2ce"; // steelblue
+                color2 = "#ed4e31"; // tomato
+                break;
+            case "hulk":
+                color1 = "#5b4862"; // purple
+                color2 = "#70964b"; // green
+                break;
+            case "ironman":
+                color1 = "#dc1405"; // red
+                color2 = "#ffa700"; // yellow
+                break;
+            case "pitt":
+                color1 = "#1c2957"; // blue
+                color2 = "#cdb87d"; // gold
+                break;
+            case "wolverine":
+                color1 = "#8a2d00"; // saddlebrown
+                color2 = "#ef8900"; // darkorange
+                break;
+        }
+
+        // loop through the chess board and change each piece's color
+        ObservableList<Node> children = guiChessboard.getChildren();
+        for (Node node : children) {
+            Pane square = (Pane) node;
+
+            if (!square.getChildren().isEmpty()) {
+                Node nodeChild = square.getChildren().get(0);
+
+                if (nodeChild instanceof ImageView) {
+                    if (nodeChild.getId().matches("[a-z]")) {
+                        // change "black" pieces
+                        ImageView piece = (ImageView) nodeChild;
+                        piece.setEffect(getPaintColor(piece, Color.web(color1)));
+                    } else {
+                        // change "white" pieces
+                        ImageView piece = (ImageView) nodeChild;
+                        piece.setEffect(getPaintColor(piece, Color.web(color2)));
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Takes a chess piece and a given color and changes that chess piece to be
+     *      that color by using a JavaFX Blend effect.
+     *
+     * @param piece The chess piece to change the color of.
+     * @param color The color to change the chess piece.
+     * @return The new Blended color to apply to the chess piece.
+     */
+    public Blend getPaintColor(ImageView piece, Color color) {
+        ColorAdjust monochrome = new ColorAdjust();
+        monochrome.setSaturation(0);
+
+        Blend blush = new Blend(
+                BlendMode.SRC_ATOP,
+                monochrome,
+                new ColorInput(
+                        0,
+                        0,
+                        piece.getImage().getWidth(),
+                        piece.getImage().getHeight(),
+                        color
+                )
+        );
+
+        return blush;
     }
 
 

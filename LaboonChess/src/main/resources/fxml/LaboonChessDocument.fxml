@@ -42,6 +42,22 @@
                 </Menu>
                 <Menu mnemonicParsing="true" text="_Edit">
                     <items>
+                  <Menu text="Colors">
+                    <items>
+                        <RadioMenuItem id="election" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Election" toggleGroup="$coloroptions" >
+                            <toggleGroup>
+                                <ToggleGroup fx:id="coloroptions" />
+                            </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem id="pitt" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Pitt" toggleGroup="$coloroptions" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <RadioMenuItem id="chunli" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Chun-Li" toggleGroup="$coloroptions" />
+                        <RadioMenuItem id="deadpool" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Deadpool" toggleGroup="$coloroptions" />
+                        <RadioMenuItem id="hulk" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Hulk" toggleGroup="$coloroptions" />
+                        <RadioMenuItem id="ironman" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Iron Man" toggleGroup="$coloroptions" />
+                        <RadioMenuItem id="wolverine" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Wolverine" toggleGroup="$coloroptions" />
+                    </items>
+                  </Menu>
                         <MenuItem fx:id="mnuFlipBoard" mnemonicParsing="true" onAction="#handleFlipBoardAction" text="_Flip Board">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
