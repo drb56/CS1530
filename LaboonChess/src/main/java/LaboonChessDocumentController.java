@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +14,17 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.effect.ColorInput;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -67,6 +75,82 @@ public class LaboonChessDocumentController implements Initializable {
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    /**
+     * Changes the color of the chess pieces to the option selected.
+     *
+     * @param event The color option selected.
+     */
+    @FXML
+    private void handleColorChangeAction(ActionEvent event) throws IOException {
+        // Pitt:        blue   #1c2957 | gold   #cdb87d
+        // Steelers:    black  #000000 | yellow #FFB612
+        // Plum:        purple #310436 | gold   #c5b358
+        // Hulk:        purple #4d3d53 | green  #70964b
+        // Iron Man:    red    #cc0000 | yellow #ffa700
+        // Ritika:      steelb #49a2ce | tomato #ed4e31
+        // get the chosen color
+        RadioMenuItem item = (RadioMenuItem) event.getSource();
+        String color1 = "", color2 = "";
+
+        switch (item.getId()) {
+            case "pitt":
+                color1 = "#1c2957";
+                color2 = "#cdb87d";
+                break;
+            case "hulk":
+                color1 = "#4d3d53";
+                color2 = "#70964b";
+                break;
+            case "ironman":
+                color1 = "#cc0000";
+                color2 = "#ffa700";
+                break;
+            case "ritika":
+                color1 = "#49a2ce";
+                color2 = "#ed4e31";
+                break;
+        }
+
+
+        ObservableList<Node> children = guiChessboard.getChildren();
+        for (Node node : children) {
+            Pane square = (Pane) node;
+
+            if (!square.getChildren().isEmpty()) {
+                Node nodeChild = square.getChildren().get(0);
+
+                if (nodeChild instanceof ImageView) {
+                    if (nodeChild.getId().matches("[a-z]")) {
+                        ImageView piece = (ImageView) nodeChild;
+                        piece.setEffect(getPaintColor(piece, Color.web(color1)));
+                    } else {
+                        ImageView piece = (ImageView) nodeChild;
+                        piece.setEffect(getPaintColor(piece, Color.web(color2)));
+                    }
+                }
+            }
+        }
+    }
+
+    public Blend getPaintColor(ImageView piece, Color color) {
+        ColorAdjust monochrome = new ColorAdjust();
+        monochrome.setSaturation(0);
+
+        Blend blush = new Blend(
+                BlendMode.SRC_ATOP,
+                monochrome,
+                new ColorInput(
+                        0,
+                        0,
+                        piece.getImage().getWidth(),
+                        piece.getImage().getHeight(),
+                        color
+                )
+        );
+
+        return blush;
     }
 
 
