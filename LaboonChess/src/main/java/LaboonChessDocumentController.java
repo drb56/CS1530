@@ -84,32 +84,34 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleColorChangeAction(ActionEvent event) throws IOException {
-        // Pitt:        blue   #1c2957 | gold   #cdb87d
-        // Steelers:    black  #000000 | yellow #FFB612
-        // Plum:        purple #310436 | gold   #c5b358
-        // Hulk:        purple #4d3d53 | green  #70964b
-        // Iron Man:    red    #cc0000 | yellow #ffa700
-        // Ritika:      steelb #49a2ce | tomato #ed4e31
         // get the chosen color
         RadioMenuItem item = (RadioMenuItem) event.getSource();
         String color1 = "", color2 = "";
 
         switch (item.getId()) {
-            case "pitt":
-                color1 = "#1c2957";
-                color2 = "#cdb87d";
+            case "chunli":
+                color1 = "#204194"; // darksteelblue
+                color2 = "#d5c541"; // goldenrod
+                break;
+            case "election":
+                color1 = "#49a2ce"; // steelblue
+                color2 = "#ed4e31"; // tomato
                 break;
             case "hulk":
-                color1 = "#4d3d53";
-                color2 = "#70964b";
+                color1 = "#4d3d53"; // purple
+                color2 = "#70964b"; // green
                 break;
             case "ironman":
-                color1 = "#cc0000";
-                color2 = "#ffa700";
+                color1 = "#ff1b1b"; // red
+                color2 = "#ffa700"; // yellow
                 break;
-            case "ritika":
-                color1 = "#49a2ce";
-                color2 = "#ed4e31";
+            case "pitt":
+                color1 = "#1c2957"; // blue
+                color2 = "#cdb87d"; // gold
+                break;
+            case "wolverine":
+                color1 = "#8a2d00"; // saddlebrown
+                color2 = "#ef8900"; // darkorange
                 break;
         }
 
