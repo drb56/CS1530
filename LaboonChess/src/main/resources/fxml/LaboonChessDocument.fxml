@@ -51,7 +51,6 @@
                         </RadioMenuItem>
                         <RadioMenuItem id="pitt" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Pitt" toggleGroup="$coloroptions" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <RadioMenuItem id="chunli" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Chun-Li" toggleGroup="$coloroptions" />
                         <RadioMenuItem id="deadpool" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Deadpool" toggleGroup="$coloroptions" />
                         <RadioMenuItem id="hulk" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Hulk" toggleGroup="$coloroptions" />
                         <RadioMenuItem id="ironman" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Iron Man" toggleGroup="$coloroptions" />

@@ -89,10 +89,6 @@ public class LaboonChessDocumentController implements Initializable {
         String color1 = "", color2 = "";
 
         switch (item.getId()) {
-            case "chunli":
-                color1 = "#204194"; // darksteelblue
-                color2 = "#d5c541"; // goldenrod
-                break;
             case "deadpool":
                 color1 = "#040603"; // black
                 color2 = "#a5090c"; // firebrick
@@ -114,8 +110,8 @@ public class LaboonChessDocumentController implements Initializable {
                 color2 = "#cdb87d"; // gold
                 break;
             case "wolverine":
-                color1 = "#8a2d00"; // saddlebrown
-                color2 = "#ef8900"; // darkorange
+                color1 = "#365382"; // saddlebrown
+                color2 = "#f2c903"; // yellow
                 break;
         }
 
