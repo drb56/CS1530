@@ -93,6 +93,10 @@ public class LaboonChessDocumentController implements Initializable {
                 color1 = "#204194"; // darksteelblue
                 color2 = "#d5c541"; // goldenrod
                 break;
+            case "deadpool":
+                color1 = "#040603"; // black
+                color2 = "#a5090c"; // firebrick
+                break;
             case "election":
                 color1 = "#49a2ce"; // steelblue
                 color2 = "#ed4e31"; // tomato
