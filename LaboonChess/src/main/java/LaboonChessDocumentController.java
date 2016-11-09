@@ -119,7 +119,7 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
         }
 
-
+        // loop through the chess board and change each piece's color
         ObservableList<Node> children = guiChessboard.getChildren();
         for (Node node : children) {
             Pane square = (Pane) node;
@@ -129,9 +129,11 @@ public class LaboonChessDocumentController implements Initializable {
 
                 if (nodeChild instanceof ImageView) {
                     if (nodeChild.getId().matches("[a-z]")) {
+                        // change "black" pieces
                         ImageView piece = (ImageView) nodeChild;
                         piece.setEffect(getPaintColor(piece, Color.web(color1)));
                     } else {
+                        // change "white" pieces
                         ImageView piece = (ImageView) nodeChild;
                         piece.setEffect(getPaintColor(piece, Color.web(color2)));
                     }
@@ -140,6 +142,14 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+    /**
+     * Takes a chess piece and a given color and changes that chess piece to be
+     *      that color by using a JavaFX Blend effect.
+     *
+     * @param piece The chess piece to change the color of.
+     * @param color The color to change the chess piece.
+     * @return The new Blended color to apply to the chess piece.
+     */
     public Blend getPaintColor(ImageView piece, Color color) {
         ColorAdjust monochrome = new ColorAdjust();
         monochrome.setSaturation(0);
