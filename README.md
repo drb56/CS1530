@@ -12,3 +12,16 @@ CS1530 group repository
 $> cd LaboonChess
 $> gradle [clean|build|test]
 ```
+## Feature Tutorial
+
+1. Play against another human player:
+   Select `File` --> `New Game` --> `Multiplayer`
+2. Play against a Black side AI opponent:
+   Select `File` --> `New Game` --> `Computer: Black`
+3. Play against a White side AI opponent:
+   Select `File` --> `New Game` --> `Computer: White`
+4. Flip Board:
+   Select `Edit` --> `Flip Board`
+5. Change Colors:
+   Select `Edit` --> `Colors` --> Color Scheme of Your Choice
+                                  
