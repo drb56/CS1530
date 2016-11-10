@@ -39,7 +39,7 @@ public class LaboonChessDocumentController implements Initializable {
     private String san = null;              /* holds standard algebraic notation of first square and second square */
     private Stockfish stockfish;            /* chess API engine */
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
-    private boolean playerIsWhite = false;   /* determines whether player is white or black */
+    private boolean playerIsWhite = true;   /* determines whether player is white or black */
 
 
     /**
