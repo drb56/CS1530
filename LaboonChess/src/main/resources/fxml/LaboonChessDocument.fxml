@@ -19,6 +19,13 @@
             <menus>
                 <Menu mnemonicParsing="true" text="_File">
                     <items>
+                        <Menu mnemonicParsing="true" text="_New Game">
+                            <items>
+                                <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_Multiplayer"></MenuItem>
+                                <MenuItem fx:id="mnuNewGameBlackAI" onAction="#handleNewGameActionBlackAI" text="_Computer: Black"></MenuItem>
+                                <MenuItem fx:id="mnuNewGameWhiteAI" onAction="#handleNewGameActionWhiteAI" text="_Computer: White"></MenuItem>
+                            </items>
+                        </Menu>
                         <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_New Game">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />

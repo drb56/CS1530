@@ -49,8 +49,8 @@ public class LaboonChessDocumentController implements Initializable {
     private String san = null;              /* holds standard algebraic notation of first square and second square */
     private Stockfish stockfish;            /* chess API engine */
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
-    private boolean playerIsWhite = true;   /* determines whether player is white or black */
-
+    private int playerType = 0;         /* determines whether player is white or black */
+    private int difficulty = 0;
 
     /**
      * First-running method that builds the objects and dependencies needed to run the program. Here,
@@ -87,7 +87,7 @@ public class LaboonChessDocumentController implements Initializable {
      * @param fen fen string
      * @param timeWait time for waiting, longer = more difficult
      */
-    public void moveStockFish(String fen, int timeWait) {
+    public void moveStockFish(String fen) {
         stockfish.sendCommand("");
         // receive output dump
         System.out.println(stockfish.getOutput(0));
@@ -292,9 +292,20 @@ public class LaboonChessDocumentController implements Initializable {
         } else { // reset
             timer_count = 0;
         }
-        if(!playerIsWhite) {
-            moveStockFish("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", 100);
-        }
+
+    }
+
+    @FXML
+    private void handleNewGameActionBlackAI(ActionEvent event) {
+        handleNewGameAction(event);
+        playerType = 1;
+    }
+
+    @FXML
+    private void handleNewGameActionWhiteAI(ActionEvent event) {
+        handleNewGameAction(event);
+        playerType = 2;
+        moveStockFish("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", 100);
 
     }
 
@@ -359,7 +370,7 @@ public class LaboonChessDocumentController implements Initializable {
                 /* DO NOTHING: user clicked on the opposing team's chess piece */
                 isFirstClick = true;
 
-            } else if ((chessboard.turn() == 'w' && !playerIsWhite) || (chessboard.turn() == 'b' && playerIsWhite)) {
+            } else if ((chessboard.turn() == 'w' && playerType == 2) || (chessboard.turn() == 'b' && playerType == 1)) {
                 /* DO NOTHING: not player's designated turn */
                 isFirstClick = true;
 
@@ -406,7 +417,10 @@ public class LaboonChessDocumentController implements Initializable {
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
-                moveStockFish(chessboard.toFEN(), 100);
+                if(playerType > 0) {
+                    moveStockFish(chessboard.toFEN(), 100);
+                }
+
                 // System.out.println("FEN: " + chessboard.toFEN());     // DEBUG
                 System.out.println(chessboard.toFEN());     // DEBUG
                 System.out.println(chessboard.reverseFEN());
