@@ -16,6 +16,7 @@ import static org.loadui.testfx.Assertions.verifyThat;
 
 public class LaboonChessTest extends GuiTest{
     private ChessBoard chessBoard;
+    private ChessBoard chessBoard2;
     public Parent getRootNode()
     {
         Parent parent = null;
@@ -36,13 +37,14 @@ public class LaboonChessTest extends GuiTest{
     @Before
     public void beforeTests(){
         chessBoard = new ChessBoard();
+        chessBoard2 = new ChessBoard("r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w");
     }
 
     /**
      * Tests that when the game starts, the correct Fen string is created.
      */
     @Test
-    public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w"); }
+    public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w kqKQ"); }
 
     /**
      * Tests valid input (algebraic notation) returns the proper row. "1" is the 7th row of a chessboard
@@ -178,5 +180,29 @@ public class LaboonChessTest extends GuiTest{
     @Test
     public void testIsLegalPawnMoveTwo() {
         assertEquals(chessBoard.isLegal("b2", "b4"), true);
+    }
+
+    /**
+     * Tests that the reverse of the original board is as it should be
+     */
+    @Test
+    public void testReverseFEN() {
+        assertEquals(chessBoard.reverseFEN(), "RNBKQBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbkqbnr");
+    }
+
+    /**
+     * Tests that the reverse of a complicated board is as it should be
+     */
+    @Test
+    public void testReverseFENComplicatedBoard() {
+        assertEquals(chessBoard2.reverseFEN(), "R1BKQ1NR/PPPP2PP/2N1PP2/2B5/8/npp4n/p2ppppp/r1bkqb1r");
+    }
+
+    /**
+     * Tests that the creation of a ChessBoard object creates the correct chessboard
+     */
+    @Test
+    public void testChessBoardGivenFEN() {
+        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w kqKQ");
     }
 }

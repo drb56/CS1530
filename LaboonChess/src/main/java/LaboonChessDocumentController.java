@@ -5,17 +5,26 @@ import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.effect.ColorInput;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -29,7 +38,8 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
-    @FXML private GridPane guiChessboard;   /* Chessboard gui, for interacting with chess pieces */
+    @FXML private GridPane guiChessboard;    /* holds the GUI chessboard */
+
 
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
@@ -49,7 +59,7 @@ public class LaboonChessDocumentController implements Initializable {
      * TODO: Determine how to make Stockfish run in all environments (WIN, MAC, LINUX)
      *
      * @param url The location of the default fxml document for the program.
-     * @param rb
+     * @param rb n/a
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,10 +79,6 @@ public class LaboonChessDocumentController implements Initializable {
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public void movePiece(Pane fromSquare, Pane toSquare) {
-
     }
 
     /**
@@ -105,6 +111,7 @@ public class LaboonChessDocumentController implements Initializable {
             }
 
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
+
         }
     }
 
@@ -115,6 +122,94 @@ public class LaboonChessDocumentController implements Initializable {
      */
     public Pane getChessSquare(String coordinate) {
         return (Pane) guiChessboard.getScene().lookup("#"+coordinate);
+    }
+
+    /**
+     * Changes the color of the chess pieces to the option selected.
+     *
+     * @param event The color option selected.
+     */
+    @FXML
+    private void handleColorChangeAction(ActionEvent event) throws IOException {
+        // get the chosen color
+        RadioMenuItem item = (RadioMenuItem) event.getSource();
+        String color1 = "", color2 = "";
+
+        switch (item.getId()) {
+            case "deadpool":
+                color1 = "#040603"; // black
+                color2 = "#a5090c"; // firebrick
+                break;
+            case "election":
+                color1 = "#49a2ce"; // steelblue
+                color2 = "#ed4e31"; // tomato
+                break;
+            case "hulk":
+                color1 = "#5b4862"; // purple
+                color2 = "#70964b"; // green
+                break;
+            case "ironman":
+                color1 = "#dc1405"; // red
+                color2 = "#ffa700"; // yellow
+                break;
+            case "pitt":
+                color1 = "#1c2957"; // blue
+                color2 = "#cdb87d"; // gold
+                break;
+            case "wolverine":
+                color1 = "#365382"; // saddlebrown
+                color2 = "#f2c903"; // yellow
+                break;
+        }
+
+        // loop through the chess board and change each piece's color
+        ObservableList<Node> children = guiChessboard.getChildren();
+        for (Node node : children) {
+            Pane square = (Pane) node;
+
+            if (!square.getChildren().isEmpty()) {
+                Node nodeChild = square.getChildren().get(0);
+
+                if (nodeChild instanceof ImageView) {
+                    if (nodeChild.getId().matches("[a-z]")) {
+                        // change "black" pieces
+                        ImageView piece = (ImageView) nodeChild;
+                        piece.setEffect(getPaintColor(piece, Color.web(color1)));
+                    } else {
+                        // change "white" pieces
+                        ImageView piece = (ImageView) nodeChild;
+                        piece.setEffect(getPaintColor(piece, Color.web(color2)));
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Takes a chess piece and a given color and changes that chess piece to be
+     *      that color by using a JavaFX Blend effect.
+     *
+     * @param piece The chess piece to change the color of.
+     * @param color The color to change the chess piece.
+     * @return The new Blended color to apply to the chess piece.
+     */
+    public Blend getPaintColor(ImageView piece, Color color) {
+        ColorAdjust monochrome = new ColorAdjust();
+        monochrome.setSaturation(0);
+
+        Blend blush = new Blend(
+                BlendMode.SRC_ATOP,
+                monochrome,
+                new ColorInput(
+                        0,
+                        0,
+                        piece.getImage().getWidth(),
+                        piece.getImage().getHeight(),
+                        color
+                )
+        );
+
+        return blush;
     }
 
     /**
@@ -129,13 +224,6 @@ public class LaboonChessDocumentController implements Initializable {
         // pause the game timer (if it has been started)
         if (gameTimer != null) { gameTimer.pause(); }
 
-        /* Determine the screen location to place the "About" dialog window */
-        double x, y, length, width;
-        x = mnuMain.getScene().getWindow().getX();
-        y = mnuMain.getScene().getWindow().getY();
-        length = mnuMain.getScene().getWindow().getHeight();
-        width = mnuMain.getScene().getWindow().getWidth();
-
         /* Build the "About" modal dialog window */
         Stage aboutDialog;
         aboutDialog = new Stage();
@@ -143,7 +231,7 @@ public class LaboonChessDocumentController implements Initializable {
         aboutDialog.setTitle("About LaboonChess");
         aboutDialog.initModality(Modality.APPLICATION_MODAL);
         aboutDialog.initStyle(StageStyle.UTILITY);
-        aboutDialog.setX(mnuMain.getScene().getWindow().getX() + (mnuMain.getScene().getWindow().getHeight()/9));
+        aboutDialog.setX(mnuMain.getScene().getWindow().getX() + (mnuMain.getScene().getWindow().getHeight()/12));
         aboutDialog.setY(mnuMain.getScene().getWindow().getY() + (mnuMain.getScene().getWindow().getWidth()/3));
         aboutDialog.setResizable(false);
         aboutDialog.showAndWait();
@@ -320,6 +408,50 @@ public class LaboonChessDocumentController implements Initializable {
 
                 moveStockFish(chessboard.toFEN(), 100);
                 // System.out.println("FEN: " + chessboard.toFEN());     // DEBUG
+                System.out.println(chessboard.toFEN());     // DEBUG
+                System.out.println(chessboard.reverseFEN());
+            }
+        }
+    }
+
+
+    /**
+     * Handles logic for when the Flip Board menu item is clicked. When this occurs, the
+     * chessboard is visually "flipped" around to show the black chess pieces on the bottom and
+     * the white chess pieces on top (or vice versa).
+     *
+     * This actually occurs using JavaFX's rotation property built into the GridPane node
+     * (aka the chessboard) and the Pane nodes (aka the chess squares). The rotation is set at
+     * 180 degrees to simulate the flipping.
+     *
+     * The coordinates (Panes) that border the chessboard are also looked at and their
+     * CSS properties are flipped to correspond with the flipping of the board.
+     *
+     * @param event The user action event that was used to trigger this method. Contains the Flip Board object.
+     */
+    @FXML void handleFlipBoardAction(ActionEvent event) {
+        // rotate the chessboard
+        guiChessboard.rotateProperty().setValue((guiChessboard.rotateProperty().getValue() + 180) % 360);
+
+        // rotate the pieces in the chessboard
+        for (Node square : guiChessboard.getChildren()) {
+            // rotate
+            square.rotateProperty().setValue((square.rotateProperty().getValue() + 180) % 360);
+
+            // if this is a coordinate on the outside of the chessboard,
+            //      then flip the border around to keep the border correct
+            //      for the chessboard
+            String id = square.getId();
+            if (square.rotateProperty().getValue() == 0) {
+                // default layout
+                if (id != null && id.matches("[A-Z0-9]")) {
+                    square.getStyleClass().remove("flipped");
+                }
+            } else {
+                // flipped
+                if (id != null && id.matches("[A-Z0-9]")) {
+                    square.getStyleClass().add("flipped");
+                }
             }
         }
     }
