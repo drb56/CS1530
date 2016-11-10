@@ -26,11 +26,6 @@
                                 <MenuItem fx:id="mnuNewGameWhiteAI" onAction="#handleNewGameActionWhiteAI" text="_Computer: White"></MenuItem>
                             </items>
                         </Menu>
-                        <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_New Game">
-                            <accelerator>
-                                <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                            </accelerator>
-                        </MenuItem>
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuLoadGame" mnemonicParsing="true" onAction="#handleLoadGameAction" text="_Load Game...">
                             <accelerator>
@@ -74,6 +69,13 @@
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator></MenuItem>
+                        <Menu fx:id="mnuSetDifficulty" mnemonicParsing="true" text="_AI Difficulty">
+                            <items>
+                                <MenuItem fx:id="easyDifficulty" mnemonicParsing="true" onAction="#handleDifficultyEasy" text="_Easy"></MenuItem>
+                                <MenuItem fx:id="mediumDifficulty" mnemonicParsing="true" onAction="#handleDifficultyMedium" text="_Medium"></MenuItem>
+                                <MenuItem fx:id="hardDifficulty" mnemonicParsing="true" onAction="#handleDifficultyHard" text="_Hard"></MenuItem>
+                            </items>
+                        </Menu>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="true" text="_Help">

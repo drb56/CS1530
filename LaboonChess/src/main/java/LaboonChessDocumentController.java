@@ -87,9 +87,12 @@ public class LaboonChessDocumentController implements Initializable {
      * @param fen fen string
      * @param timeWait time for waiting, longer = more difficult
      */
-    public void moveStockFish(String fen) {
+    public void moveStockFish(String fen, int timeWait) {
         stockfish.sendCommand("");
-        // receive output dump
+
+        String difficultyCommand = "setoption name Skill Level value "+difficulty;
+        stockfish.sendCommand(difficultyCommand);
+
         System.out.println(stockfish.getOutput(0));
         String move = stockfish.getBestMove(fen, timeWait);
         String fromSquareStr = move.substring(0, 2);
@@ -264,6 +267,23 @@ public class LaboonChessDocumentController implements Initializable {
         lblStatus.setText("Load Game clicked");                 // DEBUG
     }
 
+    @FXML
+    private void handleDifficultyEasy(ActionEvent event) {
+        difficulty = 0;
+        lblStatus.setText("Game AI set to easy");
+    }
+
+    @FXML
+    private void handleDifficultyMedium(ActionEvent event) {
+        difficulty = 10;
+        lblStatus.setText("Game AI set to medium");
+    }
+
+    @FXML
+    private void handleDifficultyHard(ActionEvent event) {
+        difficulty = 20;
+        lblStatus.setText("Game AI set to jard");
+    }
 
     /**
      * Resets the chessboard to the starting layout, and also resets the timer.
