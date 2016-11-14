@@ -41,12 +41,6 @@ public class LaboonChessTest extends GuiTest{
     }
 
     /**
-     * Tests that when the game starts, the correct Fen string is created.
-     */
-    @Test
-    public void testChessboardToFENGameStart(){ assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w kqKQ"); }
-
-    /**
      * Tests valid input (algebraic notation) returns the proper row. "1" is the 7th row of a chessboard
      * The chessboard starts at a1 (a = column, 1 = row) in the lower left corner of the chessboard
      * and ends at h8 (h = column, 8 = row) in the upper right corner of the chessboard.
@@ -154,55 +148,5 @@ public class LaboonChessTest extends GuiTest{
     @Test
     public void testSanTo2DColOutOfBoundsLower(){
         assertEquals(chessBoard.sanTo2DCol("`1"), -1);
-    }
-
-    /**
-     * Tests that when the user inputs an illegal move isLegal() method returns false
-     */
-    @Test
-    public void testIsLegalReturnsFalse() {
-        assertEquals(chessBoard.isLegal("b2", "c2"), false);
-    }
-
-    /**
-     * Tests that when the user inputs a legal move it returns true
-     * This test in particular will move b2->b3
-     */
-    @Test
-    public void testIsLegalPawnMoveOne() {
-        assertEquals(chessBoard.isLegal("b2", "b3"), true);
-    }
-
-    /**
-     * Tests that when the user inputs a legal move it returns true
-     * This test in particular will move b2->b4
-     */
-    @Test
-    public void testIsLegalPawnMoveTwo() {
-        assertEquals(chessBoard.isLegal("b2", "b4"), true);
-    }
-
-    /**
-     * Tests that the reverse of the original board is as it should be
-     */
-    @Test
-    public void testReverseFEN() {
-        assertEquals(chessBoard.reverseFEN(), "RNBKQBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbkqbnr");
-    }
-
-    /**
-     * Tests that the reverse of a complicated board is as it should be
-     */
-    @Test
-    public void testReverseFENComplicatedBoard() {
-        assertEquals(chessBoard2.reverseFEN(), "R1BKQ1NR/PPPP2PP/2N1PP2/2B5/8/npp4n/p2ppppp/r1bkqb1r");
-    }
-
-    /**
-     * Tests that the creation of a ChessBoard object creates the correct chessboard
-     */
-    @Test
-    public void testChessBoardGivenFEN() {
-        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w kqKQ");
     }
 }
