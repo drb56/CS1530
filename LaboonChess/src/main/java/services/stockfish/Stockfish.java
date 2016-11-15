@@ -21,7 +21,6 @@ public class Stockfish {
     private final String MAC_PATH = getClass().getResource("/binaries/mac/stockfish-8-64").toExternalForm();
 	private final String WIN_PATH = getClass().getResource("/binaries/win/stockfish_8_x64.exe").toExternalForm().substring(6).replace("/", "\\").replace("%20", " ");
     private final String LINUX_PATH = getClass().getResource("/binaries/linux/stockfish_8_x64").toExternalForm();
-
 	/**
 	 * Starts Stockfish engine as a process and initializes it
 	 *
@@ -43,6 +42,7 @@ public class Stockfish {
 			processWriter = new OutputStreamWriter(
 					engineProcess.getOutputStream());
 		} catch (Exception e) {
+			System.out.println(e);
 			return false;
 		}
 		return true;
