@@ -19,8 +19,8 @@ public class Stockfish {
 
 	//private static final String MAC_PATH = "../CS1530/LaboonChess/src/main/java/services/stockfish/stockfish-7-64-bmi2";
     private final String MAC_PATH = getClass().getResource("/binaries/mac/stockfish-8-64").getPath();
-	private final String WIN_PATH = getClass().getResource("/binaries/win/stockfish_8_x64.exe").toExternalForm().substring(6).replace("/", "\\").replace("%20", " ");
-    private final String LINUX_PATH = getClass().getResource("/binaries/linux/stockfish_8_x64").toExternalForm();
+    private final String WIN_PATH = getClass().getResource("/binaries/win/stockfish_8_x64.exe").getPath().substring(1).replace("/", "\\").replace("%20", " ");
+    private final String LINUX_PATH = getClass().getResource("/binaries/linux/stockfish_8_x64").getPath();
 	/**
 	 * Starts Stockfish engine as a process and initializes it
 	 *
