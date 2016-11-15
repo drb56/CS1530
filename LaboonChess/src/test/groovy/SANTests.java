@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 import static org.loadui.testfx.Assertions.assertNodeExists;
 import static org.loadui.testfx.Assertions.verifyThat;
 
-public class LaboonChessTest extends GuiTest{
+public class SANTests extends GuiTest{
     private ChessBoard chessBoard;
     private ChessBoard chessBoard2;
     public Parent getRootNode()
