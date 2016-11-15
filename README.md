@@ -7,6 +7,11 @@ CS1530 group repository
 - Joe Meszar (jwm54@pitt.edu | outkst)  
 - David Tsui (dat83@pitt.edu | luckyleap)  
 
+## Permissions for Mac / Linux
+```
+$> cd LaboonChess/build/resources/main/binaries/mac
+$> chmod 777 stockfish-8-64
+```
 ## Running Gradle
 ```
 $> cd LaboonChess
