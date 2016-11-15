@@ -17,23 +17,25 @@ public class Stockfish {
 	private BufferedReader processReader;
 	private OutputStreamWriter processWriter;
 
-
-	private static final String MAC_PATH = "./src/main/java/services/stockfish/stockfish-7-64-bmi2";
-	private static final String WIN_PATH = "\\src\\main\\java\\services\\stockfish\\stockfish-win-bimi2.exe";
+	//private static final String MAC_PATH = "../CS1530/LaboonChess/src/main/java/services/stockfish/stockfish-7-64-bmi2";
+    private final String MAC_PATH = getClass().getResource("/binaries/mac/stockfish-8-64").toExternalForm();
+	private final String WIN_PATH = getClass().getResource("/binaries/win/stockfish_8_x64.exe").toExternalForm().substring(6).replace("/", "\\").replace("%20", " ");
+    private final String LINUX_PATH = getClass().getResource("/binaries/linux/stockfish_8_x64").toExternalForm();
 	/**
 	 * Starts Stockfish engine as a process and initializes it
-	 * 
-	 * @param
+	 *
 	 * @return True on success. False otherwise
 	 */
 	public boolean startEngine() {
 		try {
-			String OSName = (System.getProperty("os.name"));
-			if (OSName.contains("Mac")) {
+			String OSName = (System.getProperty("os.name")).toLowerCase();
+			if (OSName.contains("mac")) {
 				engineProcess = Runtime.getRuntime().exec(MAC_PATH);
-			} else {
+			} else if (OSName.contains("win")){
 				engineProcess = Runtime.getRuntime().exec(WIN_PATH);
-			}
+			} else {
+                engineProcess = Runtime.getRuntime().exec(LINUX_PATH);
+            }
 
 			processReader = new BufferedReader(new InputStreamReader(
 					engineProcess.getInputStream()));
