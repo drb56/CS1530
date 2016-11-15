@@ -268,21 +268,23 @@ public class LaboonChessDocumentController implements Initializable {
     }
 
     @FXML
-    private void handleDifficultyEasy(ActionEvent event) {
-        difficulty = 0;
-        lblStatus.setText("Game AI set to easy");
-    }
+    private void handleDifficultyChangeAction(ActionEvent event) {
+        switch (((RadioMenuItem)event.getSource()).getId()) {
+            case "easy":
+                difficulty = 0;
+                lblStatus.setText("Game AI set to easy");
+                break;
 
-    @FXML
-    private void handleDifficultyMedium(ActionEvent event) {
-        difficulty = 10;
-        lblStatus.setText("Game AI set to medium");
-    }
+            case "medium":
+                difficulty = 10;
+                lblStatus.setText("Game AI set to medium");
+                break;
 
-    @FXML
-    private void handleDifficultyHard(ActionEvent event) {
-        difficulty = 20;
-        lblStatus.setText("Game AI set to jard");
+            case "hard":
+                difficulty = 20;
+                lblStatus.setText("Game AI set to hard");
+                break;
+        }
     }
 
     /**

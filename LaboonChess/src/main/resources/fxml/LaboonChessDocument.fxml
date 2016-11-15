@@ -21,9 +21,9 @@
                     <items>
                         <Menu mnemonicParsing="true" text="_New Game">
                             <items>
-                                <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_Multiplayer"></MenuItem>
-                                <MenuItem fx:id="mnuNewGameBlackAI" onAction="#handleNewGameActionBlackAI" text="_Computer: Black"></MenuItem>
-                                <MenuItem fx:id="mnuNewGameWhiteAI" onAction="#handleNewGameActionWhiteAI" text="_Computer: White"></MenuItem>
+                                <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_Multiplayer" />
+                                <MenuItem fx:id="mnuNewGameBlackAI" onAction="#handleNewGameActionBlackAI" text="_Computer: Black" />
+                                <MenuItem fx:id="mnuNewGameWhiteAI" onAction="#handleNewGameActionWhiteAI" text="_Computer: White" />
                             </items>
                         </Menu>
                         <SeparatorMenuItem mnemonicParsing="false" />
@@ -44,38 +44,43 @@
                 </Menu>
                 <Menu mnemonicParsing="true" text="_Edit">
                     <items>
-                  <Menu text="Colors">
-                    <items>
-                        <RadioMenuItem id="election" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Election" toggleGroup="$coloroptions" >
-                            <toggleGroup>
-                                <ToggleGroup fx:id="coloroptions" />
-                            </toggleGroup>
-                        </RadioMenuItem>
-                        <RadioMenuItem id="pitt" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Pitt" toggleGroup="$coloroptions" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <RadioMenuItem id="deadpool" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Deadpool" toggleGroup="$coloroptions" />
-                        <RadioMenuItem id="hulk" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Hulk" toggleGroup="$coloroptions" />
-                        <RadioMenuItem id="ironman" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Iron Man" toggleGroup="$coloroptions" />
-                        <RadioMenuItem id="wolverine" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Wolverine" toggleGroup="$coloroptions" />
-                    </items>
-                  </Menu>
+                        <Menu text="Colors">
+                            <items>
+                                <RadioMenuItem id="election" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Election" toggleGroup="$coloroptions">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="coloroptions" />
+                                    </toggleGroup>
+                                </RadioMenuItem>
+                                <RadioMenuItem id="pitt" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Pitt" toggleGroup="$coloroptions" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <RadioMenuItem id="deadpool" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Deadpool" toggleGroup="$coloroptions" />
+                                <RadioMenuItem id="hulk" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Hulk" toggleGroup="$coloroptions" />
+                                <RadioMenuItem id="ironman" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Iron Man" toggleGroup="$coloroptions" />
+                                <RadioMenuItem id="wolverine" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Wolverine" toggleGroup="$coloroptions" />
+                            </items>
+                        </Menu>
+                        <Menu text="_AI Difficulty">
+                            <items>
+                                <RadioMenuItem id="easy" text="_Easy" onAction="#handleDifficultyChangeAction">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="difficultyoptions" />
+                                    </toggleGroup>
+                                </RadioMenuItem>
+                                <RadioMenuItem id="medium" text="_Medium" onAction="#handleDifficultyChangeAction" toggleGroup="$difficultyoptions" />
+                                <RadioMenuItem id="hard" text="_Hard" onAction="#handleDifficultyChangeAction" toggleGroup="$difficultyoptions" />
+                            </items>
+                        </Menu>
                         <MenuItem fx:id="mnuFlipBoard" mnemonicParsing="true" onAction="#handleFlipBoardAction" text="_Flip Board">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
-                  <SeparatorMenuItem mnemonicParsing="false" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuUndoMove" mnemonicParsing="true" onAction="#handleUndoMoveAction" text="_Undo Move">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                            </accelerator></MenuItem>
-                        <Menu fx:id="mnuSetDifficulty" mnemonicParsing="true" text="_AI Difficulty">
-                            <items>
-                                <MenuItem fx:id="easyDifficulty" mnemonicParsing="true" onAction="#handleDifficultyEasy" text="_Easy"></MenuItem>
-                                <MenuItem fx:id="mediumDifficulty" mnemonicParsing="true" onAction="#handleDifficultyMedium" text="_Medium"></MenuItem>
-                                <MenuItem fx:id="hardDifficulty" mnemonicParsing="true" onAction="#handleDifficultyHard" text="_Hard"></MenuItem>
-                            </items>
-                        </Menu>
+                            </accelerator>
+                        </MenuItem>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="true" text="_Help">
@@ -83,7 +88,8 @@
                         <MenuItem fx:id="mnuAbout" mnemonicParsing="true" onAction="#handleAboutAction" text="_About">
                             <accelerator>
                                 <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                            </accelerator></MenuItem>
+                            </accelerator>
+                        </MenuItem>
                     </items>
                 </Menu>
             </menus>
