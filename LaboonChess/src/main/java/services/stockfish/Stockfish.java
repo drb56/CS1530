@@ -17,10 +17,9 @@ public class Stockfish {
 	private BufferedReader processReader;
 	private OutputStreamWriter processWriter;
 
-//	/Users/davidbickford/Documents/github/CS1530/LaboonChess/src/main/java/services.stockfish/services.stockfish
 
-	private static final String MAC_PATH = "../CS1530/LaboonChess/src/main/java/services/stockfish/stockfish-7-64-bmi2";
-	private static final String WIN_PATH = "\\\\CS1530\\LaboonChess\\src\\main\\java\\services\\stockfish\\stockfish-win-bimi2.exe";
+	private static final String MAC_PATH = "./src/main/java/services/stockfish/stockfish-7-64-bmi2";
+	private static final String WIN_PATH = "\\src\\main\\java\\services\\stockfish\\stockfish-win-bimi2.exe";
 	/**
 	 * Starts Stockfish engine as a process and initializes it
 	 * 
@@ -41,6 +40,7 @@ public class Stockfish {
 			processWriter = new OutputStreamWriter(
 					engineProcess.getOutputStream());
 		} catch (Exception e) {
+			System.out.println(e);
 			return false;
 		}
 		return true;
