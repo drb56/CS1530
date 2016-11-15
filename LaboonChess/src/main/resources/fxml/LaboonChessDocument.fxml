@@ -59,9 +59,9 @@
                                 <RadioMenuItem id="wolverine" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Wolverine" toggleGroup="$coloroptions" />
                             </items>
                         </Menu>
-                        <Menu text="_AI Difficulty">
+                        <Menu text="_Difficulty">
                             <items>
-                                <RadioMenuItem id="easy" text="_Easy" onAction="#handleDifficultyChangeAction">
+                                <RadioMenuItem id="easy" text="_Easy" onAction="#handleDifficultyChangeAction" selected="true">
                                     <toggleGroup>
                                         <ToggleGroup fx:id="difficultyoptions" />
                                     </toggleGroup>

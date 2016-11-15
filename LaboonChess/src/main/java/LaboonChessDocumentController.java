@@ -49,8 +49,8 @@ public class LaboonChessDocumentController implements Initializable {
     private String san = null;              /* holds standard algebraic notation of first square and second square */
     private Stockfish stockfish;            /* chess API engine */
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
-    private int playerType = 0;         /* determines whether player is white or black */
-    private int difficulty = 0;
+    private int playerType = 0;             /* determines whether player is white or black */
+    private int difficulty = 0;             /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
 
     /**
      * First-running method that builds the objects and dependencies needed to run the program. Here,
