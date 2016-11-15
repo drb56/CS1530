@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
@@ -298,6 +299,22 @@ public class LaboonChessDocumentController implements Initializable {
     private void handleNewGameAction(ActionEvent event) {
         lblStatus.setText("New game menu item clicked");        // DEBUG
 
+        switch (((MenuItem)event.getSource()).getId()) {
+            case "cpublack":
+                playerType = 1;
+                break;
+
+            case "cpuwhite":
+                playerType = 2;
+                moveStockFish("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", 100);
+                break;
+
+            case "multiplayer":
+                // default
+                break;
+
+        }
+
         // start or reset the game timer
         timer_count = 0;
         if (gameTimer == null) { // start
@@ -314,20 +331,6 @@ public class LaboonChessDocumentController implements Initializable {
         } else { // reset
             timer_count = 0;
         }
-
-    }
-
-    @FXML
-    private void handleNewGameActionBlackAI(ActionEvent event) {
-        handleNewGameAction(event);
-        playerType = 1;
-    }
-
-    @FXML
-    private void handleNewGameActionWhiteAI(ActionEvent event) {
-        handleNewGameAction(event);
-        playerType = 2;
-        moveStockFish("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", 100);
 
     }
 

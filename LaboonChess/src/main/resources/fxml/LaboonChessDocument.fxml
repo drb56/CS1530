@@ -21,9 +21,9 @@
                     <items>
                         <Menu mnemonicParsing="true" text="_New Game">
                             <items>
-                                <MenuItem fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_Multiplayer" />
-                                <MenuItem fx:id="mnuNewGameBlackAI" onAction="#handleNewGameActionBlackAI" text="_Computer: Black" />
-                                <MenuItem fx:id="mnuNewGameWhiteAI" onAction="#handleNewGameActionWhiteAI" text="_Computer: White" />
+                                <MenuItem id="multiplayer" fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_Multiplayer" />
+                                <MenuItem id="cpublack" fx:id="mnuNewGameBlackAI" onAction="#handleNewGameAction" text="_Computer: Black" />
+                                <MenuItem id="cpuwhite" fx:id="mnuNewGameWhiteAI" onAction="#handleNewGameAction" text="_Computer: White" />
                             </items>
                         </Menu>
                         <SeparatorMenuItem mnemonicParsing="false" />
@@ -61,13 +61,13 @@
                         </Menu>
                         <Menu text="_Difficulty">
                             <items>
-                                <RadioMenuItem id="easy" text="_Easy" onAction="#handleDifficultyChangeAction" selected="true">
+                                <RadioMenuItem id="easy" onAction="#handleDifficultyChangeAction" selected="true" text="_Easy">
                                     <toggleGroup>
                                         <ToggleGroup fx:id="difficultyoptions" />
                                     </toggleGroup>
                                 </RadioMenuItem>
-                                <RadioMenuItem id="medium" text="_Medium" onAction="#handleDifficultyChangeAction" toggleGroup="$difficultyoptions" />
-                                <RadioMenuItem id="hard" text="_Hard" onAction="#handleDifficultyChangeAction" toggleGroup="$difficultyoptions" />
+                                <RadioMenuItem id="medium" onAction="#handleDifficultyChangeAction" text="_Medium" toggleGroup="$difficultyoptions" />
+                                <RadioMenuItem id="hard" onAction="#handleDifficultyChangeAction" text="_Hard" toggleGroup="$difficultyoptions" />
                             </items>
                         </Menu>
                         <MenuItem fx:id="mnuFlipBoard" mnemonicParsing="true" onAction="#handleFlipBoardAction" text="_Flip Board">
