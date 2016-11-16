@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
@@ -12,10 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.*;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
@@ -345,6 +343,18 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
         lblStatus.setText("Save Game clicked");                 // DEBUG
+        TextInputDialog dialog = new TextInputDialog("walter");
+        dialog.setTitle("Save Game");
+        dialog.setHeaderText("Save Your Game");
+        dialog.setContentText("Enter File Name:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            chessboard.saveGame(result.get());
+        }
+//        if(chessboard.saveGame("test")) {
+//            System.out.println("Game Saved");
+//        }
     }
 
 
@@ -359,7 +369,6 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");       // DEBUG
-        chessboard.saveGame("test");
     }
 
 

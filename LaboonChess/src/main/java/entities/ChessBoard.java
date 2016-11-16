@@ -5,8 +5,7 @@ import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
 
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
@@ -42,9 +41,8 @@ public class ChessBoard {
                 { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
         };
         turn = 0;
-        lastFen = toFEN();
         allFenStrings = new ArrayList<>();
-        allFenStrings.add(lastFen);
+        lastFen = toFEN();
     }
 
     /**
@@ -67,8 +65,16 @@ public class ChessBoard {
         populateBoard(fenBeginning);
     }
 
+    /**
+     * Saves all the fen strings since the beginning of the game to be able to repopulate the board
+     *
+     * @param fileName
+     * @return true if save was successful, false otherwise
+     */
     public boolean saveGame(String fileName) {
-        try (PrintStream out = new PrintStream(new FileOutputStream(fileName + ".txt"))) {
+        String[] split = fileName.split("\\.");
+        try {
+            PrintStream out = new PrintStream(new File("savedGames/" + split[0] + ".txt"));
             for(int i=0; i<allFenStrings.size(); i++) {
                 out.println(allFenStrings.get(i));
             }
