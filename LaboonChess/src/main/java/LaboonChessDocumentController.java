@@ -359,6 +359,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");       // DEBUG
+        chessboard.saveGame("test");
     }
 
 

@@ -4,7 +4,11 @@ import com.github.bhlangonijr.chesslib.Board;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
+
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 
 public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
@@ -18,6 +22,7 @@ public class ChessBoard {
     private boolean hasRook70BeenMoved = false;
     private boolean hasRook77BeenMoved = false;
     private String castling = "";
+    private ArrayList<String> allFenStrings;
 
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
@@ -38,6 +43,8 @@ public class ChessBoard {
         };
         turn = 0;
         lastFen = toFEN();
+        allFenStrings = new ArrayList<>();
+        allFenStrings.add(lastFen);
     }
 
     /**
@@ -58,6 +65,18 @@ public class ChessBoard {
         }
         chessboard = new char[8][8];
         populateBoard(fenBeginning);
+    }
+
+    public boolean saveGame(String fileName) {
+        try (PrintStream out = new PrintStream(new FileOutputStream(fileName + ".txt"))) {
+            for(int i=0; i<allFenStrings.size(); i++) {
+                out.println(allFenStrings.get(i));
+            }
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 
     /**
@@ -295,6 +314,7 @@ public class ChessBoard {
         boardFen = fenBoard;
         fenBoard = fenBoard + " " + turn();
         fenBoard = fenBoard + "" + castling;
+        allFenStrings.add(fenBoard);
         return fenBoard;
     }
 
