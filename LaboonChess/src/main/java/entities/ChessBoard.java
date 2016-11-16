@@ -19,6 +19,9 @@ public class ChessBoard {
     private boolean hasRook77BeenMoved = false;
     private String castling = "";
 
+    public enum returnStatus {
+        INVALID, VALID, CHECKMATE, CASTLING, ENPASSANT;
+    }
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
      *      layout, the Turn is set to White, and the FEN string is the representation
@@ -141,19 +144,56 @@ public class ChessBoard {
      *
      * @param sanFrom The starting USCF chessboard coordinate that corresponds to a given chess square. (e.g. 'a1')
      * @param sanTo The starting USCF chessboard coordinate that corresponds to a given chess square. (e.g. 'd4')
-     * @return True if the move was valid; otherwise False.
+     * @return 0 if the move was invalid; 1+ if the move was valid; 2 if checkmate occurred; 3 if castling occurred; 4 if en passant occurred.
      */
-    public boolean move(String sanFrom, String sanTo) {
-        checkIfKingMoved();
-        checkIfRookMoved();
-        System.out.println("hasBlackKingMoved = " + hasBlackKingBeenMoved);
-        System.out.println("hasWhiteKingMoved = " + hasWhiteKingBeenMoved);
+    public returnStatus move(String sanFrom, String sanTo) {
+        // keep status of the potential move
+        returnStatus status = returnStatus.INVALID;
+
         if (!isLegal(sanFrom, sanTo)) {             //returns false if isn't a legal move
             System.out.println("ILLEGAL MOVE");
-            return false;
+            return status;
 
         } else {                                    //changes the board if it is a legal move
             System.out.println("LEGAL MOVE");
+
+            /**
+             * Check if the KING has moved two spaces instead of
+             *      one; this means a castling move was performed:
+             *
+             * Take the old location of the king and move the rook
+             *      on that side to where the king used to be.
+             */
+            if ((sanFrom.equals("e1") && chessboard[0][4] == 'k') || (sanFrom.equals("e8") && chessboard[7][4] == 'K')) {
+                // a king is being moved. if it's moved two spaces
+                //      then its a castling action
+                if (sanTo.contains("c") || sanTo.contains("g")) {
+                    // king is moved two spaces, complete the castling
+                    //      by changing the FEN string to reflect
+                    status = returnStatus.CASTLING;
+
+                    // perform the king's move first
+                    update2DArrayChessboard(sanFrom, sanTo);
+
+                    // build the rook's move as the auxiliary move
+
+                    // Castling to the right (King-side)
+                    if (sanFrom.equals("e1") && sanTo.contains("g")) {  // white king
+                        sanFrom = "h1"; sanTo = "f1";
+                    } else if (sanFrom.equals("e8") && sanTo.contains("g")) {   // black king
+                        sanFrom = "h8"; sanTo = "f8";
+                    }
+
+                    // Castling to the left (Queen-side)
+                    if (sanFrom.equals("e1") && sanTo.contains("c")) {  // white king
+                        sanFrom = "a1"; sanTo = "d1";
+                    } else if (sanFrom.equals("e8") && sanTo.contains("c")) {   // black king
+                        sanFrom = "a8"; sanTo = "h8";
+                    }
+                }
+            }
+
+            // update the chessboard array
             update2DArrayChessboard(sanFrom, sanTo);
 
             if (turn == 0) {
@@ -162,10 +202,11 @@ public class ChessBoard {
                 turn = 0;
             }
 
+            // update the FEN string
             lastFen = toFEN();
         }
 
-        return true;
+        return status;
     }
 
 

@@ -101,7 +101,9 @@ public class LaboonChessDocumentController implements Initializable {
 
         System.out.println("AI moving from: " + fromSquareStr);
         System.out.println("To: " + toSquareStr);
-        if (chessboard.move(fromSquareStr, toSquareStr)) {
+
+        ChessBoard.returnStatus status;
+        if ((status = chessboard.move(fromSquareStr, toSquareStr)) != ChessBoard.returnStatus.INVALID) {
 
             Pane fromSquare = getChessSquare(fromSquareStr);
             Pane toSquare = getChessSquare(toSquareStr);
@@ -115,7 +117,6 @@ public class LaboonChessDocumentController implements Initializable {
             }
 
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
-
         }
     }
 
@@ -410,6 +411,7 @@ public class LaboonChessDocumentController implements Initializable {
             /* SECOND-CLICK */
             String fromSquare = guiChessSquare.getId();                     // get the "first-click" chess square
             String toSquare = curSquare.getId();                            // get the "second-click" chess square
+            ChessBoard.returnStatus status;
 
             if (guiChessSquare.equals(curSquare)) {
                 /* USER CLICKED ON THEIR CURRENTLY HIGHLIGHTED PIECE */
@@ -417,7 +419,7 @@ public class LaboonChessDocumentController implements Initializable {
                 guiChessPiece.setOpacity(1);                // Unhighlight the currently highlighted piece
                 isFirstClick = true;                        // back to start
 
-            } else if (chessboard.move(fromSquare, toSquare)) {
+            } else if ((status = chessboard.move(fromSquare, toSquare)) != ChessBoard.returnStatus.INVALID) {
                 /*
                     See if we can place the chess piece from the
                     first click at this square on the board.
@@ -428,6 +430,32 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
                     san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
+                    // perform special operation if Castling just occurred
+                    if (status == ChessBoard.returnStatus.CASTLING) {
+                        // get the proper rook
+                        ImageView rook;
+                        switch (curSquare.getId()) {
+                            case "c8":
+                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#a8")).getChildren().get(0);
+                                ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
+                                break;
+                            case "g8":
+                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#h8")).getChildren().get(0);
+                                ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
+                                break;
+                            case "c1":
+                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#a1")).getChildren().get(0);
+                                ((Pane)guiChessboard.lookup("#d1")).getChildren().add(((Pane)guiChessboard.lookup("#a1")).getChildren().get(0));
+                                break;
+                            case "g1":
+                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#h8")).getChildren().get(0);
+                                ((Pane)guiChessboard.lookup("#f1")).getChildren().add(((Pane)guiChessboard.lookup("#h1")).getChildren().get(0));
+                                break;
+                        }
+
+                        // move the rook according to the Castling
+
+                    }
                 } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                         != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
                     /* OPPONENT PIECE EXISTS HERE */
