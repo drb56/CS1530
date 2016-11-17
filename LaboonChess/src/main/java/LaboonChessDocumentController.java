@@ -264,6 +264,15 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
         lblStatus.setText("Load Game clicked");                 // DEBUG
+        TextInputDialog dialog = new TextInputDialog("");
+        dialog.setTitle("Load Game");
+        dialog.setHeaderText("Load Your Game");
+        dialog.setContentText("Choose file:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            chessboard = new ChessBoard();
+        }
     }
 
     @FXML
@@ -343,7 +352,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
         lblStatus.setText("Save Game clicked");                 // DEBUG
-        TextInputDialog dialog = new TextInputDialog("walter");
+        TextInputDialog dialog = new TextInputDialog("");
         dialog.setTitle("Save Game");
         dialog.setHeaderText("Save Your Game");
         dialog.setContentText("Enter File Name:");
