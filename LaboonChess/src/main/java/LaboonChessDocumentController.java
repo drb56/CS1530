@@ -473,8 +473,8 @@ public class LaboonChessDocumentController implements Initializable {
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
                 // if playerType == cpu
-                //if (playerType > 0) {
-                if (chessboard.turn() > 0) {
+                if (playerType > 0) {
+                //if (chessboard.turn() > 0) {
                     moveStockFish(chessboard.toFEN(), 100);
                 }
 
