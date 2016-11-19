@@ -74,10 +74,6 @@ public class ChessBoard {
         populateBoard(fenBeginning);
     }
 
-    public void addToHistory(String fen) {
-        allFenStrings.add(fen);
-    }
-
     /**
      * Saves all the fen strings since the beginning of the game to be able to repopulate the board
      *
@@ -96,6 +92,14 @@ public class ChessBoard {
         catch (Exception e) {
             return false;
         }
+    }
+
+    /**
+     * Adds a fen string to the history
+     * @param fen the string to add
+     */
+    public void addToHistory(String fen) {
+        allFenStrings.add(fen);
     }
 
     /**
@@ -333,7 +337,6 @@ public class ChessBoard {
         boardFen = fenBoard;
         fenBoard = fenBoard + " " + turn();
         fenBoard = fenBoard + "" + castling;
-//        allFenStrings.add(fenBoard);
         return fenBoard;
     }
 
@@ -347,7 +350,6 @@ public class ChessBoard {
     private String generateFEN(char[] fenBoardArray){
         String boardFen = generateBoardFen(fenBoardArray);
         castling = generateCastleFen();
-//        String halfMove = generateHalfMoveFen(fenBoardArray);
 
         return boardFen;
     }

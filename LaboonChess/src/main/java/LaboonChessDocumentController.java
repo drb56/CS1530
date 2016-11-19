@@ -118,6 +118,7 @@ public class LaboonChessDocumentController implements Initializable {
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
 
         }
+        chessboard.addToHistory(chessboard.toFEN());
     }
 
     /**
@@ -267,10 +268,6 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
         lblStatus.setText("Load Game clicked");                 // DEBUG
-//        TextInputDialog dialog = new TextInputDialog("");
-//        dialog.setTitle("Load Game");
-//        dialog.setHeaderText("Load Your Game");
-//        dialog.setContentText("Choose file:");
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
@@ -288,19 +285,7 @@ public class LaboonChessDocumentController implements Initializable {
         catch (Exception e) {
 
         }
-//        for(int i=0; i<fenList.size(); i++) {
-//            System.out.println(fenList.get(i));
-//        }
         chessboard = new ChessBoard(fenList);
-        ArrayList<String> blah = chessboard.getFenList();
-        for(int i=0; i<blah.size(); i++) {
-            System.out.println(blah.get(i));
-        }
-
-//        Optional<String> result = dialog.showAndWait();
-//        if (result.isPresent()){
-//            chessboard = new ChessBoard();
-//        }
     }
 
     @FXML
