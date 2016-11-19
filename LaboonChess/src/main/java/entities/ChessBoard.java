@@ -45,12 +45,17 @@ public class ChessBoard {
         lastFen = toFEN();
     }
 
+    public ArrayList<String> getFenList() {
+        return allFenStrings;
+    }
+
     /**
      * Creates a ChessBoard from a FEN string. Used for loading a game.
      *
      * @param fenList an arrayList of fen strings
      */
     public ChessBoard(ArrayList<String> fenList) {
+        allFenStrings = new ArrayList<>();
         for(int i=0; i<fenList.size(); i++) {
             allFenStrings.add(fenList.get(i));
         }
@@ -67,6 +72,10 @@ public class ChessBoard {
         }
         chessboard = new char[8][8];
         populateBoard(fenBeginning);
+    }
+
+    public void addToHistory(String fen) {
+        allFenStrings.add(fen);
     }
 
     /**
@@ -324,7 +333,7 @@ public class ChessBoard {
         boardFen = fenBoard;
         fenBoard = fenBoard + " " + turn();
         fenBoard = fenBoard + "" + castling;
-        allFenStrings.add(fenBoard);
+//        allFenStrings.add(fenBoard);
         return fenBoard;
     }
 

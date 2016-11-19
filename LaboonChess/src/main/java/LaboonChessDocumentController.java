@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -273,12 +274,27 @@ public class LaboonChessDocumentController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
-        List<String> fenList = new ArrayList<>();
+        ArrayList<String> fenList = new ArrayList<>();
         try {
             FileReader reader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null)
+            {
+                fenList.add(line);
+            }
+            reader.close();
         }
         catch (Exception e) {
 
+        }
+//        for(int i=0; i<fenList.size(); i++) {
+//            System.out.println(fenList.get(i));
+//        }
+        chessboard = new ChessBoard(fenList);
+        ArrayList<String> blah = chessboard.getFenList();
+        for(int i=0; i<blah.size(); i++) {
+            System.out.println(blah.get(i));
         }
 
 //        Optional<String> result = dialog.showAndWait();
@@ -465,7 +481,7 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().remove(0);                      // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);          // insert the first-click piece onto this square
                 }
-
+                chessboard.addToHistory(chessboard.toFEN());
                 // finished with second-click
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
