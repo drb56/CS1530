@@ -117,6 +117,28 @@ public class LaboonChessDocumentController implements Initializable {
             }
 
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
+
+            if (status == ChessBoard.returnStatus.CASTLING) {
+                handleCastling(toSquare);
+            }
+        }
+    }
+
+    public void handleCastling(Pane curSquare) {
+        // get and set the proper rook to complete the castle
+        switch (curSquare.getId()) {
+            case "c8":
+                ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
+                break;
+            case "g8":
+                ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
+                break;
+            case "c1":
+                ((Pane)guiChessboard.lookup("#d1")).getChildren().add(((Pane)guiChessboard.lookup("#a1")).getChildren().get(0));
+                break;
+            case "g1":
+                ((Pane)guiChessboard.lookup("#f1")).getChildren().add(((Pane)guiChessboard.lookup("#h1")).getChildren().get(0));
+                break;
         }
     }
 
@@ -384,6 +406,7 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML void handleChessboardClickAction(MouseEvent event) {
         Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
+
         if (isFirstClick) {
             /* FIRST-CLICK */
 
@@ -432,29 +455,8 @@ public class LaboonChessDocumentController implements Initializable {
 
                     // perform special operation if Castling just occurred
                     if (status == ChessBoard.returnStatus.CASTLING) {
-                        // get the proper rook
-                        ImageView rook;
-                        switch (curSquare.getId()) {
-                            case "c8":
-                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#a8")).getChildren().get(0);
-                                ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
-                                break;
-                            case "g8":
-                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#h8")).getChildren().get(0);
-                                ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
-                                break;
-                            case "c1":
-                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#a1")).getChildren().get(0);
-                                ((Pane)guiChessboard.lookup("#d1")).getChildren().add(((Pane)guiChessboard.lookup("#a1")).getChildren().get(0));
-                                break;
-                            case "g1":
-                                //rook = (ImageView) ((Pane)guiChessboard.lookup("#h8")).getChildren().get(0);
-                                ((Pane)guiChessboard.lookup("#f1")).getChildren().add(((Pane)guiChessboard.lookup("#h1")).getChildren().get(0));
-                                break;
-                        }
-
-                        // move the rook according to the Castling
-
+                        // get and set the proper rook to complete the castle
+                        handleCastling(curSquare);
                     }
                 } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                         != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
@@ -470,7 +472,9 @@ public class LaboonChessDocumentController implements Initializable {
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
-                if(playerType > 0) {
+                // if playerType == cpu
+                //if (playerType > 0) {
+                if (chessboard.turn() > 0) {
                     moveStockFish(chessboard.toFEN(), 100);
                 }
 
