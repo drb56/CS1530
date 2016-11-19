@@ -150,11 +150,11 @@ public class LaboonChessDocumentController implements Initializable {
                 color2 = "#ed4e31"; // tomato
                 break;
             case "hulk":
-                color1 = "#5b4862"; // purple
+                color1 = "#4d004d"; // purple
                 color2 = "#70964b"; // green
                 break;
             case "ironman":
-                color1 = "#dc1405"; // red
+                color1 = "#cc0000"; // red
                 color2 = "#ffa700"; // yellow
                 break;
             case "pitt":

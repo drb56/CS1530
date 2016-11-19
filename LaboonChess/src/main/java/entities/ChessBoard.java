@@ -156,6 +156,7 @@ public class ChessBoard {
 
         } else {                                    //changes the board if it is a legal move
             System.out.println("LEGAL MOVE");
+            status = returnStatus.VALID;
 
             /**
              * Check if the KING has moved two spaces instead of
