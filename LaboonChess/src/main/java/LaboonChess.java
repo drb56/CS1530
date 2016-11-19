@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import entities.TimerAndMessages;
 
 /**
  *
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 public class LaboonChess extends Application {
     @FXML Label lblTimer = null;
     long timer_count = 0;
+
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -50,5 +52,6 @@ public class LaboonChess extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        new TimerAndMessages();
     }
 }
