@@ -1,5 +1,11 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -14,10 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.*;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
@@ -28,9 +31,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.stage.*;
 import javafx.util.Duration;
 import entities.ChessBoard;
 import services.stockfish.Stockfish;
@@ -119,6 +120,7 @@ public class LaboonChessDocumentController implements Initializable {
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
 
         }
+        chessboard.addToHistory(chessboard.toFEN());
     }
 
     /**
@@ -268,6 +270,24 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
         lblStatus.setText("Load Game clicked");                 // DEBUG
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
+        ArrayList<String> fenList = new ArrayList<>();
+        try {
+            FileReader reader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null)
+            {
+                fenList.add(line);
+            }
+            reader.close();
+        }
+        catch (Exception e) {
+
+        }
+        chessboard = new ChessBoard(fenList);
     }
 
     @FXML
@@ -347,6 +367,15 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
         lblStatus.setText("Save Game clicked");                 // DEBUG
+        TextInputDialog dialog = new TextInputDialog("");
+        dialog.setTitle("Save Game");
+        dialog.setHeaderText("Save Your Game");
+        dialog.setContentText("Enter File Name:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            chessboard.saveGame(result.get());
+        }
     }
 
 
@@ -439,7 +468,7 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().remove(0);                      // remove the current chess piece
                     curSquare.getChildren().add(0, guiChessPiece);          // insert the first-click piece onto this square
                 }
-
+                chessboard.addToHistory(chessboard.toFEN());
                 // finished with second-click
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished

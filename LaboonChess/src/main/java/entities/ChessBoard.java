@@ -4,7 +4,10 @@ import com.github.bhlangonijr.chesslib.Board;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
+
+import java.io.*;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 
 public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
@@ -18,6 +21,7 @@ public class ChessBoard {
     private boolean hasRook70BeenMoved = false;
     private boolean hasRook77BeenMoved = false;
     private String castling = "";
+    private ArrayList<String> allFenStrings;
 
     /**
      * Creates a new ChessBoard instance. The chessboard is initialized to the "default"
@@ -37,15 +41,25 @@ public class ChessBoard {
                 { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
         };
         turn = 0;
+        allFenStrings = new ArrayList<>();
         lastFen = toFEN();
+    }
+
+    public ArrayList<String> getFenList() {
+        return allFenStrings;
     }
 
     /**
      * Creates a ChessBoard from a FEN string. Used for loading a game.
      *
-     * @param fen the FEN string to create a board from
+     * @param fenList an arrayList of fen strings
      */
-    public ChessBoard(String fen) {
+    public ChessBoard(ArrayList<String> fenList) {
+        allFenStrings = new ArrayList<>();
+        for(int i=0; i<fenList.size(); i++) {
+            allFenStrings.add(fenList.get(i));
+        }
+        String fen = allFenStrings.get(allFenStrings.size()-1);
         lastFen = fen;
         String[] fenArray = fen.split(" ");
         String[] fenBeginning = fenArray[0].split("/");
@@ -58,6 +72,34 @@ public class ChessBoard {
         }
         chessboard = new char[8][8];
         populateBoard(fenBeginning);
+    }
+
+    /**
+     * Saves all the fen strings since the beginning of the game to be able to repopulate the board
+     *
+     * @param fileName
+     * @return true if save was successful, false otherwise
+     */
+    public boolean saveGame(String fileName) {
+        String[] split = fileName.split("\\.");
+        try {
+            PrintStream out = new PrintStream(new File("savedGames/" + split[0] + ".txt"));
+            for(int i=0; i<allFenStrings.size(); i++) {
+                out.println(allFenStrings.get(i));
+            }
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Adds a fen string to the history
+     * @param fen the string to add
+     */
+    public void addToHistory(String fen) {
+        allFenStrings.add(fen);
     }
 
     /**
@@ -308,7 +350,6 @@ public class ChessBoard {
     private String generateFEN(char[] fenBoardArray){
         String boardFen = generateBoardFen(fenBoardArray);
         castling = generateCastleFen();
-//        String halfMove = generateHalfMoveFen(fenBoardArray);
 
         return boardFen;
     }
