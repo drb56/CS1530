@@ -6,9 +6,6 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by Craig on 11/15/2016.
- */
 public class TimerAndMessages {
     static int counter = 0;
     static String[] s = {"Hurry up! You are taking too long!", "Yes, if you take longer, your IQ will go up",
