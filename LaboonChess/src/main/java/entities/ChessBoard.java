@@ -48,9 +48,13 @@ public class ChessBoard {
     /**
      * Creates a ChessBoard from a FEN string. Used for loading a game.
      *
-     * @param fen the FEN string to create a board from
+     * @param fenList an arrayList of fen strings
      */
-    public ChessBoard(String fen) {
+    public ChessBoard(ArrayList<String> fenList) {
+        for(int i=0; i<fenList.size(); i++) {
+            allFenStrings.add(fenList.get(i));
+        }
+        String fen = allFenStrings.get(allFenStrings.size()-1);
         lastFen = fen;
         String[] fenArray = fen.split(" ");
         String[] fenBeginning = fenArray[0].split("/");

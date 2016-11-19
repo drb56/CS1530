@@ -1,5 +1,9 @@
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
@@ -24,9 +28,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.stage.*;
 import javafx.util.Duration;
 import entities.ChessBoard;
 import services.stockfish.Stockfish;
@@ -264,15 +266,25 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
         lblStatus.setText("Load Game clicked");                 // DEBUG
-        TextInputDialog dialog = new TextInputDialog("");
-        dialog.setTitle("Load Game");
-        dialog.setHeaderText("Load Your Game");
-        dialog.setContentText("Choose file:");
-
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()){
-            chessboard = new ChessBoard();
+//        TextInputDialog dialog = new TextInputDialog("");
+//        dialog.setTitle("Load Game");
+//        dialog.setHeaderText("Load Your Game");
+//        dialog.setContentText("Choose file:");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
+        List<String> fenList = new ArrayList<>();
+        try {
+            FileReader reader = new FileReader(file);
         }
+        catch (Exception e) {
+
+        }
+
+//        Optional<String> result = dialog.showAndWait();
+//        if (result.isPresent()){
+//            chessboard = new ChessBoard();
+//        }
     }
 
     @FXML
@@ -361,9 +373,6 @@ public class LaboonChessDocumentController implements Initializable {
         if (result.isPresent()){
             chessboard.saveGame(result.get());
         }
-//        if(chessboard.saveGame("test")) {
-//            System.out.println("Game Saved");
-//        }
     }
 
 
