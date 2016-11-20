@@ -84,13 +84,12 @@ public class ChessBoard {
     /**
      * Saves all the fen strings since the beginning of the game to be able to repopulate the board
      *
-     * @param fileName
+     * @param file
      * @return true if save was successful, false otherwise
      */
-    public boolean saveGame(String fileName) {
-        String[] split = fileName.split("\\.");
+    public boolean saveGame(File file) {
         try {
-            PrintStream out = new PrintStream(new File("savedGames/" + split[0] + ".txt"));
+            PrintStream out = new PrintStream(file.getAbsoluteFile());
             for(int i=0; i<allFenStrings.size(); i++) {
                 out.println(allFenStrings.get(i));
             }

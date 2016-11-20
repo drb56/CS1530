@@ -293,24 +293,25 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
         lblStatus.setText("Load Game clicked");                 // DEBUG
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
-        ArrayList<String> fenList = new ArrayList<>();
-        try {
-            FileReader reader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            String line;
-            while ((line = bufferedReader.readLine()) != null)
-            {
-                fenList.add(line);
-            }
-            reader.close();
-        }
-        catch (Exception e) {
+        if (file != null) {
+            ArrayList<String> fenList = new ArrayList<>();
+            try {
+                FileReader reader = new FileReader(file);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    fenList.add(line);
+                }
+                reader.close();
+            } catch (Exception e) {
 
+            }
+            chessboard = new ChessBoard(fenList);
         }
-        chessboard = new ChessBoard(fenList);
     }
 
     @FXML
@@ -390,14 +391,17 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
         lblStatus.setText("Save Game clicked");                 // DEBUG
-        TextInputDialog dialog = new TextInputDialog("");
-        dialog.setTitle("Save Game");
-        dialog.setHeaderText("Save Your Game");
-        dialog.setContentText("Enter File Name:");
 
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()){
-            chessboard.saveGame(result.get());
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Game");
+        File file = fileChooser.showSaveDialog(guiChessboard.getScene().getWindow());
+        if (file != null) {
+            try {
+                file.createNewFile();
+                chessboard.saveGame(file);
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
     }
 
