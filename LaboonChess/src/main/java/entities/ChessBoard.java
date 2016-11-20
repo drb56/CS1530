@@ -4,7 +4,10 @@ import com.github.bhlangonijr.chesslib.Board;
 import com.github.bhlangonijr.chesslib.move.MoveGenerator;
 import com.github.bhlangonijr.chesslib.move.MoveGeneratorException;
 import com.github.bhlangonijr.chesslib.move.MoveList;
+
+import java.io.*;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 
 public class ChessBoard {
     private char[][] chessboard;    /* holds the contents of the chessboard (pnrbkq | PNRBKQ | null) */
@@ -12,6 +15,7 @@ public class ChessBoard {
     private String boardFen;        /* holds the beginning portion of the FEN string that has the locations of each piece */
     private int turn;               /* holds which team is to go next (0=white 1=black) */
     private String castling = "";
+    private ArrayList<String> allFenStrings;
 
     public enum returnStatus {
         INVALID, VALID, CHECKMATE, CASTLING, ENPASSANT;
@@ -35,17 +39,33 @@ public class ChessBoard {
                 { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
                 { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
         };
+        castling = " KQkq";
         turn = 0;
+        allFenStrings = new ArrayList<>();
         lastFen = toFEN();
+    }
+
+    /**
+     * Gets the list of FEN string moves performed during
+     *      the course of the chess game.
+     * @return
+     */
+    public ArrayList<String> getFenList() {
+        return allFenStrings;
     }
 
 
     /**
      * Creates a ChessBoard from a FEN string. Used for loading a game.
      *
-     * @param fen the FEN string to create a board from
+     * @param fenList an arrayList of fen strings
      */
-    public ChessBoard(String fen) {
+    public ChessBoard(ArrayList<String> fenList) {
+        allFenStrings = new ArrayList<>();
+        for(int i=0; i<fenList.size(); i++) {
+            allFenStrings.add(fenList.get(i));
+        }
+        String fen = allFenStrings.get(allFenStrings.size()-1);
         lastFen = fen;
         String[] fenArray = fen.split(" ");
         String[] fenBeginning = fenArray[0].split("/");
@@ -60,6 +80,34 @@ public class ChessBoard {
         populateBoard(fenBeginning);
     }
 
+
+    /**
+     * Saves all the fen strings since the beginning of the game to be able to repopulate the board
+     *
+     * @param fileName
+     * @return true if save was successful, false otherwise
+     */
+    public boolean saveGame(String fileName) {
+        String[] split = fileName.split("\\.");
+        try {
+            PrintStream out = new PrintStream(new File("savedGames/" + split[0] + ".txt"));
+            for(int i=0; i<allFenStrings.size(); i++) {
+                out.println(allFenStrings.get(i));
+            }
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Adds a fen string to the history
+     * @param fen the string to add
+     */
+    public void addToHistory(String fen) {
+        allFenStrings.add(fen);
+    }
 
     /**
      * physically populates the chessboard with the values that should be there
@@ -158,6 +206,22 @@ public class ChessBoard {
             System.out.println("LEGAL MOVE");
             status = returnStatus.VALID;
 
+            // remove castling if rooks or kings changed
+            switch (sanFrom) {
+                case "a1":
+                    castling = castling.replaceAll("Q", "");
+                    break;
+                case "h1":
+                    castling = castling.replaceAll("K", "");
+                    break;
+                case "a8":
+                    castling = castling.replaceAll("q", "");
+                    break;
+                case "h8":
+                    castling = castling.replaceAll("k", "");
+                    break;
+            }
+
             /**
              * Check if the KING has moved two spaces instead of
              *      one; this means a castling move was performed:
@@ -165,31 +229,49 @@ public class ChessBoard {
              * Take the old location of the king and move the rook
              *      on that side to where the king used to be.
              */
-            if ((sanFrom.equals("e1") && chessboard[7][4] == 'K') || (sanFrom.equals("e8") && chessboard[0][4] == 'k')) {
-                // a king is being moved. if it's moved two spaces
-                //      then its a castling action
-                if (sanTo.contains("c") || sanTo.contains("g")) {
-                    // king is moved two spaces, complete the castling
-                    //      by changing the FEN string to reflect
-                    status = returnStatus.CASTLING;
+            if (castling.matches(".*(K|Q|k|q).*")) {
+                if ((sanFrom.equals("e1") && chessboard[7][4] == 'K') || (sanFrom.equals("e8") && chessboard[0][4] == 'k')) {
+                    // a king is being moved. if it's moved two spaces
+                    //      then its a castling action
+                    if (sanTo.contains("c") || sanTo.contains("g")) {
+                        // king is moved two spaces, complete the castling
+                        //      by changing the FEN string to reflect
+                        status = returnStatus.CASTLING;
 
-                    // perform the king's move first
-                    update2DArrayChessboard(sanFrom, sanTo);
+                        // perform the king's move first
+                        update2DArrayChessboard(sanFrom, sanTo);
 
-                    // build the rook's move as the auxiliary move
+                        // if the king moves then no more castling can occur
+                        //      for that team
+                        if (sanFrom.equals("e1")) {
+                            castling = castling.replaceAll("(K|Q)", "");
+                        } else {
+                            castling = castling.replaceAll("(k|q)", "");
+                        }
 
-                    // Castling to the right (King-side)
-                    if (sanFrom.equals("e1") && sanTo.contains("g")) {  // white king
-                        sanFrom = "h1"; sanTo = "f1"; castling = castling.replaceAll("KQ", "-");
-                    } else if (sanFrom.equals("e8") && sanTo.contains("g")) {   // black king
-                        sanFrom = "h8"; sanTo = "f8"; castling = castling.replaceAll("kq", "-");
+                        // castling for White
+                        if (sanFrom.equals("e1") && sanTo.contains("g")) {  // king-side
+                            sanFrom = "h1";
+                            sanTo = "f1";
+                        } else if (sanFrom.equals("e1") && sanTo.contains("c")) {  // queen-side
+                            sanFrom = "a1";
+                            sanTo = "d1";
+                        }
+
+                        // castling for Black
+                        if (sanFrom.equals("e8") && sanTo.contains("g")) {   // king-side
+                            sanFrom = "h8";
+                            sanTo = "f8";
+                        } else if (sanFrom.equals("e8") && sanTo.contains("c")) {   // queen-side
+                            sanFrom = "a8";
+                            sanTo = "h8";
+                        }
                     }
 
-                    // Castling to the left (Queen-side)
-                    if (sanFrom.equals("e1") && sanTo.contains("c")) {  // white king
-                        sanFrom = "a1"; sanTo = "d1"; castling = castling.replaceAll("KQ", "-");
-                    } else if (sanFrom.equals("e8") && sanTo.contains("c")) {   // black king
-                        sanFrom = "a8"; sanTo = "h8"; castling = castling.replaceAll("kq", "-");
+                    // check if castling is complete for both sides; if so,
+                    //      then mark it as '-' to show this in the FEN string.
+                    if (castling.equals(" ")) {
+                        castling = " -";
                     }
                 }
             }

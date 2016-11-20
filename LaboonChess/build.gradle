@@ -15,6 +15,18 @@ repositories {
 /**
  * Prints out test outputs in nicely formatted string
  */
+task filepermission(type: Exec) {
+    String OSName = (System.getProperty("os.name")).toLowerCase();
+    if (OSName.contains("mac")) {
+        commandLine 'chmod', '777', 'src/main/resources/binaries/mac/stockfish-8-64'
+    } else if (OSName.contains("win")){
+        // None
+    } else {
+        commandLine 'chmod', '777', 'src/main/resources/binaries/linux/stockfish_8_x64'
+    }
+
+}
+
 tasks.withType(Test) {
     testLogging {
         // set options for log level LIFECYCLE
