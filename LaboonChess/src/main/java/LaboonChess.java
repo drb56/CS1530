@@ -23,7 +23,6 @@ public class LaboonChess extends Application {
         
         Scene scene = new Scene(root);
 
-
         // set custom app icon
         stage.getIcons().add(new Image(LaboonChess.class.getResourceAsStream("/images/icon.png")));
 

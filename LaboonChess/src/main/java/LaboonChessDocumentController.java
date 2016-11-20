@@ -104,7 +104,9 @@ public class LaboonChessDocumentController implements Initializable {
 
         System.out.println("AI moving from: " + fromSquareStr);
         System.out.println("To: " + toSquareStr);
-        if (chessboard.move(fromSquareStr, toSquareStr)) {
+
+        ChessBoard.returnStatus status;
+        if ((status = chessboard.move(fromSquareStr, toSquareStr)) != ChessBoard.returnStatus.INVALID) {
 
             Pane fromSquare = getChessSquare(fromSquareStr);
             Pane toSquare = getChessSquare(toSquareStr);
@@ -119,6 +121,27 @@ public class LaboonChessDocumentController implements Initializable {
 
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
 
+            if (status == ChessBoard.returnStatus.CASTLING) {
+                handleCastling(toSquare);
+            }
+        }
+    }
+
+    public void handleCastling(Pane curSquare) {
+        // get and set the proper rook to complete the castle
+        switch (curSquare.getId()) {
+            case "c8":
+                ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
+                break;
+            case "g8":
+                ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
+                break;
+            case "c1":
+                ((Pane)guiChessboard.lookup("#d1")).getChildren().add(((Pane)guiChessboard.lookup("#a1")).getChildren().get(0));
+                break;
+            case "g1":
+                ((Pane)guiChessboard.lookup("#f1")).getChildren().add(((Pane)guiChessboard.lookup("#h1")).getChildren().get(0));
+                break;
         }
         chessboard.addToHistory(chessboard.toFEN());
     }
@@ -153,11 +176,11 @@ public class LaboonChessDocumentController implements Initializable {
                 color2 = "#ed4e31"; // tomato
                 break;
             case "hulk":
-                color1 = "#5b4862"; // purple
+                color1 = "#4d004d"; // purple
                 color2 = "#70964b"; // green
                 break;
             case "ironman":
-                color1 = "#dc1405"; // red
+                color1 = "#cc0000"; // red
                 color2 = "#ffa700"; // yellow
                 break;
             case "pitt":
@@ -414,6 +437,7 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML void handleChessboardClickAction(MouseEvent event) {
         Pane curSquare = (Pane) event.getSource();                          // get the source chess square that was clicked
+
         if (isFirstClick) {
             /* FIRST-CLICK */
 
@@ -441,6 +465,7 @@ public class LaboonChessDocumentController implements Initializable {
             /* SECOND-CLICK */
             String fromSquare = guiChessSquare.getId();                     // get the "first-click" chess square
             String toSquare = curSquare.getId();                            // get the "second-click" chess square
+            ChessBoard.returnStatus status;
 
             if (guiChessSquare.equals(curSquare)) {
                 /* USER CLICKED ON THEIR CURRENTLY HIGHLIGHTED PIECE */
@@ -448,7 +473,7 @@ public class LaboonChessDocumentController implements Initializable {
                 guiChessPiece.setOpacity(1);                // Unhighlight the currently highlighted piece
                 isFirstClick = true;                        // back to start
 
-            } else if (chessboard.move(fromSquare, toSquare)) {
+            } else if ((status = chessboard.move(fromSquare, toSquare)) != ChessBoard.returnStatus.INVALID) {
                 /*
                     See if we can place the chess piece from the
                     first click at this square on the board.
@@ -459,6 +484,11 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
                     san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
 
+                    // perform special operation if Castling just occurred
+                    if (status == ChessBoard.returnStatus.CASTLING) {
+                        // get and set the proper rook to complete the castle
+                        handleCastling(curSquare);
+                    }
                 } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                         != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
                     /* OPPONENT PIECE EXISTS HERE */
@@ -473,7 +503,9 @@ public class LaboonChessDocumentController implements Initializable {
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
 
-                if(playerType > 0) {
+                // if playerType == cpu
+                if (playerType > 0) {
+                //if (chessboard.turn() > 0) {
                     moveStockFish(chessboard.toFEN(), 100);
                 }
 
