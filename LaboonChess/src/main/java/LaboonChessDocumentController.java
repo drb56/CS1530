@@ -4,12 +4,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-import entities.TimerAndMessages;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -25,7 +22,6 @@ import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.ColorInput;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -38,12 +34,11 @@ import services.stockfish.Stockfish;
 
 public class LaboonChessDocumentController implements Initializable {
 
-    /* FXML references JavaFX GUI objects */
+    /* FXML objects directly reference JavaFX GUI objects */
     @FXML private MenuBar mnuMain;          /* menu bar at the top of the application */
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
-    @FXML private GridPane guiChessboard;    /* holds the GUI chessboard */
-
+    @FXML private GridPane guiChessboard;   /* holds the GUI chessboard */
 
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
@@ -55,6 +50,7 @@ public class LaboonChessDocumentController implements Initializable {
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
     private int playerType = 0;             /* determines whether player is white or black */
     private int difficulty = 0;             /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
+
 
     /**
      * First-running method that builds the objects and dependencies needed to run the program. Here,
@@ -75,7 +71,7 @@ public class LaboonChessDocumentController implements Initializable {
             stockfish = new Stockfish();
             if (stockfish.startEngine()) {
                 System.out.println("Stockfish engine started!");
-                // send commands manually
+                // good to send commands
 
             } else {
                 throw new RuntimeException("Could not start Stockfish engine...");
@@ -85,8 +81,9 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+
     /**
-     * Move the chess piece using stock fish
+     * Move the chess piece using the Stockfish API.
      *
      * @param fen fen string
      * @param timeWait time for waiting, longer = more difficult
@@ -122,27 +119,35 @@ public class LaboonChessDocumentController implements Initializable {
             toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
 
             if (status == ChessBoard.returnStatus.CASTLING) {
-                handleCastling(toSquare);
+                performCastling(toSquare);
             }
         }
     }
 
-    public void handleCastling(Pane curSquare) {
+
+    /**
+     * Given the current chess square, will perform
+     *      the special "Castling" move that can be made.
+     *
+     * @param curSquare The currently-chosen chess square.
+     */
+    public void performCastling(Pane curSquare) {
         // get and set the proper rook to complete the castle
         switch (curSquare.getId()) {
-            case "c8":
+            case "c8": // black queen-side
                 ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
                 break;
-            case "g8":
+            case "g8": // black king-side
                 ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
                 break;
-            case "c1":
+            case "c1": // white queen-side
                 ((Pane)guiChessboard.lookup("#d1")).getChildren().add(((Pane)guiChessboard.lookup("#a1")).getChildren().get(0));
                 break;
-            case "g1":
+            case "g1": // white king-side
                 ((Pane)guiChessboard.lookup("#f1")).getChildren().add(((Pane)guiChessboard.lookup("#h1")).getChildren().get(0));
                 break;
         }
+
         chessboard.addToHistory(chessboard.toFEN());
     }
 
@@ -154,6 +159,7 @@ public class LaboonChessDocumentController implements Initializable {
     public Pane getChessSquare(String coordinate) {
         return (Pane) guiChessboard.getScene().lookup("#"+coordinate);
     }
+
 
     /**
      * Changes the color of the chess pieces to the option selected.
@@ -216,6 +222,7 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+
     /**
      * Takes a chess piece and a given color and changes that chess piece to be
      *      that color by using a JavaFX Blend effect.
@@ -242,6 +249,7 @@ public class LaboonChessDocumentController implements Initializable {
 
         return blush;
     }
+
 
     /**
      * Opens the "About" modal dialog window.
@@ -284,36 +292,12 @@ public class LaboonChessDocumentController implements Initializable {
 
 
     /**
-     * Opens a dialog to choose a saved-game in Portable Game Notation (PGN) format.
-     *
-     * TODO: Write the entire logic needed to Load an already-saved chess game in PGN format.
+     * Changes the difficulty of the AI in the game. The values chosen
+     *      are lowest, mid-range, and highest according to the
+     *      StockFish API.
      *
      * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
-    @FXML
-    private void handleLoadGameAction(ActionEvent event) {
-        lblStatus.setText("Load Game clicked");                 // DEBUG
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
-        File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
-        if (file != null) {
-            ArrayList<String> fenList = new ArrayList<>();
-            try {
-                FileReader reader = new FileReader(file);
-                BufferedReader bufferedReader = new BufferedReader(reader);
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    fenList.add(line);
-                }
-                reader.close();
-            } catch (Exception e) {
-
-            }
-            chessboard = new ChessBoard(fenList);
-        }
-    }
-
     @FXML
     private void handleDifficultyChangeAction(ActionEvent event) {
         switch (((RadioMenuItem)event.getSource()).getId()) {
@@ -333,6 +317,7 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
         }
     }
+
 
     /**
      * Resets the chessboard to the starting layout, and also resets the timer.
@@ -382,9 +367,39 @@ public class LaboonChessDocumentController implements Initializable {
 
 
     /**
-     * Opens a dialog to save the current game in Portable Game Notation (PGN) format.
+     * Opens a dialog to choose a saved chess game to load and continue.
      *
-     * TODO: Write the entire logic needed to Save the chess game in PGN format.
+     * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
+     */
+    @FXML
+    private void handleLoadGameAction(ActionEvent event) {
+        lblStatus.setText("Load Game clicked");                 // DEBUG
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
+        if (file != null) {
+            ArrayList<String> fenList = new ArrayList<>();
+            try {
+                FileReader reader = new FileReader(file);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    fenList.add(line);
+                }
+                reader.close();
+            } catch (Exception e) {
+
+            }
+            chessboard = new ChessBoard(fenList);
+        }
+    }
+
+
+    /**
+     * Opens a dialog to save the current chess game for later playing.
+     *
+     * TODO: Save in Portable Game Notation (PGN) format.
      *
      * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
@@ -491,7 +506,7 @@ public class LaboonChessDocumentController implements Initializable {
                     // perform special operation if Castling just occurred
                     if (status == ChessBoard.returnStatus.CASTLING) {
                         // get and set the proper rook to complete the castle
-                        handleCastling(curSquare);
+                        performCastling(curSquare);
                     }
                 } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
                         != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
