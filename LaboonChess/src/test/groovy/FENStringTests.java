@@ -4,16 +4,9 @@ import javafx.scene.Parent;
 import org.junit.Before;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
-
 import java.io.IOException;
-
 import entities.ChessBoard;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.loadui.testfx.Assertions.assertNodeExists;
-import static org.loadui.testfx.Assertions.verifyThat;
 
 /**
  * Created by davidbickford on 11/14/16.
@@ -41,7 +34,7 @@ public class FENStringTests extends GuiTest {
     @Before
     public void beforeTests(){
         chessBoard = new ChessBoard();
-        chessBoard2 = new ChessBoard("r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w");
+        chessBoard2 = new ChessBoard("r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w KQkq");
     }
 
     /**
@@ -49,7 +42,7 @@ public class FENStringTests extends GuiTest {
      */
     @Test
     public void testChessboardToFENGameStart() {
-        assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w kqKQ");
+        assertEquals(chessBoard.toFEN(), "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq");
     }
 
     /**
@@ -73,7 +66,6 @@ public class FENStringTests extends GuiTest {
      */
     @Test
     public void testChessBoardGivenFEN() {
-        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w kqKQ");
+        assertEquals(chessBoard2.toFEN(), "r1bqkb1r/ppppp2p/n4ppn/8/5B2/2PP1N2/PP2PPPP/RN1QKB1R w KQkq");
     }
-
 }

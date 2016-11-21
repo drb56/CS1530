@@ -56,28 +56,69 @@ public class ChessBoard {
 
 
     /**
-     * Creates a ChessBoard from a FEN string. Used for loading a game.
+     * Creates a ChessBoard from a FEN string. Used for loading
+     *      a game; does not have a history of how the chess board
+     *      came to be like this.
      *
-     * @param fenList an arrayList of fen strings
+     * @param fenString A valid FEN string.
+     */
+    public ChessBoard(String fenString) {
+        ChessBoardConstructor(fenString);
+    }
+
+
+    /**
+     * Creates a ChessBoard from a FEN string history. Used for
+     *      loading a game and maintaining the history associated
+     *      with the loaded game.
+     *
+     * @param fenList an arrayList of fen strings.
      */
     public ChessBoard(ArrayList<String> fenList) {
-        allFenStrings = new ArrayList<>();
+        // first build the history of the chess board
+        this.allFenStrings = new ArrayList<>();
         for(int i=0; i<fenList.size(); i++) {
-            allFenStrings.add(fenList.get(i));
+            this.allFenStrings.add(fenList.get(i));
         }
-        String fen = allFenStrings.get(allFenStrings.size()-1);
-        lastFen = fen;
-        String[] fenArray = fen.split(" ");
+
+        // grab the current state of the chess board
+        String fenString = allFenStrings.get(allFenStrings.size()-1);
+
+        // complete construction of class using current state of the board
+        ChessBoardConstructor(fenString);
+    }
+
+
+    /**
+     * Finalizes construction of the class; used if FEN string was given
+     *      as an argument.
+     *
+     * @param fenString A valid FEN string representing the current state of the chess board.
+     */
+    private void ChessBoardConstructor(String fenString) {
+        // passed-in string becomes the "last" FEN for the new board
+        this.lastFen = fenString;
+
+        // split the FEN string to get just the board information
+        String[] fenArray = fenString.split(" ");
         String[] fenBeginning = fenArray[0].split("/");
-        boardFen = fenArray[0];
-        if(fenArray[1].equals("w")) {
-            turn = 0;
-        }
-        else {
-            turn = 1;
-        }
-        chessboard = new char[8][8];
+        this.boardFen = fenArray[0];
+
+        // populate the chess board
+        this.chessboard = new char[8][8];
         populateBoard(fenBeginning);
+
+        // obtain the castling information (if it exists)
+        if (fenArray.length > 2) {
+            castling = " " + fenArray[2];
+        }
+
+        // determine who's turn it is
+        if (fenArray[1].equals("w")) {
+            this.turn = 0;
+        } else {
+            this.turn = 1;
+        }
     }
 
 
@@ -108,8 +149,9 @@ public class ChessBoard {
         allFenStrings.add(fen);
     }
 
+
     /**
-     * physically populates the chessboard with the values that should be there
+     * Populates the chessboard with the values that should be there
      *
      * @param fen array of each row in the board
      */
