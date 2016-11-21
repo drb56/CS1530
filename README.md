@@ -14,7 +14,6 @@ $> chmod 777 stockfish-8-64
 ```
 ## Running Gradle
 ```
-$> cd LaboonChess
 $> gradle [clean|build|test]
 ```
 ## Feature Tutorial
