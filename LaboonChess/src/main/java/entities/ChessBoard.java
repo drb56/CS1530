@@ -45,6 +45,10 @@ public class ChessBoard {
         lastFen = toFEN();
     }
 
+    public char[][] getBoardState() {
+        return chessboard;
+    }
+
     /**
      * Gets the list of FEN string moves performed during
      *      the course of the chess game.
@@ -529,5 +533,15 @@ public class ChessBoard {
             System.out.println(String.format("%d", boardNum--));
         }
         System.out.println("   A   B   C   D   E   F   G   H ");
+    }
+
+    /**
+     * Generate san given row and col
+     */
+
+    public String indexToSan(int row, int col) {
+        row = (row + 7 - (2* row)) + 1;
+        return "" + Character.toString((char)(col + 97)) +  Integer.toString(row);
+
     }
 }
