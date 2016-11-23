@@ -4,9 +4,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
+import entities.ChessBoardGUIProperties;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -22,6 +24,7 @@ import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.ColorInput;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -51,6 +54,7 @@ public class LaboonChessDocumentController implements Initializable {
     private int playerType = 0;             /* determines whether player is white or black */
     private int difficulty = 0;             /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
 
+    private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
 
     /**
      * First-running method that builds the objects and dependencies needed to run the program. Here,
@@ -136,6 +140,7 @@ public class LaboonChessDocumentController implements Initializable {
         switch (curSquare.getId()) {
             case "c8": // black queen-side
                 ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
+
                 break;
             case "g8": // black king-side
                 ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
@@ -328,6 +333,9 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleNewGameAction(ActionEvent event) {
+        chessboard = new ChessBoard();
+        updateGameBoardGUIFromFen(chessboard);
+        
         lblStatus.setText("New game menu item clicked");        // DEBUG
 
         switch (((MenuItem)event.getSource()).getId()) {
@@ -393,6 +401,8 @@ public class LaboonChessDocumentController implements Initializable {
             }
             chessboard = new ChessBoard(fenList);
         }
+
+        updateGameBoardGUIFromFen(chessboard);
     }
 
 
@@ -575,5 +585,113 @@ public class LaboonChessDocumentController implements Initializable {
                 }
             }
         }
+    }
+
+    public void clearGuiBoard() {
+        List children = guiChessboard.getChildren();
+        for(int i = 0; i < children.size(); i++) {
+            Pane child = (Pane) children.get(i);
+            List pane_properties = child.getChildren();
+            if(pane_properties.size() > 0) {
+                pane_properties.remove(0);
+            }
+
+        }
+    }
+
+    public void updateGameBoardGUIFromFen(ChessBoard board) {
+
+        clearGuiBoard();
+
+        char[][] board_state = board.getBoardState();
+        for(int i = 0; i < board_state.length; i++) {
+            for(int j = 0; j < board_state[0].length; j++) {
+                switch(board_state[i][j]) {
+                    case 'p':
+                        ImageView img = board_images.getBPawn();
+                        String san = board.indexToSan(i, j);
+                        String algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'r':
+                        img = board_images.getBrook();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'b':
+                        img = board_images.getBBishop();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'n':
+                        img = board_images.getBKnight();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'k':
+                        img = board_images.getBKing();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'q':
+                        img = board_images.getBQueen();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'P':
+                        img = board_images.getWhitePawn();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'R':
+                        img = board_images.getWhiteRook();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'N':
+                        img = board_images.getWhiteKnight();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'B':
+                        img = board_images.getWhiteBishop();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'K':
+                        img = board_images.getWhiteKing();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+                    case 'Q':
+                        img = board_images.getWhiteQueen();
+                        san = board.indexToSan(i, j);
+                        algebraic_id = "#" + san;
+                        ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
+                        break;
+
+                    default:
+                        break;
+
+
+                }
+            }
+        }
+
+
+
+
+
+
     }
 }
