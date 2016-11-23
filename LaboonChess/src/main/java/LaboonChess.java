@@ -1,22 +1,16 @@
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import entities.TimerAndMessages;
 
 /**
  *
  * @author Joe Meszar (jwm54@pitt.edu)
  */
 public class LaboonChess extends Application {
-    @FXML Label lblTimer = null;
-    long timer_count = 0;
 
-    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
