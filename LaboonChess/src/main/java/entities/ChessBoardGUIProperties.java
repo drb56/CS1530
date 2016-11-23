@@ -1,19 +1,11 @@
 package entities;
 
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.File;
-import java.net.URL;
-
-/**
- * Created by david on 11/22/16.
- */
 public class ChessBoardGUIProperties {
     public ImageView getWhiteQueen() {
-        String path2 = this.getClass().getClassLoader().getResource("images/white_queen.png").getPath();
-        ImageView piece = new ImageView(new Image(new File(path2).toURI().toString()));
+        ImageView piece = new ImageView(new Image(getClass().getResourceAsStream("/images/white_queen.png")));
         piece.setId("Q");
         piece.setFitHeight(44.0);
         piece.setFitWidth(31.0);
@@ -25,8 +17,7 @@ public class ChessBoardGUIProperties {
     }
 
     public ImageView getWhiteKing() {
-        String path2 = this.getClass().getClassLoader().getResource("images/white_king.png").getPath();
-        ImageView piece = new ImageView(new Image(new File(path2).toURI().toString()));
+        ImageView piece = new ImageView(new Image(getClass().getResourceAsStream("/images/white_king.png")));
         piece.setId("K");
         piece.setFitHeight(44.0);
         piece.setFitWidth(31.0);
@@ -38,8 +29,7 @@ public class ChessBoardGUIProperties {
     }
 
     public ImageView getWhiteBishop() {
-        String path2 = this.getClass().getClassLoader().getResource("images/white_bishop.png").getPath();
-        ImageView piece = new ImageView(new Image(new File(path2).toURI().toString()));
+        ImageView piece = new ImageView(new Image(getClass().getResourceAsStream("/images/white_bishop.png")));
         piece.setId("B");
         piece.setFitHeight(44.0);
         piece.setFitWidth(31.0);
@@ -51,8 +41,7 @@ public class ChessBoardGUIProperties {
     }
 
     public ImageView getWhiteKnight() {
-        String path2 = this.getClass().getClassLoader().getResource("images/white_knight.png").getPath();
-        ImageView piece = new ImageView(new Image(new File(path2).toURI().toString()));
+        ImageView piece = new ImageView(new Image(getClass().getResourceAsStream("/images/white_knight.png")));
         piece.setId("N");
         piece.setFitHeight(44.0);
         piece.setFitWidth(31.0);
@@ -64,8 +53,7 @@ public class ChessBoardGUIProperties {
     }
 
     public ImageView getWhiteRook() {
-        String path2 = this.getClass().getClassLoader().getResource("images/white_rook.png").getPath();
-        ImageView piece = new ImageView(new Image(new File(path2).toURI().toString()));
+        ImageView piece = new ImageView(new Image(getClass().getResourceAsStream("/images/white_rook.png")));
         piece.setId("R");
         piece.setFitHeight(44.0);
         piece.setFitWidth(31.0);
@@ -77,8 +65,7 @@ public class ChessBoardGUIProperties {
     }
 
     public ImageView getWhitePawn() {
-        String path2 = this.getClass().getClassLoader().getResource("images/white_pawn.png").getPath();
-        ImageView piece = new ImageView(new Image(new File(path2).toURI().toString()));
+        ImageView piece = new ImageView(new Image(getClass().getResourceAsStream("/images/white_pawn.png")));
         piece.setId("P");
         piece.setFitHeight(44.0);
         piece.setFitWidth(31.0);
@@ -89,9 +76,8 @@ public class ChessBoardGUIProperties {
         return piece;
     }
 
-    public ImageView getBQueen() {
-        String path2 = this.getClass().getClassLoader().getResource("images/black_queen.png").getPath();
-        ImageView bqueen = new ImageView(new Image(new File(path2).toURI().toString()));
+    public ImageView getBlackQueen() {
+        ImageView bqueen = new ImageView(new Image(getClass().getResourceAsStream("/images/black_queen.png")));
         bqueen.setId("q");
         bqueen.setFitHeight(44.0);
         bqueen.setFitWidth(31.0);
@@ -102,9 +88,8 @@ public class ChessBoardGUIProperties {
         return bqueen;
     }
 
-    public ImageView getBKing() {
-        String path2 = this.getClass().getClassLoader().getResource("images/black_king.png").getPath();
-        ImageView bking = new ImageView(new Image(new File(path2).toURI().toString()));
+    public ImageView getBlackKing() {
+        ImageView bking = new ImageView(new Image(getClass().getResourceAsStream("/images/black_king.png")));
         bking.setId("k");
         bking.setFitHeight(44.0);
         bking.setFitWidth(31.0);
@@ -115,9 +100,8 @@ public class ChessBoardGUIProperties {
         return bking;
     }
 
-    public ImageView getBKnight() {
-        String path2 = this.getClass().getClassLoader().getResource("images/black_knight.png").getPath();
-        ImageView bknight = new ImageView(new Image(new File(path2).toURI().toString()));
+    public ImageView getBlackKnight() {
+        ImageView bknight = new ImageView(new Image(getClass().getResourceAsStream("/images/black_knight.png")));
         bknight.setId("n");
         bknight.setFitHeight(44.0);
         bknight.setFitWidth(31.0);
@@ -128,9 +112,8 @@ public class ChessBoardGUIProperties {
         return bknight;
     }
 
-    public ImageView getBBishop() {
-        String path2 = this.getClass().getClassLoader().getResource("images/black_bishop.png").getPath();
-        ImageView bbishop = new ImageView(new Image(new File(path2).toURI().toString()));
+    public ImageView getBlackBishop() {
+        ImageView bbishop = new ImageView(new Image(getClass().getResourceAsStream("/images/black_bishop.png")));
         bbishop.setId("b");
         bbishop.setFitHeight(44.0);
         bbishop.setFitWidth(31.0);
@@ -141,9 +124,8 @@ public class ChessBoardGUIProperties {
         return bbishop;
     }
 
-    public ImageView getBrook() {
-        String path2 = this.getClass().getClassLoader().getResource("images/black_rook.png").getPath();
-        ImageView brook = new ImageView(new Image(new File(path2).toURI().toString()));
+    public ImageView getBlackRook() {
+        ImageView brook = new ImageView(new Image(getClass().getResourceAsStream("/images/black_rook.png")));
         brook.setId("r");
         brook.setFitHeight(44.0);
         brook.setFitWidth(31.0);
@@ -154,10 +136,8 @@ public class ChessBoardGUIProperties {
         return brook;
     }
 
-    public ImageView getBPawn() {
-        String path = this.getClass().getClassLoader().getResource("images/black_pawn.png").getPath();
-        ImageView bpawn = new ImageView(new Image(new File(path).toURI().toString()));
-
+    public ImageView getBlackPawn() {
+        ImageView bpawn = new ImageView(new Image(getClass().getResourceAsStream("/images/black_pawn.png")));
         bpawn.setId("p");
         bpawn.setFitHeight(44.0);
         bpawn.setFitWidth(31.0);

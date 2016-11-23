@@ -5,10 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Joe Meszar (jwm54@pitt.edu)
- */
 public class LaboonChess extends Application {
 
     @Override
@@ -25,10 +21,6 @@ public class LaboonChess extends Application {
 
         // load the custom CSS file for the chessboard styling
         scene.getStylesheets().add(getClass().getResource("/css/chessboard.css").toExternalForm());
-        
-        // import custom chess font
-        // usage: -fx-font-family: PIXymbolsChessW95-Regular
-        //Font.loadFont(LaboonChess.class.getResource("/font/chess.ttf").toExternalForm(), 10);
         
         // set the scene AKA the form
         stage.setScene(scene);

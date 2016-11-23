@@ -24,7 +24,6 @@ import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.ColorInput;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -608,37 +607,37 @@ public class LaboonChessDocumentController implements Initializable {
             for(int j = 0; j < board_state[0].length; j++) {
                 switch(board_state[i][j]) {
                     case 'p':
-                        ImageView img = board_images.getBPawn();
+                        ImageView img = board_images.getBlackPawn();
                         String san = board.indexToSan(i, j);
                         String algebraic_id = "#" + san;
                         ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
                         break;
                     case 'r':
-                        img = board_images.getBrook();
+                        img = board_images.getBlackRook();
                         san = board.indexToSan(i, j);
                         algebraic_id = "#" + san;
                         ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
                         break;
                     case 'b':
-                        img = board_images.getBBishop();
+                        img = board_images.getBlackBishop();
                         san = board.indexToSan(i, j);
                         algebraic_id = "#" + san;
                         ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
                         break;
                     case 'n':
-                        img = board_images.getBKnight();
+                        img = board_images.getBlackKnight();
                         san = board.indexToSan(i, j);
                         algebraic_id = "#" + san;
                         ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
                         break;
                     case 'k':
-                        img = board_images.getBKing();
+                        img = board_images.getBlackKing();
                         san = board.indexToSan(i, j);
                         algebraic_id = "#" + san;
                         ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
                         break;
                     case 'q':
-                        img = board_images.getBQueen();
+                        img = board_images.getBlackQueen();
                         san = board.indexToSan(i, j);
                         algebraic_id = "#" + san;
                         ((Pane)guiChessboard.lookup(algebraic_id)).getChildren().add(img);
@@ -682,16 +681,8 @@ public class LaboonChessDocumentController implements Initializable {
 
                     default:
                         break;
-
-
                 }
             }
         }
-
-
-
-
-
-
     }
 }

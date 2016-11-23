@@ -1,10 +1,6 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Joe Meszar (jwm54@pitt.edu)
- */
 public class LaboonChessAboutDialogController extends Application {
     
     @Override
