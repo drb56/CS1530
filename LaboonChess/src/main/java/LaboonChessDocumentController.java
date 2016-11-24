@@ -52,7 +52,6 @@ public class LaboonChessDocumentController implements Initializable {
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
     private int playerType = 0;             /* determines whether player is white or black */
     private int difficulty = 0;             /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
-    private int moveNum = 0;
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
 
@@ -373,7 +372,6 @@ public class LaboonChessDocumentController implements Initializable {
         } else { // reset
             timer_count = 0;
         }
-        moveNum = 0;
     }
 
 
@@ -445,7 +443,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");       // DEBUG
-        chessboard.undoMove();
+        chessboard.undoMove(playerType);
         updateGameBoardGUIFromFen(chessboard);
     }
 
@@ -533,7 +531,6 @@ public class LaboonChessDocumentController implements Initializable {
                     curSquare.getChildren().add(0, guiChessPiece);          // insert the first-click piece onto this square
                 }
                 chessboard.addToHistory(chessboard.toFEN());
-                moveNum++;
                 // finished with second-click
                 isFirstClick = true;                        // back to start (wait for a "first-click" again)
                 guiChessPiece.setOpacity(1);                // opacity set back to show finished
