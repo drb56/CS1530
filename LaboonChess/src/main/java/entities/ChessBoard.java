@@ -71,9 +71,24 @@ public class ChessBoard {
     }
 
     public void undoMove() {
-        allFenStrings.remove(allFenStrings.size()-1);
-        ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
-        System.out.println("You're in undo move");
+        if(allFenStrings.size() != 0) {
+            allFenStrings.remove(allFenStrings.size()-1);
+            if(allFenStrings.size() == 0) {
+                chessboard = new char[][]{
+                        { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+                        { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+                        { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+                };
+            }
+            else {
+                ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
+            }
+        }
     }
 
     /**
