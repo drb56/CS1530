@@ -349,6 +349,7 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
 
             case "multiplayer":
+                playerType = 0;
                 // default
                 break;
 
