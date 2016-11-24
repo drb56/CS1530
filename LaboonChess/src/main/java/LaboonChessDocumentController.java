@@ -126,6 +126,7 @@ public class LaboonChessDocumentController implements Initializable {
                 performCastling(toSquare);
             }
         }
+        chessboard.addToHistory(chessboard.toFEN());
     }
 
 
@@ -443,11 +444,7 @@ public class LaboonChessDocumentController implements Initializable {
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");       // DEBUG
         chessboard.undoMove();
-        moveNum--;
         updateGameBoardGUIFromFen(chessboard);
-        if(moveNum > 0) {
-            moveStockFish(chessboard.toFEN(), 100);
-        }
     }
 
 

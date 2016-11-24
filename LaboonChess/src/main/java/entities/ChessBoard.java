@@ -78,6 +78,7 @@ public class ChessBoard {
     public void undoMove() {
         if(allFenStrings.size() != 0) {
             allFenStrings.remove(allFenStrings.size()-1);
+            allFenStrings.remove(allFenStrings.size()-1);
             if(allFenStrings.size() == 0) {
                 chessboard = new char[][]{
                         { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
