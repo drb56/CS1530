@@ -77,7 +77,6 @@ public class ChessBoard {
      *      after removing the fen string then it resets the board and list.
      */
     public void undoMove(int playerType) {
-        System.out.println("array size before: " + allFenStrings.size());
         if(allFenStrings.size() != 0) {
             if(playerType > 0) {
                 allFenStrings.remove(allFenStrings.size()-1);
@@ -103,7 +102,6 @@ public class ChessBoard {
                 lastFen = allFenStrings.get(allFenStrings.size()-1);
             }
         }
-        System.out.println("array size after: " + allFenStrings.size());
     }
 
     /**
