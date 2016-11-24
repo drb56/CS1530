@@ -84,9 +84,11 @@ public class ChessBoard {
                         { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
                         { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
                 };
+                lastFen = toFEN();
             }
             else {
                 ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
+                lastFen = allFenStrings.get(allFenStrings.size()-1);
             }
         }
         for(int i=0; i<allFenStrings.size(); i++) {
