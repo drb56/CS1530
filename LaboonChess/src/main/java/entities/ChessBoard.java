@@ -70,6 +70,11 @@ public class ChessBoard {
         ChessBoardConstructor(fenString);
     }
 
+    /**
+     * Undoes the previous move by the player by removing the last fen string
+     *      from the allFenStrings ArrayList. If the size of the list is 0
+     *      after removing the fen string then it resets the board and list.
+     */
     public void undoMove() {
         if(allFenStrings.size() != 0) {
             allFenStrings.remove(allFenStrings.size()-1);
@@ -90,9 +95,6 @@ public class ChessBoard {
                 ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
                 lastFen = allFenStrings.get(allFenStrings.size()-1);
             }
-        }
-        for(int i=0; i<allFenStrings.size(); i++) {
-            System.out.println(allFenStrings.get(i));
         }
     }
 

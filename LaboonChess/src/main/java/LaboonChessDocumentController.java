@@ -448,7 +448,6 @@ public class LaboonChessDocumentController implements Initializable {
         if(moveNum > 0) {
             moveStockFish(chessboard.toFEN(), 100);
         }
-        System.out.println("moveNum: " + moveNum);
     }
 
 
