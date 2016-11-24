@@ -594,7 +594,8 @@ public class LaboonChessDocumentController implements Initializable {
         for(int i = 0; i < children.size(); i++) {
             Pane child = (Pane) children.get(i);
             List pane_properties = child.getChildren();
-            if(pane_properties.size() > 0) {
+
+            if(pane_properties.size() > 0 && pane_properties.get(0).getClass().toString().equals("class javafx.scene.image.ImageView")) {
                 pane_properties.remove(0);
             }
 
