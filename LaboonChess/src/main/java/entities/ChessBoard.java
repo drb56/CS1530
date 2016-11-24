@@ -89,6 +89,9 @@ public class ChessBoard {
                 ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
             }
         }
+        for(int i=0; i<allFenStrings.size(); i++) {
+            System.out.println(allFenStrings.get(i));
+        }
     }
 
     /**
