@@ -52,6 +52,7 @@ public class LaboonChessDocumentController implements Initializable {
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
     private int playerType = 0;             /* determines whether player is white or black */
     private int difficulty = 0;             /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
+    private int undoNum = 0;
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
 
@@ -441,6 +442,8 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");       // DEBUG
+        chessboard.undoMove();
+        updateGameBoardGUIFromFen(chessboard);
     }
 
 

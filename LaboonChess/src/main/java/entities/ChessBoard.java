@@ -70,6 +70,11 @@ public class ChessBoard {
         ChessBoardConstructor(fenString);
     }
 
+    public void undoMove() {
+        allFenStrings.remove(allFenStrings.size()-1);
+        ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
+        System.out.println("You're in undo move");
+    }
 
     /**
      * Creates a ChessBoard from a FEN string history. Used for
