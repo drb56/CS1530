@@ -161,6 +161,7 @@ public class LaboonChessDocumentController implements Initializable {
      *  Gets the square given algebraic coordinate from fxml board
      *
      *  @param coordinate Algebraic coordinate string that correlates with the pane
+     *  @return The GUI chess square associated with the given coordinate; or null
      */
     public Pane getChessSquare(String coordinate) {
         return (Pane) guiChessboard.getScene().lookup("#"+coordinate);
@@ -350,6 +351,7 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
 
             case "multiplayer":
+                playerType = 0;
                 // default
                 break;
 

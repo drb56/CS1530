@@ -51,7 +51,7 @@ public class Stockfish {
 	/**
 	 * Takes in any valid UCI command and executes it
 	 * 
-	 * @param command
+	 * @param command A valid UCI command to execute
 	 */
 	public void sendCommand(String command) {
 		try {

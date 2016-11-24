@@ -52,7 +52,8 @@ public class ChessBoard {
     /**
      * Gets the list of FEN string moves performed during
      *      the course of the chess game.
-     * @return
+     *
+     * @return A list of all FEN chess moves made during the course of the game
      */
     public ArrayList<String> getFenList() {
         return allFenStrings;
@@ -157,8 +158,8 @@ public class ChessBoard {
     /**
      * Saves all the fen strings since the beginning of the game to be able to repopulate the board
      *
-     * @param file
-     * @return true if save was successful, false otherwise
+     * @param file A file on disk to use for saving.
+     * @return true if save was successful; otherwise false.
      */
     public boolean saveGame(File file) {
         try {
@@ -530,8 +531,9 @@ public class ChessBoard {
 
 
     /**
-     *Returns whose turn it is
-     *@Return: char 'w' if whites turn, 'b' if blacks turn
+     * Returns, in character form, which team's turn it is to make a chess move.
+     *
+     * @return 'w' if it is white's turn; otherwise 'b' for black's turn.
      */
     public char turn(){
         if (turn == 0) {
@@ -563,10 +565,16 @@ public class ChessBoard {
         System.out.println("   A   B   C   D   E   F   G   H ");
     }
 
-    /**
-     * Generate san given row and col
-     */
 
+    /**
+     * Generates a standard algebraic notation (SAN) string given
+     *      a row and column of the chess board.
+     *
+     * @param row A valid row number within the chess board.
+     * @param col A valid column number within the chess board.
+     *
+     * @return The SAN string representing the row and column.
+     */
     public String indexToSan(int row, int col) {
         row = (row + 7 - (2* row)) + 1;
         return "" + Character.toString((char)(col + 97)) +  Integer.toString(row);
