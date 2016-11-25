@@ -71,6 +71,38 @@ public class ChessBoard {
         ChessBoardConstructor(fenString);
     }
 
+    /**
+     * Undoes the previous move by the player by removing the last fen string
+     *      from the allFenStrings ArrayList. If the size of the list is 0
+     *      after removing the fen string then it resets the board and list.
+     */
+    public void undoMove(int playerType) {
+        if(allFenStrings.size() != 0) {
+            if(playerType > 0) {
+                allFenStrings.remove(allFenStrings.size()-1);
+            }
+            allFenStrings.remove(allFenStrings.size()-1);
+
+            if(allFenStrings.size() == 0) {
+                chessboard = new char[][]{
+                        { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+                        { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0, 0 },
+                        { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+                        { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+                };
+                turn = 0;
+                lastFen = toFEN();
+            }
+            else {
+                ChessBoardConstructor(allFenStrings.get(allFenStrings.size()-1));
+                lastFen = allFenStrings.get(allFenStrings.size()-1);
+            }
+        }
+    }
 
     /**
      * Creates a ChessBoard from a FEN string history. Used for
