@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
-
-import entities.ChessBoardGUIProperties;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -32,6 +30,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.*;
 import javafx.util.Duration;
 import entities.ChessBoard;
+import entities.ChessBoardGUIProperties;
 import services.stockfish.Stockfish;
 
 public class LaboonChessDocumentController implements Initializable {
@@ -51,7 +50,9 @@ public class LaboonChessDocumentController implements Initializable {
     private Stockfish stockfish;            /* chess API engine */
     private ChessBoard chessboard;          /* chessboard object model used to properly manipulate the GUI */
     private int playerType = 0;             /* determines whether player is white or black */
-    private int difficulty = 0;             /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
+    private int game_difficulty = 0;        /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
+    private String chesspiece_color1;       /* Black chess piece color */
+    private String chesspiece_color2;       /* Black chess piece color */
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
 
@@ -94,7 +95,7 @@ public class LaboonChessDocumentController implements Initializable {
     public void moveStockFish(String fen, int timeWait) {
         stockfish.sendCommand("");
 
-        String difficultyCommand = "setoption name Skill Level value "+difficulty;
+        String difficultyCommand = "setoption name Skill Level value " + game_difficulty;
         stockfish.sendCommand(difficultyCommand);
 
         System.out.println(stockfish.getOutput(0));
@@ -102,9 +103,11 @@ public class LaboonChessDocumentController implements Initializable {
         String fromSquareStr = move.substring(0, 2);
         String toSquareStr = move.substring(2, 4);
 
+        // DEBUG
         System.out.println("AI moving from: " + fromSquareStr);
         System.out.println("To: " + toSquareStr);
 
+        // update the GUI if the attempted move made is considered valid
         ChessBoard.returnStatus status;
         if ((status = chessboard.move(fromSquareStr, toSquareStr)) != ChessBoard.returnStatus.INVALID) {
 
@@ -112,19 +115,21 @@ public class LaboonChessDocumentController implements Initializable {
             Pane toSquare = getChessSquare(toSquareStr);
 
             // Empty square
-            guiChessPiece = (ImageView) fromSquare.getChildren().get(0); // hold reference to this piece
-            fromSquare.getChildren().remove(0);                          // remove the chess piece in original square
+            guiChessPiece = (ImageView) fromSquare.getChildren().get(0);    // hold reference to this piece
+            fromSquare.getChildren().remove(0);                       // remove the chess piece in original square
 
             if (!toSquare.getChildren().isEmpty()) {
                 toSquare.getChildren().remove(0);
             }
 
-            toSquare.getChildren().add(0, guiChessPiece);                // place the chess piece here
+            toSquare.getChildren().add(0, guiChessPiece);             // place the chess piece here
 
             if (status == ChessBoard.returnStatus.CASTLING) {
                 performCastling(toSquare);
             }
         }
+
+        // create a history of all moves that were made
         chessboard.addToHistory(chessboard.toFEN());
     }
 
@@ -140,7 +145,6 @@ public class LaboonChessDocumentController implements Initializable {
         switch (curSquare.getId()) {
             case "c8": // black queen-side
                 ((Pane)guiChessboard.lookup("#d8")).getChildren().add(((Pane)guiChessboard.lookup("#a8")).getChildren().get(0));
-
                 break;
             case "g8": // black king-side
                 ((Pane)guiChessboard.lookup("#f8")).getChildren().add(((Pane)guiChessboard.lookup("#h8")).getChildren().get(0));
@@ -152,8 +156,6 @@ public class LaboonChessDocumentController implements Initializable {
                 ((Pane)guiChessboard.lookup("#f1")).getChildren().add(((Pane)guiChessboard.lookup("#h1")).getChildren().get(0));
                 break;
         }
-
-        chessboard.addToHistory(chessboard.toFEN());
     }
 
     /**
@@ -176,36 +178,50 @@ public class LaboonChessDocumentController implements Initializable {
     private void handleColorChangeAction(ActionEvent event) throws IOException {
         // get the chosen color
         RadioMenuItem item = (RadioMenuItem) event.getSource();
-        String color1 = "", color2 = "";
 
         switch (item.getId()) {
             case "deadpool":
-                color1 = "#040603"; // black
-                color2 = "#a5090c"; // firebrick
+                chesspiece_color1 = "#040603"; // black
+                chesspiece_color2 = "#a5090c"; // firebrick
                 break;
             case "election":
-                color1 = "#49a2ce"; // steelblue
-                color2 = "#ed4e31"; // tomato
+                chesspiece_color1 = "#49a2ce"; // steelblue
+                chesspiece_color2 = "#ed4e31"; // tomato
                 break;
             case "hulk":
-                color1 = "#4d004d"; // purple
-                color2 = "#70964b"; // green
+                chesspiece_color1 = "#4d004d"; // purple
+                chesspiece_color2 = "#70964b"; // green
                 break;
             case "ironman":
-                color1 = "#cc0000"; // red
-                color2 = "#ffa700"; // yellow
+                chesspiece_color1 = "#cc0000"; // red
+                chesspiece_color2 = "#ffa700"; // yellow
                 break;
             case "pitt":
-                color1 = "#1c2957"; // blue
-                color2 = "#cdb87d"; // gold
+                chesspiece_color1 = "#1c2957"; // blue
+                chesspiece_color2 = "#cdb87d"; // gold
                 break;
             case "wolverine":
-                color1 = "#365382"; // saddlebrown
-                color2 = "#f2c903"; // yellow
+                chesspiece_color1 = "#365382"; // saddlebrown
+                chesspiece_color2 = "#f2c903"; // yellow
                 break;
         }
 
+        // set the color for each chess piece
+        setChessPieceColors(chesspiece_color1, chesspiece_color2);
+    }
+
+
+    /**
+     * Takes two hex colors and applies them to the GUI chess pieces.
+     *
+     * @param color1 A hex value representing the color to set for the "black" chess pieces.
+     * @param color2 A hex value representing the color to set for the "white" chess pieces.
+     */
+    public void setChessPieceColors(String color1, String color2) {
         // loop through the chess board and change each piece's color
+        //      if a color is set
+        if (color1 == null || color2 == null) { return; }
+
         ObservableList<Node> children = guiChessboard.getChildren();
         for (Node node : children) {
             Pane square = (Pane) node;
@@ -298,7 +314,7 @@ public class LaboonChessDocumentController implements Initializable {
 
 
     /**
-     * Changes the difficulty of the AI in the game. The values chosen
+     * Changes the game_difficulty of the AI in the game. The values chosen
      *      are lowest, mid-range, and highest according to the
      *      StockFish API.
      *
@@ -308,17 +324,17 @@ public class LaboonChessDocumentController implements Initializable {
     private void handleDifficultyChangeAction(ActionEvent event) {
         switch (((RadioMenuItem)event.getSource()).getId()) {
             case "easy":
-                difficulty = 0;
+                game_difficulty = 0;
                 lblStatus.setText("Game AI set to easy");
                 break;
 
             case "medium":
-                difficulty = 10;
+                game_difficulty = 10;
                 lblStatus.setText("Game AI set to medium");
                 break;
 
             case "hard":
-                difficulty = 20;
+                game_difficulty = 20;
                 lblStatus.setText("Game AI set to hard");
                 break;
         }
@@ -356,16 +372,25 @@ public class LaboonChessDocumentController implements Initializable {
 
         }
 
-        // start or reset the game timer
+        // reset the game timer
+        resetGameTimer();
+    }
+
+
+    /**
+     * Starts or Resets the game clock timer.
+     */
+    public void resetGameTimer() {
         timer_count = 0;
         if (gameTimer == null) { // start
             this.gameTimer = new Timeline(new KeyFrame(Duration.seconds(1), (ActionEvent event2) -> {
                 lblTimer.setText(String.format("%d:%02d",
-                    TimeUnit.SECONDS.toMinutes(++timer_count),
-                    TimeUnit.SECONDS.toSeconds(timer_count) - TimeUnit.MINUTES.toSeconds(TimeUnit.SECONDS.toMinutes(timer_count))
+                        TimeUnit.SECONDS.toMinutes(++timer_count),
+                        TimeUnit.SECONDS.toSeconds(timer_count) - TimeUnit.MINUTES.toSeconds(TimeUnit.SECONDS.toMinutes(timer_count))
                 ));
             }));
 
+            // Keep the timer going as long as the game is being played
             gameTimer.setCycleCount(Timeline.INDEFINITE);
             gameTimer.play();
 
@@ -443,8 +468,9 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
         lblStatus.setText("Undo Move menu item clicked");       // DEBUG
-        chessboard.undoMove(playerType);
-        updateGameBoardGUIFromFen(chessboard);
+        chessboard.undoMove(playerType);                            // undo the move
+        updateGameBoardGUIFromFen(chessboard);                      // update the GUI to reflect the undo
+        setChessPieceColors(chesspiece_color1, chesspiece_color2);  // keep the same color scheme
     }
 
 
@@ -488,10 +514,7 @@ public class LaboonChessDocumentController implements Initializable {
 
             } else {
                 /* FIRST-CLICK: set up for the second click */
-                guiChessSquare = curSquare;                                 // hold reference to this square
-                guiChessPiece = (ImageView) curSquare.getChildren().get(0); // hold reference to this piece
-                guiChessPiece.setOpacity(.5);                               // set opacity to make it look "selected"
-                isFirstClick = false;                                       // now wait for second-click
+                setFirstClick(curSquare);
             }
         } else {
             /* SECOND-CLICK */
@@ -507,45 +530,72 @@ public class LaboonChessDocumentController implements Initializable {
 
             } else if ((status = chessboard.move(fromSquare, toSquare)) != ChessBoard.returnStatus.INVALID) {
                 /*
-                    See if we can place the chess piece from the
+                    Valid move. See if we can place the chess piece from the
                     first click at this square on the board.
                 */
-                if (curSquare.getChildren().isEmpty()) {
-                    /* EMPTY SQUARE HERE */
-
-                    curSquare.getChildren().add(0, guiChessPiece);          // place the chess piece here
-                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
-
-                    // perform special operation if Castling just occurred
-                    if (status == ChessBoard.returnStatus.CASTLING) {
-                        // get and set the proper rook to complete the castle
-                        performCastling(curSquare);
-                    }
-                } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
-                        != guiChessPiece.getId().matches("[a-z]")) {        // make sure to not overtake your own team's piece
-                    /* OPPONENT PIECE EXISTS HERE */
-
-                    san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
-
-                    curSquare.getChildren().remove(0);                      // remove the current chess piece
-                    curSquare.getChildren().add(0, guiChessPiece);          // insert the first-click piece onto this square
-                }
-                chessboard.addToHistory(chessboard.toFEN());
-                // finished with second-click
-                isFirstClick = true;                        // back to start (wait for a "first-click" again)
-                guiChessPiece.setOpacity(1);                // opacity set back to show finished
-
-                // if playerType == cpu
-                if (playerType > 0) {
-                //if (chessboard.turn() > 0) {
-                    moveStockFish(chessboard.toFEN(), 100);
-                }
-
-                // System.out.println("FEN: " + chessboard.toFEN());     // DEBUG
-                System.out.println(chessboard.toFEN());     // DEBUG
-                System.out.println(chessboard.reverseFEN());
+                performValidMove(curSquare, status);
             }
         }
+    }
+
+
+    /**
+     * Set up the logic to reflect the user has made their FIRST CLICK.
+     *
+     * @param curSquare The GUI square the user clicked on
+     */
+    public void setFirstClick(Pane curSquare) {
+        guiChessSquare = curSquare;                                 // hold reference to this square
+        guiChessPiece = (ImageView) curSquare.getChildren().get(0); // hold reference to this piece
+        guiChessPiece.setOpacity(.5);                               // set opacity to make it look "selected"
+        isFirstClick = false;                                       // now wait for second-click
+    }
+
+
+    /**
+     * A valid move was issued so carry out what is needed to reflect it
+     *      within the GUI chessboard.
+     *
+     * @param curSquare The GUI square the user clicked on
+     * @param status The return status from checking to see what kind of valid move was made
+     */
+    public void performValidMove(Pane curSquare, ChessBoard.returnStatus status) {
+
+        if (curSquare.getChildren().isEmpty()) {
+            /* EMPTY SQUARE HERE */
+            curSquare.getChildren().add(0, guiChessPiece);    // place the chess piece here
+            san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
+
+            // perform special operation if Castling just occurred
+            if (status == ChessBoard.returnStatus.CASTLING) {
+                // get and set the proper rook to complete the castle
+                performCastling(curSquare);
+            }
+        } else if (curSquare.getChildren().get(0).getId().matches("[a-z]")
+                != guiChessPiece.getId().matches("[a-z]")) {  // make sure to not overtake your own team's piece
+            /* OPPONENT PIECE EXISTS HERE */
+
+            san = guiChessSquare.getId() + curSquare.getId();       // get the move in terms of SAN (e.g. e3d6)
+
+            curSquare.getChildren().remove(0);                // remove the current chess piece
+            curSquare.getChildren().add(0, guiChessPiece);    // insert the first-click piece onto this square
+        }
+
+        // create a history of all moves that were made
+        chessboard.addToHistory(chessboard.toFEN());
+
+        // finished with second-click
+        isFirstClick = true;                        // back to start (wait for a "first-click" again)
+        guiChessPiece.setOpacity(1);                // opacity set back to show finished
+
+        // if playerType == cpu
+        if (playerType > 0) {
+            //if (chessboard.turn() > 0) {
+            moveStockFish(chessboard.toFEN(), 100);
+        }
+
+        // DEBUG
+        System.out.println(chessboard.toFEN());
     }
 
 
@@ -590,6 +640,10 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+
+    /**
+     * Reset the GUI chessboard.
+     */
     public void clearGuiBoard() {
         List children = guiChessboard.getChildren();
         for(int i = 0; i < children.size(); i++) {
@@ -603,8 +657,15 @@ public class LaboonChessDocumentController implements Initializable {
         }
     }
 
+
+    /**
+     * Set the GUI chessboard to a certain state, given a board configuration.
+     *
+     * @param board The chessboard configuration to set the GUI to reflect.
+     */
     public void updateGameBoardGUIFromFen(ChessBoard board) {
 
+        // clear the board before setting it.
         clearGuiBoard();
 
         char[][] board_state = board.getBoardState();
