@@ -94,10 +94,8 @@ public class Stockfish {
 	 * This function returns the best move for a given position after
 	 * calculating for 'waitTime' ms
 	 * 
-	 * @param fen
-	 *            Position string
-	 * @param waitTime
-	 *            in milliseconds
+	 * @param fen Position string
+	 * @param waitTime in milliseconds
 	 * @return Best Move in PGN format
 	 */
 	public String getBestMove(String fen, int waitTime) {
@@ -125,8 +123,7 @@ public class Stockfish {
 	/**
 	 * Get a list of all legal moves from the given position
 	 * 
-	 * @param fen
-	 *            Position string
+	 * @param fen Position string
 	 * @return String of moves
 	 */
 	public String getLegalMoves(String fen) {
@@ -139,8 +136,7 @@ public class Stockfish {
 	/**
 	 * Draws the current state of the chess board
 	 * 
-	 * @param fen
-	 *            Position string
+	 * @param fen Position string
 	 */
 	public void drawBoard(String fen) {
 		sendCommand("position fen " + fen);
