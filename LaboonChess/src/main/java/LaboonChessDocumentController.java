@@ -5,12 +5,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,7 +56,18 @@ public class LaboonChessDocumentController implements Initializable {
     private int playerType = 0;             /* determines whether player is white or black */
     private int game_difficulty = 0;        /* AI Difficulty (0=Easy, 10=Medium, 20=hard) */
     private String chesspiece_color1;       /* Black chess piece color */
-    private String chesspiece_color2;       /* Black chess piece color */
+    private String chesspiece_color2;       /* White chess piece color */
+    private Random rand = new Random();     /* Random number generator */
+
+    /* Random strings to use for the Kibitzer */
+    private String[] chess_comments = {"Hurry up! You are taking too long!", "Yes, if you take longer, your IQ will go up",
+            "Oh wow you are horrible", "Whatever you do, don't touch that rook!", "Good Luck", "Now that's a power grab!",
+            "Zip it up, and Zip it out", "NOOO PAPA!", "CARM, THERE'S NO FKIN SMOKED TURKEY IN HERE?!", "I didn't wanna get blood all ova ya floor",
+            "Money isn't real George, it only seems like it is", "Derek Ferrell, DEREK FKIN FERRELL!!", "The cosine of the tangent is not the sine",
+            "That's thirty minutes away. I'll be there in ten", "Why do I have to be Mr. Pink?", "John, Paul, George and Ringo",
+            "Now that's a TASTY burger", "We are the musicmakers, and we are the dreamers of dreams", "What'samatter Colonel Sanders... chicken?!",
+            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold"
+    };
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
 
@@ -80,11 +95,40 @@ public class LaboonChessDocumentController implements Initializable {
             } else {
                 throw new RuntimeException("Could not start Stockfish engine...");
             }
+
+            /* set up game timer */
+            resetGameTimer();
+
+            /* set up thread for random messages */
+            setupMessageTimer();
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
     }
 
+
+    public void setupMessageTimer() {
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws Exception {
+                while (true) {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            // show random message
+                            lblStatus.setText(chess_comments[rand.nextInt(chess_comments.length)]);
+                        }
+                    });
+                    // show next message within 1-5 seconds
+                    Thread.sleep(ThreadLocalRandom.current().nextInt(1000, 5000));
+                }
+            }
+        };
+
+        Thread th = new Thread(task);
+        th.setDaemon(true);
+        th.start();
+    }
 
     /**
      * Move the chess piece using the Stockfish API.
@@ -750,5 +794,12 @@ public class LaboonChessDocumentController implements Initializable {
                 }
             }
         }
+    }
+
+    public void updateStatusBar(String message) {
+        Thread t = new Thread(() ->
+        {
+            lblStatus.setText(message);
+        });
     }
 }
