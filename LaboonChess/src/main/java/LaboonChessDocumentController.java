@@ -107,6 +107,10 @@ public class LaboonChessDocumentController implements Initializable {
     }
 
 
+    /**
+     * Shows a random message in the status section of the GUI, once
+     * every one to five seconds.
+     */
     public void setupMessageTimer() {
         Task task = new Task<Void>() {
             @Override
