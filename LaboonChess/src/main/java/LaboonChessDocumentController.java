@@ -324,8 +324,6 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleAboutAction(ActionEvent event) throws IOException {
-        lblStatus.setText("About menu item clicked");           // DEBUG
-
         // pause the game timer (if it has been started)
         if (gameTimer != null) { gameTimer.pause(); }
 
@@ -369,17 +367,14 @@ public class LaboonChessDocumentController implements Initializable {
         switch (((RadioMenuItem)event.getSource()).getId()) {
             case "easy":
                 game_difficulty = 0;
-                lblStatus.setText("Game AI set to easy");
                 break;
 
             case "medium":
                 game_difficulty = 10;
-                lblStatus.setText("Game AI set to medium");
                 break;
 
             case "hard":
                 game_difficulty = 20;
-                lblStatus.setText("Game AI set to hard");
                 break;
         }
     }
@@ -396,8 +391,6 @@ public class LaboonChessDocumentController implements Initializable {
     private void handleNewGameAction(ActionEvent event) {
         chessboard = new ChessBoard();
         updateGameBoardGUIFromFen(chessboard);
-        
-        lblStatus.setText("New game menu item clicked");        // DEBUG
 
         switch (((MenuItem)event.getSource()).getId()) {
             case "cpublack":
@@ -411,9 +404,7 @@ public class LaboonChessDocumentController implements Initializable {
 
             case "multiplayer":
                 playerType = 0;
-                // default
                 break;
-
         }
 
         // reset the game timer
@@ -451,8 +442,6 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleLoadGameAction(ActionEvent event) {
-        lblStatus.setText("Load Game clicked");                 // DEBUG
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
@@ -485,8 +474,6 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleSaveGameAction(ActionEvent event) {
-        lblStatus.setText("Save Game clicked");                 // DEBUG
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save Game");
         File file = fileChooser.showSaveDialog(guiChessboard.getScene().getWindow());
@@ -511,7 +498,6 @@ public class LaboonChessDocumentController implements Initializable {
      */
     @FXML
     private void handleUndoMoveAction(ActionEvent event) {
-        lblStatus.setText("Undo Move menu item clicked");       // DEBUG
         chessboard.undoMove(playerType);                            // undo the move
         updateGameBoardGUIFromFen(chessboard);                      // update the GUI to reflect the undo
         setChessPieceColors(chesspiece_color1, chesspiece_color2);  // keep the same color scheme
@@ -794,12 +780,5 @@ public class LaboonChessDocumentController implements Initializable {
                 }
             }
         }
-    }
-
-    public void updateStatusBar(String message) {
-        Thread t = new Thread(() ->
-        {
-            lblStatus.setText(message);
-        });
     }
 }
