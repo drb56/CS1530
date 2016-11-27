@@ -13,7 +13,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet @../css/chessboard.css?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboonChessDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboonChessDocumentController">
     <children>
         <MenuBar fx:id="mnuMain" prefHeight="25.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -95,7 +95,7 @@
             </menus>
         </MenuBar>
 
-        <GridPane fx:id="guiChessboard" alignment="TOP_CENTER" layoutY="25.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <GridPane fx:id="guiChessboard" alignment="TOP_CENTER" layoutY="25.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="15.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
@@ -735,12 +735,8 @@
             </children>
         </GridPane>
 
-        <Separator layoutX="25.0" layoutY="440.0" prefWidth="200.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-
-        <Button fx:id="btnLoadGame" alignment="CENTER" layoutX="14.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleLoadGameAction" prefHeight="30.0" prefWidth="129.0" text="_Load Game" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="14.0" />
-        <Button fx:id="btnSaveGame" alignment="CENTER" layoutX="179.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleSaveGameAction" prefHeight="30.0" prefWidth="129.0" snapToPixel="false" text="_Save Game" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" />
-        <Button fx:id="btnExit" alignment="CENTER" layoutX="343.0" layoutY="375.0" mnemonicParsing="true" onAction="#handleExitAction" prefHeight="30.0" prefWidth="129.0" text="E_xit" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="343.0" AnchorPane.rightAnchor="14.0" />
-        <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="477.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="480.0" textAlignment="CENTER" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
-        <Label fx:id="lblTimer" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="370.0" layoutY="482.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="14.0" />
+        <Separator layoutX="25.0" layoutY="440.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="442.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="480.0" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
+        <Label fx:id="lblTimer" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="436.0" layoutY="439.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" />
     </children>
 </AnchorPane>
