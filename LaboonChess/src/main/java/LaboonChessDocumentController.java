@@ -146,7 +146,7 @@ public class LaboonChessDocumentController implements Initializable {
         String difficultyCommand = "setoption name Skill Level value " + game_difficulty;
         stockfish.sendCommand(difficultyCommand);
 
-        System.out.println(stockfish.getOutput(0));
+        //System.out.println(stockfish.getOutput(0));
         String move = stockfish.getBestMove(fen, timeWait);
         String fromSquareStr = move.substring(0, 2);
         String toSquareStr = move.substring(2, 4);
