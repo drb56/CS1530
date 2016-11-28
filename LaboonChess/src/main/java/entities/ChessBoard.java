@@ -18,7 +18,7 @@ public class ChessBoard {
     private ArrayList<String> allFenStrings;
 
     public enum returnStatus {
-        INVALID, VALID, CHECKMATE, CASTLING, ENPASSANT;
+        INVALID, VALID, CHECKMATE, CASTLING, ENPASSANT, PAWNPROMOTION;
     }
 
 
@@ -367,11 +367,32 @@ public class ChessBoard {
             // update the chessboard array
             update2DArrayChessboard(sanFrom, sanTo);
 
+            /**
+             * Check if a pawn has been moved all the way across
+             *      the board; if it has, then Promote it to Queen.
+             */
+            if ((turn == 0) && (sanTo.contains("8") && chessboard[sanTo2DRow(sanTo)][sanTo2DCol(sanTo)] == 'P')
+                    || (turn == 1) && (sanTo.contains("1") && chessboard[sanTo2DRow(sanTo)][sanTo2DCol(sanTo)] == 'p')) {
+
+                // return that a pawn promotion has occurred
+                status = returnStatus.PAWNPROMOTION;
+
+                // update the board to reflect the change from pawn to Queen
+                if (turn == 0) {
+                    chessboard[sanTo2DRow(sanTo)][sanTo2DCol(sanTo)] = 'Q';     // white queen
+                } else {
+                    chessboard[sanTo2DRow(sanTo)][sanTo2DCol(sanTo)] = 'q';     // black queen
+                }
+            }
+
             if (turn == 0) {
                 turn = 1;
             } else {
                 turn = 0;
             }
+
+            // DEBUG
+            this.printBoard();
 
             // update the FEN string
             lastFen = toFEN();
@@ -400,8 +421,6 @@ public class ChessBoard {
 
         chessboard[toRow][toCol] = chessboard[fromRow][fromCol];        // move piece from start square to end square
         chessboard[fromRow][fromCol] = 0;                               // the start square should now be empty
-
-        this.printBoard(); // DEBUG
     }
 
 

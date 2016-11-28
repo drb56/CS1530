@@ -615,6 +615,19 @@ public class LaboonChessDocumentController implements Initializable {
             curSquare.getChildren().add(0, guiChessPiece);    // insert the first-click piece onto this square
         }
 
+        // perform special operation if a pawn was promoted
+        if (status == ChessBoard.returnStatus.PAWNPROMOTION) {
+            // remove the pawn and place a queen
+            curSquare.getChildren().remove(0);
+
+            // place white or black queen, depending on the team
+            if (curSquare.getId().contains("8")) {
+                curSquare.getChildren().add(board_images.getWhiteQueen());
+            } else {
+                curSquare.getChildren().add(board_images.getBlackQueen());
+            }
+        }
+
         // create a history of all moves that were made
         chessboard.addToHistory(chessboard.toFEN());
 
