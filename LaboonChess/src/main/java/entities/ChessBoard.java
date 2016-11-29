@@ -174,9 +174,10 @@ public class ChessBoard {
      * @param file A file on disk to use for saving.
      * @return true if save was successful; otherwise false.
      */
-    public boolean saveGame(File file) {
+    public boolean saveGame(File file, int playerType) {
         try {
             PrintStream out = new PrintStream(file.getAbsoluteFile());
+            out.println(playerType);
             for(int i=0; i<allFenStrings.size(); i++) {
                 out.println(allFenStrings.get(i));
             }
