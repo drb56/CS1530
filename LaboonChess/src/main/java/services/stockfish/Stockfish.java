@@ -107,7 +107,11 @@ public class Stockfish {
 		if (output.contains("bestmove")) {
 			return output.split("bestmove ")[1].split(" ")[0];
 		} else {
-			return output.split(" pv ")[1].split(" ")[0];
+			if (output.contains(" pv ")) {
+				return output.split(" pv ")[1].split(" ")[0];
+			} else {
+				return "";
+			}
 		}
 	}
 
