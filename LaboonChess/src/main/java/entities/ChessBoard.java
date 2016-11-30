@@ -248,9 +248,9 @@ public class ChessBoard {
      *
      * @param sanFrom The starting USCF chessboard coordinate that corresponds to a given chess square. (e.g. 'a1')
      * @param sanTo The starting USCF chessboard coordinate that corresponds to a given chess square. (e.g. 'd4')
-     * @return True if the move was valid; otherwise False.
+     * @return 1 if the move was valid; 0 if the move was invalid; 2 if Checkmate.
      */
-    public boolean isLegal(String sanFrom, String sanTo) {
+    public int isLegal(String sanFrom, String sanTo) {
         Board board = new Board();
         board.loadFromFEN(lastFen);
         MoveList moves = null;
@@ -259,18 +259,21 @@ public class ChessBoard {
             moves = MoveGenerator.getInstance().generateLegalMoves(board);
             String actualMove = sanFrom + sanTo;
 
+            // see if checkmate has occurred
+            if (moves.size() == 0) { return 2; }
+
             // performs lazy matching to see if the actualMove
             //      is contained within the list of legal moves
             if (moves.toString().contains(actualMove)) {
-                return true;
+                return 1;
             } else {
-                return false;
+                return 0;
             }
         } catch (MoveGeneratorException e) {
             e.printStackTrace();
         }
 
-        return false;
+        return 0;
     }
 
 
@@ -286,12 +289,12 @@ public class ChessBoard {
     public returnStatus move(String sanFrom, String sanTo) {
         // keep status of the potential move
         returnStatus status = returnStatus.INVALID;
-
-        if (!isLegal(sanFrom, sanTo)) {             //returns false if isn't a legal move
+        int isLegal = isLegal(sanFrom, sanTo);
+        if (isLegal == 0) {                              // returns false if isn't a legal move
             System.out.println("ILLEGAL MOVE");
             return status;
 
-        } else {                                    //changes the board if it is a legal move
+        } else if (isLegal == 1) {                       // changes the board if it is a legal move
             System.out.println("LEGAL MOVE");
             status = returnStatus.VALID;
 
@@ -397,6 +400,9 @@ public class ChessBoard {
 
             // update the FEN string
             lastFen = toFEN();
+        } else {
+            // CHECKMATE
+            status = returnStatus.CHECKMATE;
         }
 
         return status;
