@@ -322,6 +322,22 @@ public class ChessBoard {
              *      on that side to where the king used to be.
              */
             if (castling.matches(".*(K|Q|k|q).*")) {
+                // check for moving of the rooks, and remove castling feature for that rook
+                if (sanFrom.equals("a1") && chessboard[7][0] == 'R') {
+                    // remove castling for white, queen-side
+                    castling = castling.replaceAll("Q", "");
+                } else if (sanFrom.equals("h1") && chessboard[7][7] == 'R') {
+                    // remove castling for white, king-side
+                    castling = castling.replaceAll("K", "");
+                } else if (sanFrom.equals("a8") && chessboard[0][0] == 'r') {
+                    // remove castling for black, queen-side
+                    castling = castling.replaceAll("q", "");
+                } else if (sanFrom.equals("h8") && chessboard[0][7] == 'r') {
+                    // remove castling for black, king-side
+                    castling = castling.replaceAll("k", "");
+                }
+
+                // check for moving of the king
                 if ((sanFrom.equals("e1") && chessboard[7][4] == 'K') || (sanFrom.equals("e8") && chessboard[0][4] == 'k')) {
                     // a king is being moved. if it's moved two spaces
                     //      then its a castling action
@@ -358,6 +374,12 @@ public class ChessBoard {
                             sanFrom = "a8";
                             sanTo = "h8";
                         }
+                    } else if ((sanFrom.equals("e1") && chessboard[7][4] == 'K')) {
+                        // remove white castling
+                        castling = castling.replaceAll("[K|Q]", "");
+                    } else {
+                        // remove black castling
+                        castling = castling.replaceAll("[k|q]", "");
                     }
 
                     // check if castling is complete for both sides; if so,
