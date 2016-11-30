@@ -578,6 +578,10 @@ public class ChessBoard {
         }
     }
 
+    /**
+     * Sets the turn to a different player
+     * @param turn
+     */
     public void setTurn(int turn) {
         this.turn = turn;
     }
