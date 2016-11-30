@@ -455,6 +455,8 @@ public class LaboonChessDocumentController implements Initializable {
                 FileReader reader = new FileReader(file);
                 BufferedReader bufferedReader = new BufferedReader(reader);
                 String line;
+                line = bufferedReader.readLine();
+                playerType = Integer.parseInt(line);
                 while ((line = bufferedReader.readLine()) != null) {
                     fenList.add(line);
                 }
@@ -484,7 +486,7 @@ public class LaboonChessDocumentController implements Initializable {
         if (file != null) {
             try {
                 file.createNewFile();
-                chessboard.saveGame(file);
+                chessboard.saveGame(file, playerType);
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
