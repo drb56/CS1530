@@ -156,8 +156,9 @@ public class LaboonChessDocumentController implements Initializable {
         System.out.println("To: " + toSquareStr);
 
         // update the GUI if the attempted move made is considered valid
-        ChessBoard.returnStatus status;
-        if ((status = chessboard.move(fromSquareStr, toSquareStr)) != ChessBoard.returnStatus.INVALID) {
+        ChessBoard.returnStatus status = chessboard.move(fromSquareStr, toSquareStr);
+        if ((status != ChessBoard.returnStatus.INVALID) &&
+                (status != ChessBoard.returnStatus.CHECKMATE)) {
 
             Pane fromSquare = getChessSquare(fromSquareStr);
             Pane toSquare = getChessSquare(toSquareStr);
@@ -175,10 +176,34 @@ public class LaboonChessDocumentController implements Initializable {
             if (status == ChessBoard.returnStatus.CASTLING) {
                 performCastling(toSquare);
             }
+        } else if (status == ChessBoard.returnStatus.CHECKMATE) {
+            // GRAY ALL OF THE PIECES
+            performCheckmate();
         }
 
         // create a history of all moves that were made
         chessboard.addToHistory(chessboard.toFEN());
+    }
+
+
+    /**
+     * Displays an alert as to what team has won.
+     */
+    public void performCheckmate() {
+        String team;
+
+        if (chessboard.turn() == 'w') {
+            team = "Black";
+        } else {
+            team = "White";
+        }
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Checkmate");
+        alert.setHeaderText(null);
+        alert.setContentText(String.format("The %s team has won!", team));
+
+        alert.showAndWait();
     }
 
 
@@ -569,12 +594,15 @@ public class LaboonChessDocumentController implements Initializable {
                 guiChessPiece.setOpacity(1);                // Unhighlight the currently highlighted piece
                 isFirstClick = true;                        // back to start
 
-            } else if ((status = chessboard.move(fromSquare, toSquare)) != ChessBoard.returnStatus.INVALID) {
+            } else if (((status = chessboard.move(fromSquare, toSquare)) != ChessBoard.returnStatus.INVALID) &&
+                (status != ChessBoard.returnStatus.CHECKMATE)) {
                 /*
                     Valid move. See if we can place the chess piece from the
                     first click at this square on the board.
                 */
                 performValidMove(curSquare, status);
+            } else if (status == ChessBoard.returnStatus.CHECKMATE) {
+                performCheckmate();
             }
         }
     }
