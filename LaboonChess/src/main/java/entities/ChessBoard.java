@@ -578,6 +578,10 @@ public class ChessBoard {
         }
     }
 
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
 
     /**
      * Pretty-prints the current state of the 2D chessboard array.
