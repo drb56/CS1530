@@ -465,7 +465,12 @@ public class LaboonChessDocumentController implements Initializable {
 
             }
             chessboard = new ChessBoard(fenList);
+            String[] fen = fenList.get(fenList.size()-1).split(" ");
+            if(fen.equals("b")) {
+                chessboard.setTurn(1);
+            }
         }
+
 
         updateGameBoardGUIFromFen(chessboard);
     }
