@@ -611,6 +611,8 @@ public class LaboonChessDocumentController implements Initializable {
         updateGameBoardGUIFromFen(chessboard);                      // update the GUI to reflect the undo
         setChessPieceColors(chesspiece_color1, chesspiece_color2);  // keep the same color scheme
         isFirstClick = true;                                        // make sure the click action gets reset
+        gameOver = false;                                           // gets out of checkmate (guaranteed)
+        gameTimer.play();                                           // make sure timer starts again
     }
 
 
