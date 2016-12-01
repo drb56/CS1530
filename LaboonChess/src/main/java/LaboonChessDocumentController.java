@@ -477,11 +477,20 @@ public class LaboonChessDocumentController implements Initializable {
         }
 
         // reset team colors
-        chesspiece_color1 = null;
-        chesspiece_color2 = null;
+        resetTeamColors();
 
         // reset the game timer
         resetGameTimer();
+    }
+
+
+    /**
+     * Resets the team colors to their default values.
+     */
+    public void resetTeamColors() {
+        // reset team colors
+        chesspiece_color1 = null;
+        chesspiece_color2 = null;
     }
 
 
@@ -540,7 +549,10 @@ public class LaboonChessDocumentController implements Initializable {
             }
         }
 
+        // reset team colors
+        resetTeamColors();
 
+        // update the GUI to reflect the loaded game's current FEN
         updateGameBoardGUIFromFen(chessboard);
     }
 
