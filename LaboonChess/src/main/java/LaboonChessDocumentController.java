@@ -68,7 +68,7 @@ public class LaboonChessDocumentController implements Initializable {
             "Money isn't real George, it only seems like it is", "Derek Ferrell, DEREK FKIN FERRELL!!", "The cosine of the tangent is not the sine",
             "That's thirty minutes away. I'll be there in ten", "Why do I have to be Mr. Pink?", "John, Paul, George and Ringo",
             "Now that's a TASTY burger", "We are the musicmakers, and we are the dreamers of dreams", "What'samatter Colonel Sanders... chicken?!",
-            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold"
+            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold", "He called the shit 'POOP' hahahahha"
     };
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
@@ -475,6 +475,10 @@ public class LaboonChessDocumentController implements Initializable {
                 playerType = 0;
                 break;
         }
+
+        // reset team colors
+        chesspiece_color1 = null;
+        chesspiece_color2 = null;
 
         // reset the game timer
         resetGameTimer();
