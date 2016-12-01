@@ -172,11 +172,10 @@ public class LaboonChessDocumentController implements Initializable {
             status = chessboard.move(fromSquareStr, toSquareStr);
         }
 
+        Pane fromSquare = getChessSquare(fromSquareStr);
+        Pane toSquare = getChessSquare(toSquareStr);
         if ((status != ChessBoard.returnStatus.INVALID) &&
                 (status != ChessBoard.returnStatus.CHECKMATE)) {
-
-            Pane fromSquare = getChessSquare(fromSquareStr);
-            Pane toSquare = getChessSquare(toSquareStr);
 
             // Empty square
             guiChessPiece = (ImageView) fromSquare.getChildren().get(0);    // hold reference to this piece
@@ -194,6 +193,11 @@ public class LaboonChessDocumentController implements Initializable {
         } else if (status == ChessBoard.returnStatus.CHECKMATE) {
             // GRAY ALL OF THE PIECES
             performCheckmate();
+        }
+
+        // perform special operation if a pawn was promoted
+        if (status == ChessBoard.returnStatus.PAWNPROMOTION) {
+            performPawnPromotion(toSquare);
         }
 
         // create a history of all moves that were made
@@ -704,16 +708,9 @@ public class LaboonChessDocumentController implements Initializable {
 
         // perform special operation if a pawn was promoted
         if (status == ChessBoard.returnStatus.PAWNPROMOTION) {
-            // remove the pawn and place a queen
-            curSquare.getChildren().remove(0);
-
-            // place white or black queen, depending on the team
-            if (curSquare.getId().contains("8")) {
-                curSquare.getChildren().add(board_images.getWhiteQueen());
-            } else {
-                curSquare.getChildren().add(board_images.getBlackQueen());
-            }
+            performPawnPromotion(curSquare);
         }
+
 
         // create a history of all moves that were made
         chessboard.addToHistory(chessboard.toFEN());
@@ -730,6 +727,24 @@ public class LaboonChessDocumentController implements Initializable {
 
         // DEBUG
         System.out.println(chessboard.toFEN());
+    }
+
+
+    /**
+     * Performs the special move Pawn Promotion
+     *
+     * @param curSquare The GUI Pane that is to be moved to
+     */
+    public void performPawnPromotion(Pane curSquare) {
+        // remove the pawn and place a queen
+        curSquare.getChildren().remove(0);
+
+        // place white or black queen, depending on the team
+        if (curSquare.getId().contains("8")) {
+            curSquare.getChildren().add(board_images.getWhiteQueen());
+        } else {
+            curSquare.getChildren().add(board_images.getBlackQueen());
+        }
     }
 
 
