@@ -3,7 +3,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import org.junit.Before;
 import org.junit.Test;
-import org.loadui.testfx.GuiTest;
+
 import java.io.IOException;
 import entities.ChessBoard;
 import static org.junit.Assert.assertEquals;
@@ -11,22 +11,10 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by davidbickford on 11/14/16.
  */
-public class FENStringTests extends GuiTest {
+public class FENStringTests {
     private ChessBoard chessBoard;
     private ChessBoard chessBoard2;
-    public Parent getRootNode()
-    {
-        Parent parent = null;
-        try {
-            parent = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
-            return parent;
 
-        } catch (IOException ex) {
-            System.out.println(ex);
-            System.exit(1);
-        }
-        return parent;
-    }
 
     /**
      * Creates a new chessboard object for the rest of the tests to use.

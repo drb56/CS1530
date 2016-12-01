@@ -6,11 +6,12 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class LaboonChess extends Application {
+    private Parent root;
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
-        
+        root = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
+
         Scene scene = new Scene(root);
 
         // set custom app icon
@@ -30,7 +31,14 @@ public class LaboonChess extends Application {
 
         // show the scene/stage AKA the form/window
         stage.show();
+
+
     }
+
+    public Parent getRoot() {
+        return root;
+    }
+
 
     /**
      * @param args the command line arguments

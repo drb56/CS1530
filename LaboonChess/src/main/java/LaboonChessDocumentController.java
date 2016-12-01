@@ -73,6 +73,10 @@ public class LaboonChessDocumentController implements Initializable {
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
 
+    public GridPane getChessGridBoardGridPane() {
+        return this.guiChessboard;
+    }
+
     /**
      * First-running method that builds the objects and dependencies needed to run the program. Here,
      *      the ChessBoard object is initialized and the Stockfish binary is loaded.

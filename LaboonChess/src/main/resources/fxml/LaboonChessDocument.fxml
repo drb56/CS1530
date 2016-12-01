@@ -17,9 +17,9 @@
     <children>
         <MenuBar fx:id="mnuMain" prefHeight="25.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
-                <Menu mnemonicParsing="true" text="_File">
+                <Menu id = "mnuFile" mnemonicParsing="true" text="_File">
                     <items>
-                        <Menu mnemonicParsing="true" text="_New Game">
+                        <Menu id = "newGame" mnemonicParsing="true" text="_New Game">
                             <items>
                                 <MenuItem id="multiplayer" fx:id="mnuNewGame" onAction="#handleNewGameAction" text="_Multiplayer" />
                                 <MenuItem id="cpublack" fx:id="mnuNewGameBlackAI" onAction="#handleNewGameAction" text="_Computer: Black" />
@@ -736,7 +736,7 @@
         </GridPane>
 
         <Separator layoutX="25.0" layoutY="440.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-        <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="442.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="480.0" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
+        <Label id="comments" fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="442.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="480.0" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
         <Label fx:id="lblTimer" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="436.0" layoutY="439.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" />
     </children>
 </AnchorPane>

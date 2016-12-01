@@ -3,8 +3,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import org.junit.Before;
 import org.junit.Test;
-import org.loadui.testfx.GuiTest;
-
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
@@ -12,22 +10,9 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by davidbickford on 11/14/16.
  */
-public class LegalMovesTests extends GuiTest{
+public class LegalMovesTests {
     private ChessBoard chessBoard;
     private ChessBoard chessBoard2;
-    public Parent getRootNode()
-    {
-        Parent parent = null;
-        try {
-            parent = FXMLLoader.load(getClass().getResource("/fxml/LaboonChessDocument.fxml"));
-            return parent;
-
-        } catch (IOException ex) {
-            System.out.println(ex);
-            System.exit(1);
-        }
-        return parent;
-    }
 
     /**
      * Creates a new chessboard object for the rest of the tests to use.
@@ -43,7 +28,7 @@ public class LegalMovesTests extends GuiTest{
      */
     @Test
     public void testIsLegalReturnsFalse() {
-        assertEquals(chessBoard.isLegal("b2", "c2"), false);
+        assertEquals(chessBoard.isLegal("b2", "c2"), 0);
     }
 
     /**
@@ -52,7 +37,7 @@ public class LegalMovesTests extends GuiTest{
      */
     @Test
     public void testIsLegalPawnMoveOne() {
-        assertEquals(chessBoard.isLegal("b2", "b3"), true);
+        assertEquals(chessBoard.isLegal("b2", "b3"), 1);
     }
 
     /**
@@ -61,6 +46,6 @@ public class LegalMovesTests extends GuiTest{
      */
     @Test
     public void testIsLegalPawnMoveTwo() {
-        assertEquals(chessBoard.isLegal("b2", "b4"), true);
+        assertEquals(chessBoard.isLegal("b2", "b4"), 1);
     }
 }
