@@ -143,23 +143,6 @@ public class LaboonChessDocumentController implements Initializable {
      * @param timeWait time for waiting, longer = more difficult
      */
     public void moveStockFish(String fen, int timeWait) {
-//        stockfish.sendCommand("");
-//
-//        String difficultyCommand = "setoption name Skill Level value " + game_difficulty;
-//        stockfish.sendCommand(difficultyCommand);
-//
-//        //System.out.println(stockfish.getOutput(0));
-//        String move = stockfish.getBestMove(fen, timeWait);
-//        String fromSquareStr = move.substring(0, 2);
-//        String toSquareStr = move.substring(2, 4);
-//
-//        // DEBUG
-//        System.out.println("AI moving from: " + fromSquareStr);
-//        System.out.println("To: " + toSquareStr);
-//
-//        // update the GUI if the attempted move made is considered valid
-//        ChessBoard.returnStatus status = chessboard.move(fromSquareStr, toSquareStr);
-
         ChessBoard.returnStatus status = ChessBoard.returnStatus.INVALID;
         String fromSquareStr = "";
         String toSquareStr = "";
@@ -452,8 +435,6 @@ public class LaboonChessDocumentController implements Initializable {
     /**
      * Resets the chessboard to the starting layout, and also resets the timer.
      *
-     * TODO: Reset the chess pieces on the GUI and also reset the ChessBoard object.
-     *
      * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
     @FXML
@@ -589,8 +570,6 @@ public class LaboonChessDocumentController implements Initializable {
     /**
      * Using a log of FEN moves, will undo the last move and revert
      *      the chessboard back to its previous state.
-     *
-     * TODO: Write the entire logic needed to Undo a chess move.
      *
      * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
