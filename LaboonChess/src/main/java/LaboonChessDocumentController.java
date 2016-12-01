@@ -481,6 +481,9 @@ public class LaboonChessDocumentController implements Initializable {
 
         // reset the game timer
         resetGameTimer();
+
+        // make sure the click action gets reset
+        isFirstClick = true;
     }
 
 
@@ -554,6 +557,9 @@ public class LaboonChessDocumentController implements Initializable {
 
         // update the GUI to reflect the loaded game's current FEN
         updateGameBoardGUIFromFen(chessboard);
+
+        // make sure the click action gets reset
+        isFirstClick = true;
     }
 
 
@@ -593,6 +599,7 @@ public class LaboonChessDocumentController implements Initializable {
         chessboard.undoMove(playerType);                            // undo the move
         updateGameBoardGUIFromFen(chessboard);                      // update the GUI to reflect the undo
         setChessPieceColors(chesspiece_color1, chesspiece_color2);  // keep the same color scheme
+        isFirstClick = true;                                        // make sure the click action gets reset
     }
 
 
