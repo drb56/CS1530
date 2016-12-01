@@ -8,6 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+
 <AnchorPane id="AnchorPane" prefHeight="225.0" prefWidth="318.0" style="-fx-background-color: linear-gradient(#ccc 0%, #eee 25%, #fff 75%, #ccc 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboonChessAboutDialogController">
    <children>
       <Label alignment="CENTER" prefHeight="131.0" prefWidth="350.0" text="LaboonChess created by:&#10;&#10;David Bickford (drb56@pitt.edu)&#10;Craig Kodman (cmk126@pitt.edu)&#10;Joe Meszar (jwm54@pitt.edu)&#10;David Tsui (dat83@pitt.edu)&#10;&#10;" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
