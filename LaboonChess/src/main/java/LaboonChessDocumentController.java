@@ -390,8 +390,8 @@ public class LaboonChessDocumentController implements Initializable {
         aboutDialog.setTitle("About LaboonChess");
         aboutDialog.initModality(Modality.APPLICATION_MODAL);
         aboutDialog.initStyle(StageStyle.UTILITY);
-        aboutDialog.setX(mnuMain.getScene().getWindow().getX() + (mnuMain.getScene().getWindow().getHeight()/12));
-        aboutDialog.setY(mnuMain.getScene().getWindow().getY() + (mnuMain.getScene().getWindow().getWidth()/3));
+        aboutDialog.setX(mnuMain.getScene().getWindow().getX() + (mnuMain.getScene().getWindow().getHeight()/9));
+        aboutDialog.setY(mnuMain.getScene().getWindow().getY() + (mnuMain.getScene().getWindow().getWidth()/4));
         aboutDialog.setResizable(false);
         aboutDialog.showAndWait();
 
