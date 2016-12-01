@@ -58,6 +58,8 @@ public class LaboonChessDocumentController implements Initializable {
     private String chesspiece_color1;       /* Black chess piece color */
     private String chesspiece_color2;       /* White chess piece color */
     private Random rand = new Random();     /* Random number generator */
+    private String team1name = "WHITE";     /* team name. Changes with color scheme */
+    private String team2name = "BLACK";     /* team name. Changes with color scheme */
 
     /* Random strings to use for the Kibitzer */
     private String[] chess_comments = {"Hurry up! You are taking too long!", "Yes, if you take longer, your IQ will go up",
@@ -66,7 +68,7 @@ public class LaboonChessDocumentController implements Initializable {
             "Money isn't real George, it only seems like it is", "Derek Ferrell, DEREK FKIN FERRELL!!", "The cosine of the tangent is not the sine",
             "That's thirty minutes away. I'll be there in ten", "Why do I have to be Mr. Pink?", "John, Paul, George and Ringo",
             "Now that's a TASTY burger", "We are the musicmakers, and we are the dreamers of dreams", "What'samatter Colonel Sanders... chicken?!",
-            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold"
+            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold", "He called the shit 'POOP' hahahahha"
     };
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
@@ -145,22 +147,29 @@ public class LaboonChessDocumentController implements Initializable {
      * @param timeWait time for waiting, longer = more difficult
      */
     public void moveStockFish(String fen, int timeWait) {
-        stockfish.sendCommand("");
+        ChessBoard.returnStatus status = ChessBoard.returnStatus.INVALID;
+        String fromSquareStr = "";
+        String toSquareStr = "";
+        int count = 0;
+        while ((status == ChessBoard.returnStatus.INVALID) && (count < 10)) {
+            count++;
+            stockfish.sendCommand("");
 
-        String difficultyCommand = "setoption name Skill Level value " + game_difficulty;
-        stockfish.sendCommand(difficultyCommand);
+            String difficultyCommand = "setoption name Skill Level value " + game_difficulty;
+            stockfish.sendCommand(difficultyCommand);
 
-        //System.out.println(stockfish.getOutput(0));
-        String move = stockfish.getBestMove(fen, timeWait);
-        String fromSquareStr = move.substring(0, 2);
-        String toSquareStr = move.substring(2, 4);
+            //System.out.println(stockfish.getOutput(0));
+            String move = stockfish.getBestMove(fen, timeWait);
+            fromSquareStr = move.substring(0, 2);
+            toSquareStr = move.substring(2, 4);
 
-        // DEBUG
-        System.out.println("AI moving from: " + fromSquareStr);
-        System.out.println("To: " + toSquareStr);
+            // DEBUG
+            System.out.println("AI moving from: " + fromSquareStr);
+            System.out.println("To: " + toSquareStr);
 
-        // update the GUI if the attempted move made is considered valid
-        ChessBoard.returnStatus status = chessboard.move(fromSquareStr, toSquareStr);
+            status = chessboard.move(fromSquareStr, toSquareStr);
+        }
+
         if ((status != ChessBoard.returnStatus.INVALID) &&
                 (status != ChessBoard.returnStatus.CHECKMATE)) {
 
@@ -186,7 +195,9 @@ public class LaboonChessDocumentController implements Initializable {
         }
 
         // create a history of all moves that were made
-        chessboard.addToHistory(chessboard.toFEN());
+        if (status != ChessBoard.returnStatus.INVALID) {
+            chessboard.addToHistory(chessboard.toFEN());
+        }
     }
 
 
@@ -197,9 +208,9 @@ public class LaboonChessDocumentController implements Initializable {
         String team;
 
         if (chessboard.turn() == 'w') {
-            team = "Black";
+            team = team2name;
         } else {
-            team = "White";
+            team = team1name;
         }
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -260,26 +271,38 @@ public class LaboonChessDocumentController implements Initializable {
             case "deadpool":
                 chesspiece_color1 = "#040603"; // black
                 chesspiece_color2 = "#a5090c"; // firebrick
+                team2name = "BLACK";
+                team1name = "RED";
                 break;
             case "election":
                 chesspiece_color1 = "#49a2ce"; // steelblue
                 chesspiece_color2 = "#ed4e31"; // tomato
+                team2name = "BLUE";
+                team1name = "RED";
                 break;
             case "hulk":
                 chesspiece_color1 = "#4d004d"; // purple
                 chesspiece_color2 = "#70964b"; // green
+                team2name = "PURPLE";
+                team1name = "GREEN";
                 break;
             case "ironman":
                 chesspiece_color1 = "#cc0000"; // red
                 chesspiece_color2 = "#ffa700"; // yellow
+                team2name = "RED";
+                team1name = "YELLOW";
                 break;
             case "pitt":
                 chesspiece_color1 = "#1c2957"; // blue
                 chesspiece_color2 = "#cdb87d"; // gold
+                team2name = "BLUE";
+                team1name = "GOLD";
                 break;
             case "wolverine":
                 chesspiece_color1 = "#365382"; // saddlebrown
                 chesspiece_color2 = "#f2c903"; // yellow
+                team2name = "BROWN";
+                team1name = "YELLOW";
                 break;
         }
 
@@ -416,8 +439,6 @@ public class LaboonChessDocumentController implements Initializable {
     /**
      * Resets the chessboard to the starting layout, and also resets the timer.
      *
-     * TODO: Reset the chess pieces on the GUI and also reset the ChessBoard object.
-     *
      * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
     @FXML
@@ -440,8 +461,24 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
         }
 
+        // reset team colors
+        resetTeamColors();
+
         // reset the game timer
         resetGameTimer();
+
+        // make sure the click action gets reset
+        isFirstClick = true;
+    }
+
+
+    /**
+     * Resets the team colors to their default values.
+     */
+    public void resetTeamColors() {
+        // reset team colors
+        chesspiece_color1 = null;
+        chesspiece_color2 = null;
     }
 
 
@@ -500,8 +537,14 @@ public class LaboonChessDocumentController implements Initializable {
             }
         }
 
+        // reset team colors
+        resetTeamColors();
 
+        // update the GUI to reflect the loaded game's current FEN
         updateGameBoardGUIFromFen(chessboard);
+
+        // make sure the click action gets reset
+        isFirstClick = true;
     }
 
 
@@ -532,8 +575,6 @@ public class LaboonChessDocumentController implements Initializable {
      * Using a log of FEN moves, will undo the last move and revert
      *      the chessboard back to its previous state.
      *
-     * TODO: Write the entire logic needed to Undo a chess move.
-     *
      * @param event The mouseclick event that was used to trigger this method. Contains the GUI object clicked.
      */
     @FXML
@@ -541,6 +582,7 @@ public class LaboonChessDocumentController implements Initializable {
         chessboard.undoMove(playerType);                            // undo the move
         updateGameBoardGUIFromFen(chessboard);                      // update the GUI to reflect the undo
         setChessPieceColors(chesspiece_color1, chesspiece_color2);  // keep the same color scheme
+        isFirstClick = true;                                        // make sure the click action gets reset
     }
 
 
