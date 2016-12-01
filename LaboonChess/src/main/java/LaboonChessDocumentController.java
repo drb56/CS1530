@@ -67,8 +67,10 @@ public class LaboonChessDocumentController implements Initializable {
             "Zip it up, and Zip it out", "NOOO PAPA!", "CARM, THERE'S NO FKIN SMOKED TURKEY IN HERE?!", "I didn't wanna get blood all ova ya floor",
             "Money isn't real George, it only seems like it is", "Derek Ferrell, DEREK FKIN FERRELL!!", "The cosine of the tangent is not the sine",
             "That's thirty minutes away. I'll be there in ten", "Why do I have to be Mr. Pink?", "John, Paul, George and Ringo",
-            "Now that's a TASTY burger", "We are the musicmakers, and we are the dreamers of dreams", "What'samatter Colonel Sanders... chicken?!",
-            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold", "He called the shit 'POOP' hahahahha"
+            "Now that's a TASTY burger", "That's a bold strategy, Cotton!", "I'm naked right now", "Craig is the worst chess player",
+            "What'samatter Colonel Sanders... chicken?!", "What do you mean, 'you people'?", "We're going STREEAKKINGG!!",
+            "50 million Elvis fans can't be wrong", "Nail in my head, from my creator", "All that glitters is not gold", "He called the shit 'POOP' hahahahha",
+            "Get to da choppa!!!"
     };
 
     private ChessBoardGUIProperties board_images = new ChessBoardGUIProperties(); /* Chessboard GUI property class for holding all imageviews */
@@ -103,7 +105,7 @@ public class LaboonChessDocumentController implements Initializable {
             }
 
             /* set up game timer */
-            resetGameTimer();
+            resetGameTimer(0);
 
             /* set up thread for random messages */
             setupMessageTimer();
@@ -465,7 +467,7 @@ public class LaboonChessDocumentController implements Initializable {
         resetTeamColors();
 
         // reset the game timer
-        resetGameTimer();
+        resetGameTimer(0);
 
         // make sure the click action gets reset
         isFirstClick = true;
@@ -485,8 +487,8 @@ public class LaboonChessDocumentController implements Initializable {
     /**
      * Starts or Resets the game clock timer.
      */
-    public void resetGameTimer() {
-        timer_count = 0;
+    public void resetGameTimer(int reset) {
+        timer_count = reset;
         if (gameTimer == null) { // start
             this.gameTimer = new Timeline(new KeyFrame(Duration.seconds(1), (ActionEvent event2) -> {
                 lblTimer.setText(String.format("%d:%02d",
@@ -500,7 +502,7 @@ public class LaboonChessDocumentController implements Initializable {
             gameTimer.play();
 
         } else { // reset
-            timer_count = 0;
+            timer_count = reset;
         }
     }
 
@@ -515,6 +517,7 @@ public class LaboonChessDocumentController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(guiChessboard.getScene().getWindow());
+        int newTimer = 0;
         if (file != null) {
             ArrayList<String> fenList = new ArrayList<>();
             try {
@@ -523,6 +526,8 @@ public class LaboonChessDocumentController implements Initializable {
                 String line;
                 line = bufferedReader.readLine();
                 playerType = Integer.parseInt(line);
+                line = bufferedReader.readLine();
+                newTimer = Integer.parseInt(line);
                 while ((line = bufferedReader.readLine()) != null) {
                     fenList.add(line);
                 }
@@ -542,6 +547,7 @@ public class LaboonChessDocumentController implements Initializable {
 
         // update the GUI to reflect the loaded game's current FEN
         updateGameBoardGUIFromFen(chessboard);
+        resetGameTimer(newTimer);
 
         // make sure the click action gets reset
         isFirstClick = true;
@@ -563,7 +569,7 @@ public class LaboonChessDocumentController implements Initializable {
         if (file != null) {
             try {
                 file.createNewFile();
-                chessboard.saveGame(file, playerType);
+                chessboard.saveGame(file, playerType, timer_count);
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }

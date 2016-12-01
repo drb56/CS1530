@@ -172,12 +172,15 @@ public class ChessBoard {
      * Saves all the fen strings since the beginning of the game to be able to repopulate the board
      *
      * @param file A file on disk to use for saving.
+     * @param playerType If it is multiplayer, comp black, or comp white.
+     * @param timer_count The timer that it was saved as.
      * @return true if save was successful; otherwise false.
      */
-    public boolean saveGame(File file, int playerType) {
+    public boolean saveGame(File file, int playerType, int timer_count) {
         try {
             PrintStream out = new PrintStream(file.getAbsoluteFile());
             out.println(playerType);
+            out.println(timer_count);
             for(int i=0; i<allFenStrings.size(); i++) {
                 out.println(allFenStrings.get(i));
             }
