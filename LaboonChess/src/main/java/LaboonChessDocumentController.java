@@ -60,6 +60,7 @@ public class LaboonChessDocumentController implements Initializable {
     private Random rand = new Random();     /* Random number generator */
     private String team1name = "WHITE";     /* team name. Changes with color scheme */
     private String team2name = "BLACK";     /* team name. Changes with color scheme */
+    private boolean gameOver = false;       /* Holds whether the game has ended */
 
     /* Random strings to use for the Kibitzer */
     private String[] chess_comments = {"Hurry up! You are taking too long!", "Yes, if you take longer, your IQ will go up",
@@ -128,7 +129,9 @@ public class LaboonChessDocumentController implements Initializable {
                         @Override
                         public void run() {
                             // show random message
-                            lblStatus.setText(chess_comments[rand.nextInt(chess_comments.length)]);
+                            if (!gameOver) {
+                                lblStatus.setText(chess_comments[rand.nextInt(chess_comments.length)]);
+                            }
                         }
                     });
                     // show next message within 1-5 seconds
@@ -219,11 +222,17 @@ public class LaboonChessDocumentController implements Initializable {
             team = team1name;
         }
 
+        // the game has ended
+        gameOver = true;
+
+        // turn off the game timer
+        gameTimer.stop();
+
+        // show alert as to which team won
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Checkmate");
         alert.setHeaderText(null);
         alert.setContentText(String.format("The %s team has won!", team));
-
         alert.showAndWait();
     }
 
@@ -467,6 +476,9 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
         }
 
+        // new game started
+        gameOver = false;
+        
         // reset team colors
         resetTeamColors();
 
@@ -505,8 +517,11 @@ public class LaboonChessDocumentController implements Initializable {
             gameTimer.setCycleCount(Timeline.INDEFINITE);
             gameTimer.play();
 
-        } else { // reset
+        } else if (timer_count >= 0) {  // reset
             timer_count = reset;
+            gameTimer.play();
+        } else {                        // turn off timer
+            gameTimer.stop();
         }
     }
 
@@ -545,6 +560,9 @@ public class LaboonChessDocumentController implements Initializable {
                 chessboard.setTurn(1);
             }
         }
+
+        // new game started
+        gameOver = false;
 
         // reset team colors
         resetTeamColors();
