@@ -4,9 +4,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
-/**
- * Created by davidbickford on 11/30/16.
- */
 public class UndoMoveTests {
     private ChessBoard chessBoard;
     ArrayList<String> history;

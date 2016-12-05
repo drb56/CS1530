@@ -290,20 +290,20 @@ public class LaboonChessDocumentController implements Initializable {
                 team1name = "RED";
                 break;
             case "election":
-                chesspiece_color1 = "#49a2ce"; // steelblue
-                chesspiece_color2 = "#ed4e31"; // tomato
-                team2name = "BLUE";
-                team1name = "RED";
+                chesspiece_color1 = "#ed4e31"; // tomato
+                chesspiece_color2 = "#3088b4"; // steelblue
+                team2name = "RED";
+                team1name = "BLUE";
                 break;
             case "hulk":
-                chesspiece_color1 = "#4d004d"; // purple
-                chesspiece_color2 = "#70964b"; // green
+                chesspiece_color1 = "#e200e2"; // purple
+                chesspiece_color2 = "#09f009"; // green
                 team2name = "PURPLE";
                 team1name = "GREEN";
                 break;
             case "ironman":
-                chesspiece_color1 = "#cc0000"; // red
-                chesspiece_color2 = "#ffa700"; // yellow
+                chesspiece_color1 = "#ff0000"; // red
+                chesspiece_color2 = "#ffb01a"; // yellow
                 team2name = "RED";
                 team1name = "YELLOW";
                 break;
@@ -314,15 +314,33 @@ public class LaboonChessDocumentController implements Initializable {
                 team1name = "GOLD";
                 break;
             case "wolverine":
-                chesspiece_color1 = "#365382"; // saddlebrown
+                chesspiece_color1 = "#912525"; // saddlebrown
                 chesspiece_color2 = "#f2c903"; // yellow
                 team2name = "BROWN";
                 team1name = "YELLOW";
                 break;
+            default:
+                chesspiece_color1 = null; // saddlebrown
+                chesspiece_color2 = null; // yellow
+                resetTeamColors();
         }
 
         // set the color for each chess piece
         setChessPieceColors(chesspiece_color1, chesspiece_color2);
+
+        // set the actual chessboard square colors
+        // rotate the pieces in the chessboard
+        for (Node square : guiChessboard.getChildren()) {
+
+            // if this is a coordinate on the outside of the chessboard,
+            //      then flip the border around to keep the border correct
+            //      for the chessboard
+            String id = square.getId();
+            if (id != null && id.matches("[a-z][0-9]")) {
+                if (square.getStyleClass().size() > 1) { square.getStyleClass().remove(1); }
+                square.getStyleClass().add(item.getId() + square.getStyleClass().get(0));
+            }
+        }
     }
 
 
@@ -335,7 +353,7 @@ public class LaboonChessDocumentController implements Initializable {
     public void setChessPieceColors(String color1, String color2) {
         // loop through the chess board and change each piece's color
         //      if a color is set
-        if (color1 == null || color2 == null) { return; }
+        //if (color1 == null || color2 == null) { return; }
 
         ObservableList<Node> children = guiChessboard.getChildren();
         for (Node node : children) {
@@ -348,11 +366,19 @@ public class LaboonChessDocumentController implements Initializable {
                     if (nodeChild.getId().matches("[a-z]")) {
                         // change "black" pieces
                         ImageView piece = (ImageView) nodeChild;
-                        piece.setEffect(getPaintColor(piece, Color.web(color1)));
+                        if (color1 == null) {
+                            piece.setEffect(null);
+                        } else {
+                            piece.setEffect(getPaintColor(piece, Color.web(color1)));
+                        }
                     } else {
                         // change "white" pieces
                         ImageView piece = (ImageView) nodeChild;
-                        piece.setEffect(getPaintColor(piece, Color.web(color2)));
+                        if (color2 == null) {
+                            piece.setEffect(null);
+                        } else {
+                            piece.setEffect(getPaintColor(piece, Color.web(color2)));
+                        }
                     }
                 }
             }
@@ -491,12 +517,20 @@ public class LaboonChessDocumentController implements Initializable {
 
 
     /**
-     * Resets the team colors to their default values.
+     * Resets the chessboard and team colors to their default values.
      */
     public void resetTeamColors() {
         // reset team colors
         chesspiece_color1 = null;
         chesspiece_color2 = null;
+
+        // reset chessboard
+        for (Node square : guiChessboard.getChildren()) {
+            String id = square.getId();
+            if (id != null && id.matches("[a-z][0-9]")) {
+                if (square.getStyleClass().size() > 1) { square.getStyleClass().remove(1); }
+            }
+        }
     }
 
 
@@ -765,6 +799,9 @@ public class LaboonChessDocumentController implements Initializable {
         } else {
             curSquare.getChildren().add(board_images.getBlackQueen());
         }
+
+        // make sure color scheme stays the same
+        setChessPieceColors(chesspiece_color1, chesspiece_color2);  // keep the same color scheme
     }
 
 

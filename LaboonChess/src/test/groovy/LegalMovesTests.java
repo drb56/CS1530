@@ -1,15 +1,9 @@
 import entities.ChessBoard;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import org.junit.Before;
 import org.junit.Test;
-import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by davidbickford on 11/14/16.
- */
 public class LegalMovesTests {
     private ChessBoard chessBoard;
     private ChessBoard chessBoard2;

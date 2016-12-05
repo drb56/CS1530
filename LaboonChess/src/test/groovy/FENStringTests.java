@@ -4,17 +4,12 @@ import javafx.scene.Parent;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import entities.ChessBoard;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by davidbickford on 11/14/16.
- */
 public class FENStringTests {
     private ChessBoard chessBoard;
     private ChessBoard chessBoard2;
-
 
     /**
      * Creates a new chessboard object for the rest of the tests to use.

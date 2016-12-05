@@ -10,9 +10,7 @@ import org.testfx.framework.junit.ApplicationTest;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by David on 11/30/2016.
- */
+
 public class KibitzerTests extends ApplicationTest {
     Parent mainNode;
     Stage stage;
