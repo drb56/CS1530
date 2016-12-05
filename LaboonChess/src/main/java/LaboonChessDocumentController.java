@@ -303,7 +303,7 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
             case "ironman":
                 chesspiece_color1 = "#ff0000"; // red
-                chesspiece_color2 = "#ffb01a"; // yellow
+                chesspiece_color2 = "#ffff00"; // yellow
                 team2name = "RED";
                 team1name = "YELLOW";
                 break;
@@ -314,8 +314,8 @@ public class LaboonChessDocumentController implements Initializable {
                 team1name = "GOLD";
                 break;
             case "wolverine":
-                chesspiece_color1 = "#912525"; // saddlebrown
-                chesspiece_color2 = "#f2c903"; // yellow
+                chesspiece_color1 = "#055988"; // blue
+                chesspiece_color2 = "transparent"; // darkyellow
                 team2name = "BROWN";
                 team1name = "YELLOW";
                 break;

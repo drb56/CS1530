@@ -39,22 +39,22 @@
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #058d05, #047504);
 }
 .ironmanblack {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ff7676, #ff9d9d);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #771414, #881717);
 }
 .ironmanwhite {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #fff1d8, #ffebc4);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #b1e1fc, #8bd3fb);
 }
 .pittblack {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #4b66c5, #697fcf);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #697fcf, #8698d8);
 }
 .pittwhite {
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #eee6d2, #e8dfc4);
 }
 .wolverineblack {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #d96b6b, #e18b8b);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #c3e3f2, #d3ebf6);
 }
 .wolverinewhite {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #feefa8, #feec94);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #fdfdaa, #fefec3);
 }
 /*
     This puts a border around the chessboard.
