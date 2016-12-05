@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by David on 11/30/2016.
- */
 public class GetImageTests {
     @Test
     public void testGetWhiteBishop() {

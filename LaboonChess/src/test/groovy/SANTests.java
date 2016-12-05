@@ -1,9 +1,7 @@
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import entities.ChessBoard;
 import org.junit.Before;
 import org.junit.Test;
-import java.io.IOException;
-import entities.ChessBoard;
+
 import static org.junit.Assert.assertEquals;
 
 public class SANTests{

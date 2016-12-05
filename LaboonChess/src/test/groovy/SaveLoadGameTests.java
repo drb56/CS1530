@@ -1,19 +1,14 @@
 import entities.ChessBoard;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by davidbickford on 11/30/16.
- */
 public class SaveLoadGameTests {
     private ChessBoard chessBoard;
     private ChessBoard chessBoard2;
