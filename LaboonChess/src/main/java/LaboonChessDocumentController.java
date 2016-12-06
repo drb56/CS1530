@@ -315,7 +315,7 @@ public class LaboonChessDocumentController implements Initializable {
                 break;
             case "wolverine":
                 chesspiece_color1 = "#055988"; // blue
-                chesspiece_color2 = "transparent"; // darkyellow
+                chesspiece_color2 = "#f2c903"; // darkyellow
                 team2name = "BROWN";
                 team1name = "YELLOW";
                 break;
