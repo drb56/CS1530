@@ -54,7 +54,7 @@
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #c3e3f2, #d3ebf6);
 }
 .wolverinewhite {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #fdfdaa, #fefec3);
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #d96b6b, #e18b8b);
 }
 /*
     This puts a border around the chessboard.

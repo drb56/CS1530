@@ -44,6 +44,7 @@ public class LaboonChessDocumentController implements Initializable {
     @FXML private Label lblStatus;          /* TEMP, used as verbose output for testing */
     @FXML private Label lblTimer;           /* bottom-right, used to display the timer */
     @FXML private GridPane guiChessboard;   /* holds the GUI chessboard */
+    @FXML private RadioMenuItem mnuColorDefault; /* used when resetting board */
 
     private int timer_count = 0;            /* used for game clock, as the counter */
     Timeline gameTimer = null;              /* used for game clock, counting up from the time game was started */
@@ -58,8 +59,8 @@ public class LaboonChessDocumentController implements Initializable {
     private String chesspiece_color1;       /* Black chess piece color */
     private String chesspiece_color2;       /* White chess piece color */
     private Random rand = new Random();     /* Random number generator */
-    private String team1name = "WHITE";     /* team name. Changes with color scheme */
-    private String team2name = "BLACK";     /* team name. Changes with color scheme */
+    private String team1name = "white";     /* team name. Changes with color scheme */
+    private String team2name = "black";     /* team name. Changes with color scheme */
     private boolean gameOver = false;       /* Holds whether the game has ended */
 
     /* Random strings to use for the Kibitzer */
@@ -286,42 +287,44 @@ public class LaboonChessDocumentController implements Initializable {
             case "deadpool":
                 chesspiece_color1 = "#040603"; // black
                 chesspiece_color2 = "#a5090c"; // firebrick
-                team2name = "BLACK";
-                team1name = "RED";
+                team2name = "black";
+                team1name = "red";
                 break;
             case "election":
                 chesspiece_color1 = "#ed4e31"; // tomato
                 chesspiece_color2 = "#3088b4"; // steelblue
-                team2name = "RED";
-                team1name = "BLUE";
+                team2name = "red";
+                team1name = "blue";
                 break;
             case "hulk":
                 chesspiece_color1 = "#e200e2"; // purple
                 chesspiece_color2 = "#09f009"; // green
-                team2name = "PURPLE";
-                team1name = "GREEN";
+                team2name = "purple";
+                team1name = "green";
                 break;
             case "ironman":
                 chesspiece_color1 = "#ff0000"; // red
                 chesspiece_color2 = "#ffff00"; // yellow
-                team2name = "RED";
-                team1name = "YELLOW";
+                team2name = "red";
+                team1name = "yellow";
                 break;
             case "pitt":
                 chesspiece_color1 = "#1c2957"; // blue
                 chesspiece_color2 = "#cdb87d"; // gold
-                team2name = "BLUE";
-                team1name = "GOLD";
+                team2name = "blue";
+                team1name = "gold";
                 break;
             case "wolverine":
                 chesspiece_color1 = "#055988"; // blue
                 chesspiece_color2 = "#f2c903"; // darkyellow
-                team2name = "BROWN";
-                team1name = "YELLOW";
+                team2name = "blue";
+                team1name = "yellow";
                 break;
             default:
                 chesspiece_color1 = null; // saddlebrown
                 chesspiece_color2 = null; // yellow
+                team2name = "black";
+                team1name = "white";
                 resetTeamColors();
         }
 
@@ -523,6 +526,8 @@ public class LaboonChessDocumentController implements Initializable {
         // reset team colors
         chesspiece_color1 = null;
         chesspiece_color2 = null;
+        team1name = "white";
+        team2name = "black";
 
         // reset chessboard
         for (Node square : guiChessboard.getChildren()) {
@@ -531,6 +536,9 @@ public class LaboonChessDocumentController implements Initializable {
                 if (square.getStyleClass().size() > 1) { square.getStyleClass().remove(1); }
             }
         }
+
+        // set the appropriate menu item for color
+        mnuColorDefault.setSelected(true);
     }
 
 

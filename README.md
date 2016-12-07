@@ -9,7 +9,7 @@ CS1530 group repository
 
 ## Permissions for Mac / Linux
 ```
-$> cd LaboonChess/build/resources/main/binaries/mac
+$> cd LaboonChess/build/resources/main/binaries/[linux|mac]
 $> chmod 777 stockfish-8-64
 ```
 ## Running Gradle

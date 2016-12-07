@@ -46,7 +46,7 @@
                     <items>
                         <Menu text="Colors">
                             <items>
-                                <RadioMenuItem id="default" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Default" toggleGroup="$coloroptions">
+                                <RadioMenuItem id="default" fx:id="mnuColorDefault" mnemonicParsing="false" onAction="#handleColorChangeAction" text="Traditional" toggleGroup="$coloroptions" selected="true">
                                     <toggleGroup>
                                         <ToggleGroup fx:id="coloroptions" />
                                     </toggleGroup>
