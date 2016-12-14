@@ -2,10 +2,10 @@
 CS1530 group repository  
 
 ## Group Members  
-- David Bickford (drb56@pitt.edu | drb56)  
-- Craig Kodman (cmk126@pitt.edu | c-kodman)  
-- Joe Meszar (jwm54@pitt.edu | outkst)  
-- David Tsui (dat83@pitt.edu | luckyleap)  
+- David Bickford ([drb56](https://github.com/drb56))  
+- Craig Kodman ([c-kodman](https://github.com/c-kodman))  
+- Joe Meszar ([outkst](https://github.com/outkst))  
+- David Tsui ([luckyleap](https://github.com/luckyleap))  
 
 ## Permissions for Mac / Linux
 ```
